@@ -1,0 +1,20 @@
+<div class="content">
+  <button ng-click="order = 'name'">Nach Name sortieren</button>
+  <button ng-click="order = 'kategorie'">Nach Kategorie sortieren</button>
+  <input type="text" ng-model="search" placeholder="Nach Artikel suchen" />
+  <ul>
+    <li ng-repeat="artikel in inventar | orderBy: order | filter: search" ng-show="artikel.available">
+      <img ng-src="{{artikel.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px;"
+           ng-show="artikel.thumb"/>
+      <h3>{{artikel.name}} - {{artikel.preis | currency: '€'}}</h3>
+      <div class="remove" ng-click="removeartikel(artikel)">x</div>
+      <span class="kategorie" style="background: {{artikel.kategorie}}">{{artikel.kategorie}} kategorie</span>
+    </li>
+  </ul>
+  <form ng-submit="addartikel()">
+    <input type="text" placeholder="Bezeichnung" ng-model="newartikel.name" />
+    <input type="text" placeholder="Kategorie" ng-model="newartikel.kategorie" />
+    <input type="text" placeholder="Preis" ng-model="newartikel.preis" />
+    <input type="submit" value="Artikel hinzufügen" />
+  </form>
+</div>
