@@ -11,10 +11,28 @@
       <span class="kategorie" style="background: {{artikel.kategorie}}">{{artikel.kategorie}} kategorie</span>
     </li>
   </ul>
-  <form ng-submit="addartikel()">
-    <input type="text" placeholder="Bezeichnung" ng-model="newartikel.name" />
-    <input type="text" placeholder="Kategorie" ng-model="newartikel.kategorie" />
-    <input type="text" placeholder="Preis" ng-model="newartikel.preis" />
-    <input type="submit" value="Artikel hinzufügen" />
+  <form name="addArticle" ng-submit="addartikel()" novalidate>
+    <input type="text" placeholder="Bezeichnung" name="name" ng-model="newartikel.name" ng-required="true" />
+    <div ng-show="addArticle.name.$touched && addArticle.name.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
+    </div>
+    <input type="text" placeholder="Kategorie" name="kategorie" ng-model="newartikel.kategorie" ng-required="true"/>
+    <div ng-show="addArticle.kategorie.$touched && addArticle.kategorie.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
+    </div>
+    <input type="text" placeholder="Preis" name="preis" ng-model="newartikel.preis" ng-required="true" />
+    <div ng-show="addArticle.preis.$touched && addArticle.preis.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
+    </div>
+    <textarea placeholder="Beschreibung" name="beschreibung" ng-model="newartikel.beschreibung" ng-required="true" ></textarea>
+    <div ng-show="addArticle.beschreibung.$touched && addArticle.beschreibung.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
+    </div>
+    <input type="number" placeholder="Menge" name="menge" ng-model="newartikel.menge" ng-required="true" />
+    <div ng-show="addArticle.menge.$touched && addArticle.menge.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
+    </div>
+    <input type="file" placeholder="Bild" ng-model="newartikel.thumb" />
+    <input type="submit" value="Artikel hinzufügen" ng-disabled="addArticle.$invalid" />
   </form>
 </div>
