@@ -8,14 +8,18 @@ webShop.config(['$routeProvider', '$locationProvider', function($routeProvider, 
 
   $routeProvider
     .when('/home', {
-      templateUrl: 'views/home.html'
+      templateUrl: 'views/home-website.html'
     })
-    .when('/directory', {
-      templateUrl: 'views/artikel-verwalten.html',
-      controller: 'InventarController'
-    }).otherwise({
-      redirectTo: '/home'
-    });
+    .when('/admin', {
+      templateUrl: 'views/home-admin.html'
+    })
+    .when('/manage-inventory', {
+      templateUrl: 'views/manage-inventory.html',
+      controller: 'InventoryController'
+    })
+   .otherwise({
+    redirectTo: '/home',
+  });
 
 }]);
 //

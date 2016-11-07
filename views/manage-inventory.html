@@ -1,0 +1,38 @@
+<div class="content">
+  <button ng-click="order = 'name'">Nach Name sortieren</button>
+  <button ng-click="order = 'category'">Nach Kategorie sortieren</button>
+  <input type="text" ng-model="search" placeholder="Nach Artikel suchen" />
+  <ul>
+    <li ng-repeat="article in inventory | orderBy: order | filter: search" ng-show="article.available">
+      <img ng-src="{{article.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px;"
+           ng-show="article.thumb"/>
+      <h3>{{article.name}} - {{article.price | currency: '€'}}</h3>
+      <div class="remove" ng-click="removeArticle(article)">x</div>
+      <span class="category" style="background: {{article.category}}">{{article.category}} category</span>
+    </li>
+  </ul>
+  <form name="addArticleForm" ng-submit="addArticle()" novalidate>
+    <input type="text" placeholder="Bezeichnung" name="name" ng-model="newArticle.name" ng-required="true" />
+    <div ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
+    </div>
+    <input type="text" placeholder="category" name="category" ng-model="newArticle.category" ng-required="true"/>
+    <div ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
+    </div>
+    <input type="text" placeholder="price" name="price" ng-model="newArticle.price" ng-required="true" />
+    <div ng-show="addArticleForm.price.$touched && addArticleForm.price.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
+    </div>
+    <textarea placeholder="description" name="description" ng-model="newArticle.description" ng-required="true" ></textarea>
+    <div ng-show="addArticleForm.description.$touched && addArticleForm.description.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
+    </div>
+    <input type="number" placeholder="quantity" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
+    <div ng-show="addArticleForm.quantity.$touched && addArticleForm.quantity.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
+    </div>
+    <input type="file" placeholder="Bild" ng-model="newArticle.thumb" />
+    <input type="submit" value="Artikel hinzufügen" ng-disabled="addArticleForm.$invalid" />
+  </form>
+</div>

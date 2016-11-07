@@ -1,23 +1,23 @@
 [{
 	"name": "Notebook1",
-	"kategorie": "green",
-	"preis": 50,
+	"category": "green",
+	"price": 50,
 	"available": true,
 	"thumb": "content/img/notebook1.jpg"
 }, {
 	"name": "Notebook2",
-	"kategorie": "yellow",
-	"preis": 10,
+	"category": "yellow",
+	"price": 10,
 	"available": true,
 	"thumb": "content/img/notebook2.jpg"
 }, {
 	"name": "Notebook3",
-	"kategorie": "orange",
-	"preis": 30,
+	"category": "orange",
+	"price": 30,
 	"available": false
 }, {
 	"name": "Notebook4",
-	"kategorie": "black",
-	"preis": 1000,
+	"category": "black",
+	"price": 1000,
 	"available": true
 }]
