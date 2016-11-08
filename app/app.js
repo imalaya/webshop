@@ -1,28 +1,30 @@
-//controls the app, binds in additional angular modules
-var webShop = angular.module('webShop', ['ngRoute', 'ngAnimate']);
+var webShop = angular.module('webShop', ['ngRoute', 'ngAnimate', 'ui.router']);
 
-//fires up before the app starts to run
-webShop.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+  $urlRouterProvider.otherwise('/');
 
-  //$locationProvider.html5Mode(true);
+  $stateProvider
+    .state('public', {
+        abstract: true,
+        template: "<ui-view/>"
+      })
+    .state('public.site', {
+        url: '/',
+        templateUrl:'views/home-website.html'
+    });
 
-  $routeProvider
-    .when('/home', {
-      templateUrl: 'views/home-website.html'
+  $stateProvider
+    .state('private', {
+      abstract: true,
+      template: "<ui-view/>"
     })
-    .when('/admin', {
-      templateUrl: 'views/home-admin.html'
-    })
-    .when('/manage-inventory', {
-      templateUrl: 'views/manage-inventory.html',
-      controller: 'InventoryController'
-    })
-   .otherwise({
-    redirectTo: '/home',
-  });
-
+    .state('private.admin', {
+        url: '/admin',
+        templateUrl:'views/home-admin.html'
+      })
+    .state('private.admin.inventory', {
+        url: '/manage-inventory',
+        templateUrl:'views/manage-inventory.html',
+        controller: 'InventoryController'
+      });
 }]);
-//
-// webShop.run(function(){
-//
-// });

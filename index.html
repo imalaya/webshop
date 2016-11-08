@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="de" ng-app="webShop">
   <head>
-    <!-- <base href="/" /> -->
     <title>Shop Manager</title>
+
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+
     <script src="app/lib/angular.min.js"></script>
     <script src="app/lib/angular-route.min.js"></script>
     <script src="app/lib/angular-animate.min.js"></script>
+    <script src="app/lib/angular-ui-router.min.js"></script>
+
     <script src="app/app.js"></script>
     <script src="app/controllers/InventoryController.js"></script>
   </head>
   <body>
-    <header ng-include="'views/header-admin.html'"></header>
-    <main ng-view></main>
+
+    <main ui-view></main>
+
 
 </body>
 </html>
