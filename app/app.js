@@ -1,7 +1,7 @@
-var webShop = angular.module('webShop', ['ngRoute', 'ngAnimate', 'ui.router']);
+var webShop = angular.module('webShop', ['ui.router']);
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
     .state('public', {
@@ -9,9 +9,13 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         template: "<ui-view/>"
       })
     .state('public.site', {
-        url: '/',
+        url: '/home',
         templateUrl:'views/home-website.html'
-    });
+      })
+    .state('public.site.papier', {
+        url: '/papier',
+        templateUrl:'views/papier.html'
+      });
 
   $stateProvider
     .state('private', {
