@@ -1,5 +1,5 @@
 body{
-  font-family: Helvetica;
+  font-family: 'Oswald', sans-serif;
   margin: 0;
 }
 
@@ -7,16 +7,49 @@ h1,h2,h3{
   margin: 0;
 }
 
-.category{
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin-left: 5px;
-  color: #fff;
-  font-size: 15px;
-  text-transform: uppercase;
+#logo-text {
+  font-family: 'Bungee', cursive;
+  font-size: 250%;
+  text-align: center;
 }
 
-#menu-bar{
+#menu-bar {
+  position:fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 120px;
+  margin-top: 0;
+  padding-bottom: 180px;
+  background-image: url(https://daks2k3a4ib2z.cloudfront.net/57289665989457a16b40023a/57289665989457a16b400261_noise.png);
+  background-position: 0 0;
+  background-size: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: block;
+  border: 3px dashed black;
+}
+
+nav li {
+  margin: 0;
+  padding: 0 10px;
+  display:inline;
+}
+
+nav ul {
+  display: inline;
+  float: left;
+}
+
+nav a {
+  height: 60px;
+  line-height: 60px;
+  color: #204156;
+  text-decoration: none;
+}
+
+
+/*#menu-bar{
   background: crimson;
   color: #fff;
   padding: 10px;
@@ -42,9 +75,9 @@ h1,h2,h3{
 
 #menu-bar a{
   color: #fff
-}
+}*/
 
-main{
+/*main{
   background: #eee;
   width: 80%;
   margin: 30px auto;
@@ -53,83 +86,4 @@ main{
 
 .content{
   padding: 20px;
-}
-
-.content button,
-.content input[type="submit"]{
-  background: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #777;
-  border: 0;
-  box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
-  font-size: 16px;
-}
-
-.content button:nth-child(2){
-  float: right;
-}
-
-.content ul{
-  padding: 0;
-  list-style-type: none;
-  margin: 30px 0;
-}
-
-.content li{
-  padding: 15px 0;
-  border-top: 1px solid #e2e2e2;
-  color: #444;
-}
-
-.content li span{
-  float: right;
-}
-
-.content li h3{
-  display: inline-block;
-  font-weight: normal;
-  font-size: 22px;
-}
-
-.content input{
-  width: 90%;
-  padding: 10px 5%;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  margin: 10px 0;
-}
-
-.content input[type="submit"]:last-child{
-  width: 150px;
-  display: block;
-  margin: 15px auto;
-}
-
-.remove{
-  float: right;
-  padding: 5px;
-  background: #fff;
-  width: 18px;
-  text-align: center;
-  border-radius: 20px;
-  color: crimson;
-  cursor: pointer;
-  margin-left: 10px;
-}
-.content textarea{
-  width: 90%;
-  padding: 10px 5%;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  margin: 10px 0;
-}
-
-input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-  border: 2px solid red;
-}
-input[disabled="disabled"] {
-  opacity: 0.4;
-  cursor: not-allowed !important;
-}
+}*/

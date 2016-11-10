@@ -27,8 +27,8 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl:'views/home-admin.html'
       })
     .state('private.admin.inventory', {
-        url: '/manage-inventory',
-        templateUrl:'views/manage-inventory.html',
+        url: '/artikel-verwalten',
+        templateUrl:'views/manage-articles.html',
         controller: 'InventoryController'
       });
 }]);
