@@ -1,4 +1,10 @@
-var webShop = angular.module('webShop', ['ui.router']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+
+angular.module('webShop').controller('CollapseController', function ($scope) {
+  $scope.isNavCollapsed = true;
+
+});
+
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
@@ -10,7 +16,8 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
       })
     .state('public.site', {
         url: '/home',
-        templateUrl:'views/home-website.html'
+        templateUrl:'views/home-website.html',
+        controller: 'CollapseController'
       })
     .state('public.site.papier', {
         url: '/papier',
@@ -30,5 +37,10 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         url: '/artikel-verwalten',
         templateUrl:'views/manage-articles.html',
         controller: 'InventoryController'
+      })
+      .state('private.admin.user', {
+          url: '/mitarbeiter-verwalten',
+          templateUrl:'views/manage-user.html',
+          controller: 'UserController'
       });
 }]);

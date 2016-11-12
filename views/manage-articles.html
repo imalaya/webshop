@@ -16,10 +16,7 @@
     <div ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
     </div>
-    <select name="category" ng-model="newArticle.name" ng-required="true" />
-    <option value="paper">Papier</option>
-    <option value="pen">Stifte</option>
-    </select>
+    <input type="text" placeholder="Kategorie" name="category" ng-model="newArticle.category" ng-required="true" />
     <div ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
     </div>

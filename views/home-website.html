@@ -1,20 +1,30 @@
 <head>
   <link href="content/css/stylesWebsite.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
-<div id="menu-bar">
-  <h1 id="logo-text">GUTE &nbsp &nbsp MINE</h1>
-  <nav>
-  <ul>
-    <li><a ui-sref="">Geschenke</a></li>
-    <li><a ui-sref="">Zubehör</a></li>
-    <li><a ui-sref="">Technik</a></li>
-    <li><a ui-sref="">Stifte</a></li>
-    <li><a ui-sref="public.site.papier">Papier</a></li>
-    <li><a ui-sref="">Neu</a></li>
-  </ul>
-  <nav>
-</div>
-<div ui-view>
 
+<div ng-controller="CollapseController">
+	<nav class="navbar navbar-default" role="navigation">
+    <img class="hidden-xs" src="content/img/logoGM.png" width="304" height="236" alt="Gute Mine logo">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+    <a class="navbar-brand" href="#">
+      <img class="visible-xs" src="content/img/logoGM.png" width="210" height="60" alt="">
+   </a>
+ </div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+			<ul class="nav navbar-nav">
+				<li><a ui-sref="">Neu</a></li>
+				<li><a ui-sref="">Papier</a></li>
+        <li><a ui-sref="">Stifte</a></li>
+        <li><a ui-sref="">Technik</a></li>
+        <li><a ui-sref="">Zubehör</a></li>
+        <li><a ui-sref="">Geschenke</a></li>
+			</ul>
+		</div>
+	</nav>
 </div>

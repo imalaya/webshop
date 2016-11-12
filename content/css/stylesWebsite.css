@@ -1,89 +1,30 @@
-body{
-  font-family: 'Oswald', sans-serif;
-  margin: 0;
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
 }
 
-h1,h2,h3{
-  margin: 0;
-}
+.horizontal-collapse {
+    height: 70px;
+  }
+  .navbar-collapse.in {
+    overflow-y: hidden;
+  }
 
-#logo-text {
-  font-family: 'Bungee', cursive;
-  font-size: 250%;
-  text-align: center;
-}
-
-#menu-bar {
-  position:fixed;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  height: 120px;
-  margin-top: 0;
-  padding-bottom: 180px;
-  background-image: url(https://daks2k3a4ib2z.cloudfront.net/57289665989457a16b40023a/57289665989457a16b400261_noise.png);
-  background-position: 0 0;
-  background-size: 50px;
-  background-color: #fff;
-  box-sizing: border-box;
+.hidden-xs {
   display: block;
-  border: 3px dashed black;
+  margin: -20px auto;
+  margin-bottom: -30px;
+  width: 40%;
+  max-width: 100%;
+  height:auto;
 }
 
-nav li {
-  margin: 0;
-  padding: 0 10px;
-  display:inline;
+@media (max-width: 767px) {
+    .navbar-brand {
+        padding: 0;
+    }
+
+    .navbar-brand img {
+        margin-top: -3px;
+        margin-left: 5px;
+    }
 }
-
-nav ul {
-  display: inline;
-  float: left;
-}
-
-nav a {
-  height: 60px;
-  line-height: 60px;
-  color: #204156;
-  text-decoration: none;
-}
-
-
-/*#menu-bar{
-  background: crimson;
-  color: #fff;
-  padding: 10px;
-}
-
-#menu-bar h1{
-  font-size: 24px;
-  font-weight: normal;
-  display: inline-block;
-}
-
-#menu-bar ul{
-  float: right;
-  list-style-type: none;
-  padding: 0;
-  margin: 6px 0;
-}
-
-#menu-bar li{
-  float: right;
-  margin-left: 20px;
-}
-
-#menu-bar a{
-  color: #fff
-}*/
-
-/*main{
-  background: #eee;
-  width: 80%;
-  margin: 30px auto;
-  border-radius: 10px;
-}
-
-.content{
-  padding: 20px;
-}*/
