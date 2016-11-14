@@ -17,6 +17,11 @@
       <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
     </div>
     <input type="text" placeholder="Kategorie" name="category" ng-model="newArticle.category" ng-required="true" />
+    <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
+      <option selected hidden>Kategorie wählen</option>
+      <option value="paper">Papier</option>
+      <option value="pen">Stifte</option>
+    </select>  Please uncomment and use when styling this field-->
     <div ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
     </div>

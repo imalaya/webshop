@@ -1,9 +1,10 @@
 <head>
   <link href="content/css/stylesWebsite.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Lato" rel="stylesheet">
 </head>
 
 <div ng-controller="CollapseController">
-	<nav class="navbar navbar-default" role="navigation">
+	<nav id="bootstrapOverride" class="navbar navbar-default" role="navigation">
     <img class="hidden-xs" src="content/img/logoGM.png" width="304" height="236" alt="Gute Mine logo">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
@@ -24,7 +25,18 @@
         <li><a ui-sref="">Technik</a></li>
         <li><a ui-sref="">Zubehör</a></li>
         <li><a ui-sref="">Geschenke</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span> Suche</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Warenkorb</a></li>
 			</ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" class="divider"></li>
+        <li><a tabindex="-1" href="#"><span class="glyphicon glyphicon-search"></span> Suche</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Warenkorb</a></li>
+      </ul> -->
 		</div>
 	</nav>
+</div>
+<div ui-view>
+
 </div>
