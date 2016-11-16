@@ -8,10 +8,12 @@
            ng-show="article.thumb"/>
       <h3>{{article.name}} - {{article.price | currency: '€'}}</h3>
       <div class="remove" ng-click="removeArticle(article)">x</div>
-      <span class="category">{{article.category}} category</span>
+      <div class="edit" ng-click="editArticle(article)">#</div>
+      <span class="category">{{article.category}}</span>
     </li>
   </ul>
-  <form name="addArticleForm" ng-submit="addArticle()" novalidate>
+
+  <form name="addArticleForm" ng-submit="addArticle()" ng-hide="editProduct" novalidate>
     <input type="text" placeholder="Name" name="name" ng-model="newArticle.name" ng-required="true" />
     <div ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
@@ -39,5 +41,35 @@
     </div>
     <input type="file" placeholder="Bild" ng-model="newArticle.thumb" />
     <input type="submit" value="Artikel hinzufügen" ng-disabled="addArticleForm.$invalid" />
+  </form>
+
+  <form name="editArticleForm" ng-submit="editArticle()" ng-if="editProduct" novalidate>
+    <input type="text" placeholder="Name" name="name" ng-model="existingArticle.name" ng-required="true" />
+    <div ng-show="editArticleForm.name.$touched && editArticleForm.name.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
+    </div>
+    <input type="text" placeholder="Kategorie" name="category" ng-model="existingArticle.category" ng-required="true" />
+    <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
+      <option selected hidden>Kategorie wählen</option>
+      <option value="paper">Papier</option>
+      <option value="pen">Stifte</option>
+    </select>  Please uncomment and use when styling this field-->
+    <div ng-show="editArticleForm.category.$touched && editArticleForm.category.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
+    </div>
+    <input type="text" placeholder="Preis" name="price" ng-model="existingArticle.price" ng-required="true" />
+    <div ng-show="editArticleForm.price.$touched && editArticleForm.price.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
+    </div>
+    <!-- <textarea placeholder="Beschreibung" name="description" ng-model="existingArticle.description" ng-required="true" ></textarea>
+    <div ng-show="editArticleForm.description.$touched && editArticleForm.description.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
+    </div>
+    <input type="number" placeholder="Menge" name="quantity" ng-model="existingArticle.quantity" ng-required="true" />
+    <div ng-show="editArticleForm.quantity.$touched && editArticleForm.quantity.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
+    </div>
+    <input type="file" placeholder="Bild" ng-model="existingArticle.thumb" /> -->
+    <input type="submit" value="Artikel speichern" ng-disabled="editArticleForm.$invalid" ng-click="saveArticle()">
   </form>
 </div>

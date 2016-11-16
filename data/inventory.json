@@ -1,23 +1,23 @@
 [{
 	"name": "Notebook1",
-	"category": "green",
+	"category": "Papier",
 	"price": 50,
 	"available": true,
 	"thumb": "content/img/notebook1.jpg"
 }, {
 	"name": "Notebook2",
-	"category": "yellow",
+	"category": "Papier",
 	"price": 10,
 	"available": true,
 	"thumb": "content/img/notebook2.jpg"
 }, {
 	"name": "Notebook3",
-	"category": "orange",
+	"category": "Papier",
 	"price": 30,
 	"available": false
 }, {
-	"name": "Notebook4",
-	"category": "black",
+	"name": "Kugelschreiber",
+	"category": "Stifte",
 	"price": 1000,
 	"available": true
 }]

@@ -1,4 +1,4 @@
-webShop.controller('InventoryController', ['$scope', '$http', function($scope, $http){
+webShop.controller('InventoryController', ['$scope', '$http','$uibModal', '$log', function($scope, $http, $uibModal, $log){
 
   $scope.removeArticle = function(article) {
     var removedArticle = $scope.inventory.indexOf(article);
@@ -27,9 +27,20 @@ webShop.controller('InventoryController', ['$scope', '$http', function($scope, $
 
   };
 
+  $scope.editArticle = function(article) {
+    $scope.editProduct = true;
+    $scope.existingArticle = article;
+  };
+
+  $scope.saveArticle = function () {
+    $scope.existingArticle = {};
+    $scope.editProduct = false;
+  };
+
+
 //get test data
   $http.get('data/inventory.json').success(function(data){
     $scope.inventory = data;
-  })
+  });
 
 }]);

@@ -125,6 +125,19 @@ main{
   cursor: pointer;
   margin-left: 10px;
 }
+
+.edit{
+  float: right;
+  padding: 5px;
+  background: #fff;
+  width: 18px;
+  text-align: center;
+  border-radius: 20px;
+  color: crimson;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
 .content textarea{
   width: 90%;
   padding: 10px 5%;
