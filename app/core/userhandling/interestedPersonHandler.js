@@ -1,6 +1,10 @@
 /**
  * Created by Ju on 18.11.2016.
  */
+
+var interestedPerson = require('./core/db/interestedPerson');
+var nodemailer = require('./nodemailer');
+
 exports.createInterestedPerson = function(emailAddress) {
     var username = generateUsername(emailAddress);
     var firstName = generateFirstName(username);
@@ -23,5 +27,12 @@ function generateLastName(username){
     var usernameArray = username.split('.');
     return usernameArray[1];
 }
-var interestedPerson = require('./core/db/interestedPerson');
-interestedPerson.saveInterestedPerson("firstName", "lastName", "userName", "emailAddress");
+
+function saveInterestedPerson(firstName, lastName, username, emailAddress){
+interestedPerson.saveInterestedPerson(firstName, lastName, username, emailAddress);
+}
+
+function sendEmail(interestedPersonId, username, emailAddress){
+    //TODO
+}
+
