@@ -1,8 +1,3 @@
-<head>
-  <link href="content/css/stylesWebsite.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Lato" rel="stylesheet">
-</head>
-
 <div ng-controller="CollapseController">
 	<nav id="bootstrapOverride" class="navbar navbar-default" role="navigation">
     <img class="hidden-xs" src="content/img/logoGM.png" width="304" height="236" alt="Gute Mine logo">
@@ -34,4 +29,47 @@
 </div>
 <div ui-view>
 
+</div>
+<div class="footer">
+    <div class="footer-left">
+        <div ng-controller="MapController">
+            <div id="map">
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span> Jungstr. 12</span> Berlin, Deutschland</p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <p> 030 578 666 43</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="#"> office@gutemine.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <div>
+            <a href="#">Bezahlung</a>
+            <a href="#">Versand & Lieferung</a>
+            <a href="#">Stornierung & Umtausch</a>
+        </div>
+        <div>
+            <a href="#">Hilfe</a>
+            <a href="#">Kontakt</a>
+            <a href="#">AGB</a>
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+        </div>
+        <div class="icons">
+            <p class="name"> Gute Mine &copy; 2016</p>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
 </div>

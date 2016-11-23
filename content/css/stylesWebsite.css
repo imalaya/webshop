@@ -53,6 +53,122 @@ div ul {
     height:auto;
   }
 
+/* Footer */
+
+.footer{
+    width: auto;
+    height: auto;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: black;
+    padding: 50px;
+    border-top-style: solid;
+    border-color: black;
+    border-width: 2px;
+    display: flex;
+}
+
+.footer div.footer-left,
+.footer div.footer-center,
+.footer div.footer-right{
+    width: 33%;
+}
+
+/* Footer Google Maps */
+
+#map{
+    width: 350px;
+    height: 350px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+/* Footer center*/
+
+.footer .footer-center i{
+    background-color: white;
+    font-size: 25px;
+    width: 42px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer .footer-center p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer .footer-center p a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer .footer-right div a:hover,
+.footer .footer-center p a:hover{
+    color: #cc9900;
+}
+
+/* Footer right*/
+
+.footer .footer-right div{
+    margin-bottom: 15px;
+}
+
+.footer .footer-right div a{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.footer .footer-right div.icons {
+    margin-top: 10px;
+}
+
+.footer .footer-right .icons .name{
+    display: inline-flex;
+    margin-right: 45px;
+    font-size: 10px;
+}
+
+.footer .footer-right .icons a{
+    display: inline-block;
+    padding: 0;
+    margin: 1px;
+}
+
+.footer .footer-right .icons i {
+    background-color: white;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+}
+
 @media (max-width: 767px) {
     .navbar-brand {
         padding: 0;
@@ -82,5 +198,86 @@ div ul {
 
     .navbar .navbar-collapse {
         text-align: center;
+    }
+}
+
+@media (min-width: 735px) and (max-width:1200px)  {
+
+    .footer{
+        font-size: 10px;
+        padding: 20px;
+    }
+
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right{
+        display: block;
+        margin: auto;
+        width: 40%;
+    }
+
+    #map{
+        width: 200px;
+        height: 200px;
+    }
+
+    .footer .footer-center i{
+        font-size: 16px;
+        width: 32px;
+        height: 32px;
+        line-height: 29px;
+        margin: 5px 5px;
+        vertical-align: middle;
+    }
+
+    .footer .footer-center p span {
+        font-size: 10px;
+    }
+
+    .footer .footer-right div{
+        margin-bottom: 10px;
+    }
+
+    .footer .footer-right div a{
+        padding: 2px;
+    }
+
+    .footer .footer-right .icons .name{
+        margin-right: 8px;
+        font-size: 7px;
+    }
+
+    .footer .footer-right .icons i {
+        font-size: 12px;
+        width: 25px;
+        height: 25px;
+        line-height: 23px;
+    }
+}
+
+@media (max-width: 735px) {
+    .footer{
+        display: block;
+        padding-top: 40px;
+    }
+
+    .footer div.footer-left,
+    .footer div.footer-center,
+    .footer div.footer-right{
+        width: 100%;
+        margin: auto;
+        padding-top: 10px;
+    }
+
+    /* Footer Google Maps */
+
+    #map{
+        width: 300px;
+        height: 300px;
+    }
+
+    .footer .footer-right .icons .name{
+        margin-right: 2px;
+        width: 100%;
     }
 }

@@ -9,14 +9,19 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         template: "<ui-view/>"
       })
     .state('public.site', {
-        url: '/home',
-        templateUrl:'views/home-website.html',
-        controller: 'CollapseController'
+            url: '/home',
+            templateUrl: 'views/home-website.html',
+            controller: 'CollapseController'
       })
     .state('public.site.papier', {
         url: '/papier',
         templateUrl:'views/papier.html'
       });
+
+    //.state('public.site.contact', {
+    //    url: '/contact',
+    //    templateUrl:'views/contact.html'
+    //});
 
   $stateProvider
     .state('private', {
@@ -46,3 +51,4 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           controller: 'UserController'
       });
 }]);
+
