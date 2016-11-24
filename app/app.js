@@ -40,9 +40,9 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     //      controller: 'InventoryController'
     //   })
 
-      .state('private.admin.user', {
+      .state('private.admin.member', {
           url: '/mitarbeiter-verwalten',
-          templateUrl:'views/manage-user.html',
-          controller: 'UserController'
+          templateUrl:'views/manage-member.html',
+          controller: 'MemberController'
       });
 }]);

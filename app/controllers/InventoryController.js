@@ -17,12 +17,7 @@ webShop.controller('InventoryController', ['$scope', '$http','$uibModal', '$log'
     });
 
 //reset placeholder
-    $scope.newArticle.name="";
-    $scope.newArticle.category="";
-    $scope.newArticle.price="";
-    $scope.newArticle.description="";
-    $scope.newArticle.quantity="";
-    $scope.newArticle.thumb="";
+    $scope.newArticle = {};
     $scope.addArticleForm.$setUntouched();
 
   };

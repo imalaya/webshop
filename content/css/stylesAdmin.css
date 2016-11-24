@@ -153,3 +153,7 @@ input[disabled="disabled"] {
   opacity: 0.4;
   cursor: not-allowed !important;
 }
+
+table {
+  width: 60%;
+}
