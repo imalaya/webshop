@@ -170,10 +170,11 @@ div ul {
     padding-left: 4px;
 }
 
-/* contact page + part of privacy page*/
+/* contact page + part of privacy page + part of site notice page*/
 
+#contact,
 #privacy,
-#contact{
+#sitenotice{
     width: auto;
     color: black;
     letter-spacing: 4px;
@@ -182,7 +183,8 @@ div ul {
 
 #contact h1,
 #privacy h1,
-#privacy h3{
+#privacy h3,
+#sitenotice h1{
     font-size: 50px;
     text-align: center;
     font-weight: 300;
@@ -190,7 +192,8 @@ div ul {
 }
 
 #privacy p,
-#contact h2{
+#contact h2,
+#sitenotice p{
     text-align: center;
     font-size: 24px;
     font-weight: 100;
@@ -274,9 +277,10 @@ textarea {
     border: 1px solid #000;
 }
 
-/* privacy page */
+/* privacy page + site notice page */
 
-#privacy p{
+#privacy p,
+#sitenotice p{
     font-size: 20px;
     letter-spacing: 2px;
     margin-left: 50px;
@@ -287,6 +291,25 @@ textarea {
 #privacy h3{
    font-size: 30px;
    margin-top: 30px;
+}
+
+#sitenotice h4{
+    font-size: 18px;
+    margin-top: 100px;
+    text-align: justify;
+    margin-left: 50px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+#sitenotice p{
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+#sitenotice h4#advice{
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 767px) {

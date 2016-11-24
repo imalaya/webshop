@@ -17,13 +17,19 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         url: '/papier',
         templateUrl:'views/papier.html'
     })
+
+    //anchor tags footer
     .state('public.site.contact', {
         url: '/contact',
-        templateUrl:'views/contact.html'
+        templateUrl:'views/footerLinks/contact.html'
     })
     .state('public.site.privacy', {
         url: '/privacy',
-        templateUrl:'views/privacy.html'
+        templateUrl:'views/footerLinks/privacy.html'
+    })
+    .state('public.site.sitenotice', {
+       url: '/sitenotice',
+       templateUrl:'views/footerLinks/siteNotice.html'
     });
 
   $stateProvider
