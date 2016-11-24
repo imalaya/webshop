@@ -16,12 +16,11 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     .state('public.site.papier', {
         url: '/papier',
         templateUrl:'views/papier.html'
-      });
-
-    //.state('public.site.contact', {
-    //    url: '/contact',
-    //    templateUrl:'views/contact.html'
-    //});
+      })
+    .state('public.site.contact', {
+        url: '/contact',
+        templateUrl:'views/contact.html'
+    });
 
   $stateProvider
     .state('private', {

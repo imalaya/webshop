@@ -54,19 +54,18 @@ div ul {
   }
 
 /* Footer */
-
 .footer{
     width: auto;
     height: auto;
     background-color: white;
     font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-weight: 300;
+    letter-spacing: 3px;
     color: black;
     padding: 50px;
     border-top-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width:1.5px;
     display: flex;
 }
 
@@ -83,7 +82,7 @@ div ul {
     height: 350px;
     border-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width: 1.5px;
 }
 
 /* Footer center*/
@@ -94,12 +93,13 @@ div ul {
     width: 42px;
     border-radius: 50%;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1.5px;
     border-color: black;
     text-align: center;
     line-height: 42px;
     margin: 10px 15px;
     vertical-align: middle;
+    padding-left: 4px;
 }
 
 .footer .footer-center p {
@@ -110,7 +110,7 @@ div ul {
 
 .footer .footer-center p span {
     display: block;
-    font-weight: normal;
+    font-weight: 100;
     font-size: 14px;
     line-height: 2;
 }
@@ -128,7 +128,7 @@ div ul {
 /* Footer right*/
 
 .footer .footer-right div{
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .footer .footer-right div a{
@@ -162,11 +162,111 @@ div ul {
     height: 35px;
     border-radius: 50%;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1.5px;
     border-color: black;
     text-align: center;
     line-height: 35px;
     vertical-align: middle;
+    padding-left: 4px;
+}
+
+/* contact page*/
+
+#contact{
+    width: auto;
+    color: black;
+    letter-spacing: 4px;
+}
+
+#contact h1{
+    font-size: 55px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 50px;
+}
+
+#contact h2{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+/* contact form */
+#contact-form-main{
+    width:100%;
+    float:left;
+    padding-top:0px;
+    background:url("http://www.philippefercha.com/img/home-page.jpg") no-repeat;
+    background-size: cover;
+    height:100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#contact-form-div {
+    background: #fff;
+    padding-left:35px;
+    padding-right:35px;
+    padding-top:35px;
+    padding-bottom:35px;
+    width: 450px;
+    float: left;
+    left: 50%;
+    position: relative;
+    margin-top:30px;
+    margin-left: -260px;
+    margin-bottom: 30px;
+}
+
+.feedback-input {
+    font-weight:100;
+    font-size: 14px;
+    letter-spacing: 4px;
+    line-height: 22px;
+    background-color: #fff;
+    padding: 13px 13px 13px 13px;
+    margin-bottom: 10px;
+    width:100%;
+    box-sizing: border-box;
+    border: 0px solid transparent;
+    border-bottom: 1px solid #000;
+}
+
+.feedback-input:focus{
+    background: #fff;
+    box-shadow: 0;
+    color: #000;
+    outline: none;
+    padding: 13px 13px 13px 13px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+#form-button{
+    float:left;
+    width: 100%;
+    border: 0px solid transparent;
+    cursor:pointer;
+    background-color: #000;
+    color:white;
+    font-size:18px;
+    letter-spacing: 4px;
+    padding-top:22px;
+    padding-bottom:22px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:300;
+}
+
+#form-button:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
 }
 
 @media (max-width: 767px) {
