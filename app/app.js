@@ -7,19 +7,23 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     .state('public', {
         abstract: true,
         template: "<ui-view/>"
-      })
+    })
     .state('public.site', {
             url: '/home',
             templateUrl: 'views/home-website.html',
             controller: 'CollapseController'
-      })
+    })
     .state('public.site.papier', {
         url: '/papier',
         templateUrl:'views/papier.html'
-      })
+    })
     .state('public.site.contact', {
         url: '/contact',
         templateUrl:'views/contact.html'
+    })
+    .state('public.site.privacy', {
+        url: '/privacy',
+        templateUrl:'views/privacy.html'
     });
 
   $stateProvider

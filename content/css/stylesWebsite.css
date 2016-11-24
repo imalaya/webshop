@@ -170,8 +170,9 @@ div ul {
     padding-left: 4px;
 }
 
-/* contact page*/
+/* contact page + part of privacy page*/
 
+#privacy,
 #contact{
     width: auto;
     color: black;
@@ -179,13 +180,16 @@ div ul {
     margin-bottom: 50px;
 }
 
-#contact h1{
-    font-size: 55px;
+#contact h1,
+#privacy h1,
+#privacy h3{
+    font-size: 50px;
     text-align: center;
     font-weight: 300;
     margin-top: 50px;
 }
 
+#privacy p,
 #contact h2{
     text-align: center;
     font-size: 24px;
@@ -268,6 +272,21 @@ textarea {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
+}
+
+/* privacy page */
+
+#privacy p{
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+}
+
+#privacy h3{
+   font-size: 30px;
+   margin-top: 30px;
 }
 
 @media (max-width: 767px) {
