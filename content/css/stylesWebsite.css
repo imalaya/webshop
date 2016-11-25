@@ -185,7 +185,7 @@ div ul {
 #privacy h1,
 #privacy h3,
 #sitenotice h1{
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
     font-weight: 300;
     margin-top: 50px;
@@ -195,7 +195,7 @@ div ul {
 #contact h2,
 #sitenotice p{
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 100;
 }
 
@@ -281,7 +281,7 @@ textarea {
 
 #privacy p,
 #sitenotice p{
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     margin-left: 50px;
     margin-right: 50px;
@@ -289,7 +289,7 @@ textarea {
 }
 
 #privacy h3{
-   font-size: 30px;
+   font-size: 22px;
    margin-top: 30px;
 }
 

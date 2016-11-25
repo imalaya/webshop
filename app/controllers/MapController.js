@@ -341,8 +341,8 @@ webShop.controller('MapController', function ($scope, $timeout) {
             position: new google.maps.LatLng(52.512130, 13.466260),
             map: $scope.map,
             icon: {
-                url: "content/Location_Icons/svg/Rocket_3.svg",
-                scaledSize: new google.maps.Size(54, 54)
+                url: "content/Location_Icons/svg/Artist_3.svg",
+                scaledSize: new google.maps.Size(42, 42)
             }
         });
 
