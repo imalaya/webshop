@@ -2,7 +2,7 @@
  * Created by Ju on 18.11.2016.
  */
 
-function db(){
+exports.db = function() {
 
     var pg = require('pg');
     var connectionString = "postgres://postgres:admin@localhost:5432/webshop";
@@ -12,7 +12,7 @@ function db(){
         if (err) throw err;
 
         // execute a query on our database
-        client.query("SELECT * from User", function (err, result) {
+        client.query("SELECT \"email\" FROM public.interested_persons WHERE name = 'name'", function (err, result) {
             if (err) throw err;
 
             // just print the result to the console
@@ -24,4 +24,4 @@ function db(){
             });
         });
     });
-}
+};

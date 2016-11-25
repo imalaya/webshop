@@ -2,8 +2,8 @@
  * Created by Ju on 18.11.2016.
  */
 
-var interestedPerson = require('./core/db/interestedPerson');
-var nodemailer = require('./nodemailer');
+var interestedPerson = require('../db/dbConnection');
+//var nodemailer = require('./nodemailer');
 
 exports.createInterestedPerson = function(emailAddress) {
     var username = generateUsername(emailAddress);
@@ -29,7 +29,7 @@ function generateLastName(username){
 }
 
 function saveInterestedPerson(firstName, lastName, username, emailAddress){
-interestedPerson.saveInterestedPerson(firstName, lastName, username, emailAddress);
+interestedPerson.db();
 }
 
 function sendEmail(interestedPersonId, username, emailAddress){
