@@ -340,7 +340,10 @@ webShop.controller('MapController', function ($scope, $timeout) {
         var marker = new google.maps.Marker ({
             position: new google.maps.LatLng(52.512130, 13.466260),
             map: $scope.map,
-            icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+            icon: {
+                url: "content/Location_Icons/svg/Rocket_3.svg",
+                scaledSize: new google.maps.Size(64, 64)
+            }
         });
 
         $scope.marker = new google.maps.Marker(marker);
