@@ -63,6 +63,265 @@
     bottom: -2px;
 }
 
+/* Footer */
+.footer{
+    width: auto;
+    height: auto;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: black;
+    padding: 50px;
+    border-top-style: solid;
+    border-color: black;
+    border-width:1.5px;
+    display: flex;
+}
+
+.footer div.footer-left,
+.footer div.footer-center,
+.footer div.footer-right{
+    width: 33%;
+}
+
+/* Footer Google Maps */
+
+#map{
+    width: 350px;
+    height: 350px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1.5px;
+}
+
+/* Footer center*/
+
+.footer .footer-center i{
+    background-color: white;
+    font-size: 25px;
+    width: 42px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+    padding-left: 4px;
+}
+
+.footer .footer-center p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer .footer-center p span {
+    display: block;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer .footer-center p a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer .footer-right div a:hover,
+.footer .footer-center p a:hover{
+    color: #cc9900;
+}
+
+/* Footer right*/
+
+.footer .footer-right div{
+    margin-bottom: 25px;
+}
+
+.footer .footer-right div a{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.footer .footer-right div.icons {
+    margin-top: 10px;
+}
+
+.footer .footer-right .icons .name{
+    display: inline-flex;
+    margin-right: 45px;
+    font-size: 10px;
+}
+
+.footer .footer-right .icons a{
+    display: inline-block;
+    padding: 0;
+    margin: 1px;
+}
+
+.footer .footer-right .icons i {
+    background-color: white;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+    padding-left: 4px;
+}
+
+/* contact page + part of privacy page + part of site notice page*/
+
+#contact,
+#privacy,
+#sitenotice{
+    width: auto;
+    color: black;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+}
+
+#contact h1,
+#privacy h1,
+#privacy h3,
+#sitenotice h1{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 50px;
+}
+
+#privacy p,
+#contact h2,
+#sitenotice p{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+/* contact form */
+#contact-form-main{
+    width:100%;
+    float:left;
+    padding-top:0px;
+    background:url("http://www.philippefercha.com/img/home-page.jpg") no-repeat;
+    background-size: cover;
+    height:100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#contact-form-div {
+    background: #fff;
+    padding-left:35px;
+    padding-right:35px;
+    padding-top:35px;
+    padding-bottom:35px;
+    width: 450px;
+    float: left;
+    left: 50%;
+    position: relative;
+    margin-top:30px;
+    margin-left: -260px;
+    margin-bottom: 30px;
+}
+
+.feedback-input {
+    font-weight:100;
+    font-size: 14px;
+    letter-spacing: 4px;
+    line-height: 22px;
+    background-color: #fff;
+    padding: 13px 13px 13px 13px;
+    margin-bottom: 10px;
+    width:100%;
+    box-sizing: border-box;
+    border: 0px solid transparent;
+    border-bottom: 1px solid #000;
+}
+
+.feedback-input:focus{
+    background: #fff;
+    box-shadow: 0;
+    color: #000;
+    outline: none;
+    padding: 13px 13px 13px 13px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+#form-button{
+    float:left;
+    width: 100%;
+    border: 0px solid transparent;
+    cursor:pointer;
+    background-color: #000;
+    color:white;
+    font-size:18px;
+    letter-spacing: 4px;
+    padding-top:22px;
+    padding-bottom:22px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:300;
+}
+
+#form-button:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+/* privacy page + site notice page */
+
+#privacy p,
+#sitenotice p{
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+}
+
+#privacy h3{
+   font-size: 30px;
+   margin-top: 30px;
+}
+
+#sitenotice h4{
+    font-size: 18px;
+    margin-top: 100px;
+    text-align: justify;
+    margin-left: 50px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+#sitenotice p{
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+#sitenotice h4#advice{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 767px) {
     .navbar-brand {
         padding: 0;
@@ -108,6 +367,7 @@
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 884px) and (min-width: 768px){
   #bootstrapOverride li a {
     padding-left: 10px;
@@ -135,3 +395,85 @@
     margin-bottom: -30px;
   }
 }
+=======
+@media (min-width: 735px) and (max-width:1200px)  {
+
+    .footer{
+        font-size: 10px;
+        padding: 20px;
+    }
+
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right{
+        display: block;
+        margin: auto;
+        width: 40%;
+    }
+
+    #map{
+        width: 200px;
+        height: 200px;
+    }
+
+    .footer .footer-center i{
+        font-size: 16px;
+        width: 32px;
+        height: 32px;
+        line-height: 29px;
+        margin: 5px 5px;
+        vertical-align: middle;
+    }
+
+    .footer .footer-center p span {
+        font-size: 10px;
+    }
+
+    .footer .footer-right div{
+        margin-bottom: 10px;
+    }
+
+    .footer .footer-right div a{
+        padding: 2px;
+    }
+
+    .footer .footer-right .icons .name{
+        margin-right: 8px;
+        font-size: 7px;
+    }
+
+    .footer .footer-right .icons i {
+        font-size: 12px;
+        width: 25px;
+        height: 25px;
+        line-height: 23px;
+    }
+}
+
+@media (max-width: 735px) {
+    .footer{
+        display: block;
+        padding-top: 40px;
+    }
+
+    .footer div.footer-left,
+    .footer div.footer-center,
+    .footer div.footer-right{
+        width: 100%;
+        margin: auto;
+        padding-top: 10px;
+    }
+
+    /* Footer Google Maps */
+
+    #map{
+        width: 300px;
+        height: 300px;
+    }
+
+    .footer .footer-right .icons .name{
+        margin-right: 2px;
+        width: 100%;
+    }
+}
+>>>>>>> dev
