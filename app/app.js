@@ -30,6 +30,10 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     .state('public.site.sitenotice', {
        url: '/sitenotice',
        templateUrl:'views/footerLinks/siteNotice.html'
+    })
+    .state('public.site.about', {
+          url: '/about',
+          templateUrl:'views/footerLinks/about.html'
     });
 
   $stateProvider

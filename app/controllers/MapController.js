@@ -342,7 +342,7 @@ webShop.controller('MapController', function ($scope, $timeout) {
             map: $scope.map,
             icon: {
                 url: "content/Location_Icons/svg/Rocket_3.svg",
-                scaledSize: new google.maps.Size(64, 64)
+                scaledSize: new google.maps.Size(54, 54)
             }
         });
 
