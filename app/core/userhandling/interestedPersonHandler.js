@@ -2,7 +2,7 @@
  * Created by Ju on 18.11.2016.
  */
 
-var interestedPerson = require('../db/dbConnection');
+var interestedPerson = require('../db/interestedPerson');
 //var nodemailer = require('./nodemailer');
 
 exports.createInterestedPerson = function(emailAddress) {
@@ -29,7 +29,7 @@ function generateLastName(username){
 }
 
 function saveInterestedPerson(firstName, lastName, username, emailAddress){
-interestedPerson.db();
+interestedPerson.saveInterestedPerson(firstName, lastName, username, emailAddress);
 }
 
 function sendEmail(interestedPersonId, username, emailAddress){
