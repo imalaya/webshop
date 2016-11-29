@@ -1,0 +1,42 @@
+<div class="content">
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Neuer Artikel</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+  <form name="addArticleForm" ng-hide="editProduct" novalidate>
+    <input type="text" placeholder="Name" name="name" ng-model="newArticle.name" ng-required="true" />
+    <div ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
+    </div>
+    <input type="text" placeholder="Kategorie" name="category" ng-model="newArticle.category" ng-required="true" />
+    <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
+      <option selected hidden>Kategorie wählen</option>
+      <option value="paper">Papier</option>
+      <option value="pen">Stifte</option>
+    </select>  Please uncomment and use when styling this field-->
+    <div ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
+    </div>
+    <input type="text" placeholder="Preis" name="price" ng-model="newArticle.price" ng-required="true" />
+    <div ng-show="addArticleForm.price.$touched && addArticleForm.price.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
+    </div>
+    <textarea placeholder="Beschreibung" name="description" ng-model="newArticle.description" ng-required="true" ></textarea>
+    <div ng-show="addArticleForm.description.$touched && addArticleForm.description.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
+    </div>
+    <input type="number" placeholder="Menge" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
+    <div ng-show="addArticleForm.quantity.$touched && addArticleForm.quantity.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
+    </div>
+    <input type="file" placeholder="Bild" ng-model="newArticle.thumb" />
+    <!-- <input type="submit" value="Artikel hinzufügen" ng-disabled="addArticleForm.$invalid" /> -->
+  </form>
+</div>
+<div class="modal-footer">
+  <!-- <input type="submit" value="Artikel hinzufügen" ng-disabled="addArticleForm.$invalid" ng-click="ok()"/> -->
+    <button class="btn btn-default" type="button" ng-click="addArticle();ok()" ng-disabled="addArticleForm.$invalid">Artikel hinzufügen</button>
+    <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+</div>
+</div>
