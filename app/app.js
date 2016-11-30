@@ -44,18 +44,36 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
 
     .state('private.admin', {
         url: '/admin',
-        templateUrl:'views/home-admin.html'
+        templateUrl:'views/adminViews/home-admin.html'
       })
 
     .state('private.admin.inventory', {
         url: '/artikel-verwalten',
-        templateUrl:'views/manage-articles.html',
+        templateUrl:'views/adminViews/manage-articles.html',
         controller: 'InventoryController'
       })
 
+      .state('private.admin.inventory.add', {
+          templateUrl:'views/adminViews/new-article.html',
+          controller: 'InventoryController',
+          parent: 'private.admin.inventory'
+        })
+
+        .state('private.admin.inventory.edit', {
+            templateUrl:'views/adminViews/edit-article.html',
+            controller: 'InventoryController',
+            parent: 'private.admin.inventory'
+          })
+
       .state('private.admin.member', {
           url: '/mitarbeiter-verwalten',
-          templateUrl:'views/manage-member.html',
+          templateUrl:'views/adminViews/manage-members.html',
           controller: 'MemberController'
+      })
+
+      .state('private.admin.member.add', {
+          templateUrl:'views/adminViews/new-member.html',
+          controller: 'MemberController',
+          parent: 'private.admin.member'
       });
 }]);

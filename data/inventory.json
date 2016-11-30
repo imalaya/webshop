@@ -1,23 +1,23 @@
 [{
-	"name": "Notebook1",
+	"name": "Notebook 1",
 	"category": "Papier",
-	"price": 50,
-	"available": true,
+	"price": 9.99,
+	"quantity": 2,
 	"thumb": "content/img/notebook1.jpg"
 }, {
-	"name": "Notebook2",
+	"name": "Notebook 2",
 	"category": "Papier",
-	"price": 10,
-	"available": true,
+	"price": 5.99,
+	"quantity": 10,
 	"thumb": "content/img/notebook2.jpg"
 }, {
-	"name": "Notebook3",
+	"name": "Notebook 3",
 	"category": "Papier",
 	"price": 30,
-	"available": false
+	"quantity": 0
 }, {
 	"name": "Kugelschreiber",
 	"category": "Stifte",
-	"price": 1000,
-	"available": true
+	"price": 29.99,
+	"quantity": 1
 }]
