@@ -2,73 +2,70 @@
  * Created by Ju on 18.11.2016.
  */
 var pg = require('pg');
-var connectionString = "postgres://postgres:admin@localhost:5432/webshop";
-var client = new pg.Client(connectionString);
+//var connectionString = "postgres://postgres:admin@localhost:5432/webshop"; --> Syntax für Clientverbindung
+var dbconfig = {
+    user: 'postgres', //env var: PGUSER
+    database: 'webshop', //env var: PGDATABASE
+    password: 'admin', //env var: PGPASSWORD
+    host: 'localhost', // Server hosting the postgres database
+    port: 5432, //env var: PGPORT
+    max: 10, // max number of clients in the pool
+    idleTimeoutMillis: 3000 // how long a client is allowed to remain idle before being closed
+};
+var pool = new pg.Pool(dbconfig);
 
 exports.saveInterestedPerson = function(firstName, lastName, username, emailAddress) {
-    var newInterestedPerson = isInterestedPersonNew(username);
-    console.log("newInterestedPerson: " + newInterestedPerson);
-    if (newInterestedPerson == true){
-        console.log("Im true");
-        insertNewInterestedPerson(firstName, lastName, username, emailAddress);
-    }
-//TODO
+    isInterestedPersonNew(username, firstName, lastName, emailAddress, resultHandlerForQuery);
 };
 
-function isInterestedPersonNew (username) {
+function resultHandlerForQuery(result, username, firstName, lastName, emailAddress){
+    console.log("Ergebnis: " + result);
+    if (result == true){
+        console.log("Im true");
+        if(first=true)return;
+        else insertNewInterestedPerson(firstName, lastName, username, emailAddress);
+        var first = true; // TODO: bessere Lösung für doppel-Callback-handler finden!
+    }
+}
 
-    client.connect(function (err) {
-        if (err) throw err;
-        // TODO: herausfinden, wie die callbackfunktion immplementiert wird. --> client.on('end', function(){console.log("Client was disconnected.");});
-        // execute a query on our database
+// Gibt die row oder true zurück.
+function isInterestedPersonNew (username, firstName, lastName, emailAddress, callback) {
+    pool.connect(function (err, client, done) {
+        if (err) throw err; // Errorhandling
+        // Datenbankabfrage
         client.query("SELECT id FROM public.interested_persons WHERE username = '"+username+"'", function (err, result) {
-            if (err) throw err;
-
-            // disconnect the client
-            client.end(function (err) {
-                if (err) throw err;
-            });
+            if (err) throw err; // Errorhandling
+            done(); // close Clientconnection
 
             // If ID was found:
             if (result.rows[0] != undefined) {
-                console.log("Die ID von " + username + " ist: " + result.rows[0].id); // outputs: { name: 'brianc' }
-                var id = result.rows[0].id;
-                return id;
+                console.log("Die ID von " + username + " ist: " + result.rows[0].id);
+                callback (result.rows[0].id, username, firstName, lastName, emailAddress);
             }
 
             // If ID was not found:
             else {
                 console.log("Den Benuternamen: " + username + " gibt es nicht.");
                 insertNewInterestedPerson(firstName, lastName, username, emailAddress);
-                return true;
+                callback (true, username, firstName, lastName, emailAddress);
             }
-
         });
     });
-
-
 }
 
 function insertNewInterestedPerson(firstName, lastName, username, emailAddress) {
 
-    client.connect(function (err) {
+    pool.connect(function (err, client, done) {
         if (err) throw err;
 
         // execute a query on our database
-        var queryText = 'INSERT INTO public.interested_persons (name, firstname, username, email, \"isRegisteredUser\") VALUES($1, $2, $3, $4, $5) RETURNING id';
-        client.query(queryText, [lastName, firstName, username, emailAddress, false], function(err, result) {
+        var queryText = "INSERT INTO public.interested_persons (name, firstname, username, email, \"isRegisteredUser\") VALUES($1, $2, $3, $4, $5) RETURNING id";
+        client.query(queryText, [lastName, firstName, username, emailAddress, true], function(err, result) {
             if (err) throw err;
-            else {
-                var newlyCreatedUserId = result.rows[0].id;
-                console.log(newlyCreatedUserId);
+            else{
+            done(); // close Clientconnection
+            console.log("Neuer Interessent eingefuegt in Zeile: " , result.rows[0].id);
             }
-
-            // disconnect the client
-            client.end(function (err) {
-                if (err) throw err;
-            });
-
         });
     });
-
 }
