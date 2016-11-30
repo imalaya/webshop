@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Mitarbeiter</h2>
+    <button>+</button>
+    <div class="table-responsive">
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Nachname</th>
+            <th>Vorname</th>
+            <th>Position</th>
+            <th>eMail</th>
+            <th>Handynummer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="member in staff">
+            <td><img ng-src="{{member.thumb}}" style="height:50px;"></td>
+            <td>{{member.lastname}}</td>
+            <td>{{member.firstname}}</td>
+            <td>{{member.jobtitle}}</td>
+            <td>{{member.email}}</td>
+            <td>{{member.mobile}}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

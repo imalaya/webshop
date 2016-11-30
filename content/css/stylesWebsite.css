@@ -1,57 +1,67 @@
 .nav, .pagination, .carousel, .panel-title a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #bootstrapOverride {
-  /*background-image: url(https://daks2k3a4ib2z.cloudfront.net/57289665989457a16b40023a/57289665989457a16b400261_noise.png);*/
-  background-color: white;
-  /*border-top: 2px dashed black;*/
-  border-bottom: 2px dashed black;
-  border-radius: 0;
-  font-family: 'Lato', sans-serif;
-  font-size: 100%;
+    /*background-image: url(https://daks2k3a4ib2z.cloudfront.net/57289665989457a16b40023a/57289665989457a16b400261_noise.png);*/
+    background-color: white;
+    /*border-top: 2px dashed black;*/
+    border-bottom: 2px dashed black;
+    border-radius: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 110%;
 }
 
-#bootstrapOverride body {
-  padding-top: 120px;
+ .content {
+    padding-top: 120px;
 }
 
 #bootstrapOverride li a:hover {
-  color: #cc9900;
+    color: #cc9900;
 }
 
 #bootstrapOverride li a {
-  color: black;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#bootstrapOverride .pull-left ul {
-  display: inline;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
-div ul {
-  padding-bottom: -30px;
-  margin-bottom: -20px;
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    background-color: #ffffff;
 }
 
-.horizontal-collapse {
-    height: 70px;
-  }
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #ffffff;
+}
 
 .navbar-collapse.in {
     overflow-y: hidden;
-  }
+}
 
-  .hidden-xs {
+#logoBig {
     display: block;
     margin: -20px auto;
     margin-bottom: -30px;
     width: 40%;
     max-width: 100%;
     height:auto;
-  }
+}
+
+#menuIconsXL {
+    position: relative;
+    bottom: 2px;
+}
+
+#menuIconsXS {
+    position: relative;
+    bottom: -2px;
+}
 
 /* Footer */
 .footer{
@@ -323,20 +333,33 @@ textarea {
     }
 
     #bootstrapOverride  .divider {
-      height: 1px;
-      width:100%;
-      display:block; /* for use on default inline elements like span */
-      margin: 9px 0;
-      overflow: hidden;
-      background-color: #e5e5e5;
+        height: 1px;
+        width:100%;
+        display:block; /* for use on default inline elements like span */
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
     }
+
+    .navbar-collapse {
+      clear: right;
+    }
+
+      .navbar-nav li {
+        font-size: 80%;
+      }
+
 }
 
 @media (min-width: 768px) {
     .navbar .navbar-nav {
         display: inline-block;
         float: none;
-        vertical-align: top;
+    }
+
+    .navbar-nav li {
+      margin-top: -5px;
+      margin-bottom: -20px;
     }
 
     .navbar .navbar-collapse {
@@ -344,6 +367,35 @@ textarea {
     }
 }
 
+<<<<<<< HEAD
+@media (max-width: 884px) and (min-width: 768px){
+  #bootstrapOverride li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 90%;
+  }
+  .navbar-nav li {
+    margin-top: 0;
+    margin-bottom: -30px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1000px){
+  #logoBig {
+    padding-top: 10px;
+  }
+
+  #bootstrapOverride li a {
+    font-size: 90%;
+  }
+
+  .navbar-nav li {
+    margin-top: 5px;
+    margin-bottom: -30px;
+  }
+}
+=======
 @media (min-width: 735px) and (max-width:1200px)  {
 
     .footer{
@@ -424,3 +476,4 @@ textarea {
         width: 100%;
     }
 }
+>>>>>>> dev

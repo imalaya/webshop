@@ -1,4 +1,4 @@
-webShop.controller('InventoryController', ['$scope', '$http','$uibModal', '$log', function($scope, $http, $uibModal, $log){
+webShop.controller('InventoryController', ['$scope', '$http', function($scope, $http){
 
   $scope.removeArticle = function(article) {
     var removedArticle = $scope.inventory.indexOf(article);
@@ -17,12 +17,7 @@ webShop.controller('InventoryController', ['$scope', '$http','$uibModal', '$log'
     });
 
 //reset placeholder
-    $scope.newArticle.name="";
-    $scope.newArticle.category="";
-    $scope.newArticle.price="";
-    $scope.newArticle.description="";
-    $scope.newArticle.quantity="";
-    $scope.newArticle.thumb="";
+    $scope.newArticle = {};
     $scope.addArticleForm.$setUntouched();
 
   };
@@ -42,5 +37,56 @@ webShop.controller('InventoryController', ['$scope', '$http','$uibModal', '$log'
   $http.get('data/inventory.json').success(function(data){
     $scope.inventory = data;
   });
+
+}]);
+
+webShop.controller('ModalDemoCtrl', ['$scope', '$uibModal', '$log', function($scope, $uibModal, $log){
+
+  $scope.items = ['item1', 'item2', 'item3'];
+
+    $scope.animationsEnabled = true;
+
+    $scope.open = function (size) {
+
+      var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        ariaLabelledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
+        templateUrl: 'myModalContent.html',
+        controller: 'ModalInstanceCtrl',
+        size: size,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
+
+  }]);
+
+  // Please note that $uibModalInstance represents a modal window (instance) dependency.
+  // It is not the same as the $uibModal service used above.
+webShop.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'items', function($scope, $uibModalInstance, items){
+
+    $scope.items = items;
+    $scope.selected = {
+      item: $scope.items[0]
+    };
+
+    $scope.ok = function () {
+      $uibModalInstance.close($scope.selected.item);
+    };
+
+    $scope.cancel = function () {
+      $uibModalInstance.dismiss('cancel');
+    };
+
 
 }]);

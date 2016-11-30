@@ -1,0 +1,23 @@
+[{
+  "lastname": "Schreiber",
+  "firstname": "Wilhelmine",
+  "jobtitle": "Chef",
+  "email": "wilhelmine.schreiber@gutemine.de",
+  "mobile": "0176-1234567",
+  "thumb": "content/img/member.png"
+}, {
+  "lastname": "Schreiber",
+  "firstname": "Hannelore",
+  "jobtitle": "Buchhaltung",
+  "email": "hannelore.schreiber@gutemine.de",
+  "mobile": "0176-7654321",
+  "thumb": "content/img/member.png"
+
+}, {
+  "lastname": "Buch",
+  "firstname": "Elsa",
+  "jobtitle": "Verkauf",
+  "email": "elsa.buch@gutemine.de",
+  "mobile": "0176-11223344",
+  "thumb": "content/img/member.png"
+}]
