@@ -32,7 +32,7 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
         $scope.staff = data;
     });
 
-    // var interestedPersonHandler = require('../core/userhandling/interestedPersonHandler');
-    // interestedPersonHandler.createInterestedPerson("pieps.pups@gutemine.de");
+ }]);
 
-}]);
+// var interestedPersonHandler = require('../core/userhandling/interestedPersonHandler');
+// interestedPersonHandler.createInterestedPerson("sara.moller@gutemine.de");
