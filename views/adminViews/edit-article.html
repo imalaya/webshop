@@ -21,20 +21,19 @@
     <div ng-show="editArticleForm.price.$touched && editArticleForm.price.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
     </div>
-    <!-- <textarea placeholder="Beschreibung" name="description" ng-model="existingArticle.description" ng-required="true" ></textarea>
+    <!-- <textarea placeholder="Beschreibung" name="description" ng-model="article.description" ng-required="true" ></textarea>
     <div ng-show="editArticleForm.description.$touched && editArticleForm.description.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
-    </div>
-    <input type="number" placeholder="Menge" name="quantity" ng-model="existingArticle.quantity" ng-required="true" />
+    </div> -->
+    <input type="number" placeholder="Menge" name="quantity" ng-model="article.quantity" ng-required="true" />
     <div ng-show="editArticleForm.quantity.$touched && editArticleForm.quantity.$invalid"
       <small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
     </div>
-    <input type="file" placeholder="Bild" ng-model="existingArticle.thumb" /> -->
-    <!-- <input type="submit" value="Artikel speichern" ng-disabled="editArticleForm.$invalid" ng-click="saveArticle()"> -->
+    <!-- <input type="file" placeholder="Bild" ng-model="article.thumb" />  -->
   </form>
   </div>
   <div class="modal-footer">
       <button class="btn btn-default" type="button" ng-click="saveArticle();ok()" ng-disabled="editArticleForm.$invalid">Artikel speichern</button>
-      <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+      <button class="btn btn-default" type="button" ng-click="cancel()">Schließen</button>
   </div>
 </div>

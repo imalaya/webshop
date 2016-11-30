@@ -1,0 +1,33 @@
+<div class="content">
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Neuer Mitarbeiter</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+  <p>Bitte geben Sie den vollständigen Vor- und Nachnamen ein und bestätigen Sie den Eintrag um einen Mitarbeiter hinzuzufügen.</p>
+
+  <form name="addMemberForm" novalidate>
+    <label>
+      Nachname
+    <input type="text" placeholder="Nachname" name="lastname" ng-model="newMember.lastname" ng-required="true" />
+   </label>
+    <div ng-show="addMemberForm.lastname.$touched && addMemberForm.lastname.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Nachnamen eingeben </small>
+    </div>
+
+    <label>
+      Vorname
+    <input type="text" placeholder="Vorname" name="firstname" ng-model="newMember.firstname" ng-required="true" />
+   </label>
+    <div ng-show="addMemberForm.firstname.$touched && addMemberForm.firstname.$invalid"
+      <small style="color:red; display: block; text-align: center;"> Gültigen Vornamen eingeben </small>
+    </div>
+   <p>@gutemine.de</p>
+  </form>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="addMember();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
+    <button class="btn btn-default" type="button" ng-click="cancel()">Schließen</button>
+</div>
+</div>

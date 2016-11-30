@@ -67,7 +67,13 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
 
       .state('private.admin.member', {
           url: '/mitarbeiter-verwalten',
-          templateUrl:'views/adminViews/manage-member.html',
+          templateUrl:'views/adminViews/manage-members.html',
           controller: 'MemberController'
+      })
+
+      .state('private.admin.member.add', {
+          templateUrl:'views/adminViews/new-member.html',
+          controller: 'MemberController',
+          parent: 'private.admin.member'
       });
 }]);

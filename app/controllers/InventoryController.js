@@ -50,7 +50,7 @@ $scope.editArticle = function (size, selectedArticle) {
       $scope.article = article;
 
       $scope.ok = function () {
-        $uibModalInstance.close();
+        $uibModalInstance.close($scope.article);
       };
 
       $scope.cancel = function () {
@@ -65,18 +65,6 @@ $scope.editArticle = function (size, selectedArticle) {
     }
   });
 };
-
-
-  //   $scope.editArticle = function(article) {
-  //   $scope.editProduct = true;
-  //   $scope.existingArticle = article;
-  // };
-  //
-  // $scope.saveArticle = function () {
-  //   $scope.existingArticle = {};
-  //   $scope.editProduct = false;
-  // };
-
 
 //get test data
   $http.get('data/inventory.json').success(function(data){
