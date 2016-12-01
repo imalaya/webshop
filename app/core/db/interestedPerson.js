@@ -18,14 +18,22 @@ exports.saveInterestedPerson = function(firstName, lastName, username, emailAddr
     isInterestedPersonNew(username, firstName, lastName, emailAddress, resultHandlerForQuery);
 };
 
-function resultHandlerForQuery(result, username, firstName, lastName, emailAddress){
-    console.log("Ergebnis: " + result);
-    if (result == true){
-        console.log("Im true");
-        if(first=true)return;
-        else insertNewInterestedPerson(firstName, lastName, username, emailAddress);
-        var first = true; // TODO: bessere Lösung für doppel-Callback-handler finden!
+function resultHandlerForQuery(resultId, resultState, username, firstName, lastName, emailAddress){
+    console.log("Ergebnis: " + resultId);
+    if (resultId == true){
+        console.log("Nutzer ist new");
+        insertNewInterestedPerson(firstName, lastName, username, emailAddress, resultHandlerForInsert);
     }
+
+    if (resultState == false){
+        console.log ("Nutzer ist noch kein User");
+        resultHandlerForInsert(resultId);
+    }
+}
+
+function resultHandlerForInsert(id){
+    //TODO: Schicke E-Mail
+    console.log("E-Mail wird geschickt.");
 }
 
 // Gibt die row oder true zurück.
@@ -33,38 +41,38 @@ function isInterestedPersonNew (username, firstName, lastName, emailAddress, cal
     pool.connect(function (err, client, done) {
         if (err) throw err; // Errorhandling
         // Datenbankabfrage
-        client.query("SELECT id FROM public.interested_persons WHERE username = '"+username+"'", function (err, result) {
+        client.query("SELECT id, \"isRegisteredUser\" FROM public.interested_persons WHERE username = '"+username+"'", function (err, result) {
             if (err) throw err; // Errorhandling
             done(); // close Clientconnection
 
             // If ID was found:
             if (result.rows[0] != undefined) {
-                console.log("Die ID von " + username + " ist: " + result.rows[0].id);
-                callback (result.rows[0].id, username, firstName, lastName, emailAddress);
+                console.log("Die ID von " + username + " ist: " + result.rows[0].id + result.rows[0].isRegisteredUser);
+                callback (result.rows[0].id, result.rows[0].isRegisteredUser, username, firstName, lastName, emailAddress);
             }
 
             // If ID was not found:
             else {
                 console.log("Den Benuternamen: " + username + " gibt es nicht.");
-                insertNewInterestedPerson(firstName, lastName, username, emailAddress);
-                callback (true, username, firstName, lastName, emailAddress);
+                callback (true, true, username, firstName, lastName, emailAddress);
             }
         });
     });
 }
 
-function insertNewInterestedPerson(firstName, lastName, username, emailAddress) {
+function insertNewInterestedPerson(firstName, lastName, username, emailAddress, callback) {
 
     pool.connect(function (err, client, done) {
         if (err) throw err;
 
         // execute a query on our database
         var queryText = "INSERT INTO public.interested_persons (name, firstname, username, email, \"isRegisteredUser\") VALUES($1, $2, $3, $4, $5) RETURNING id";
-        client.query(queryText, [lastName, firstName, username, emailAddress, true], function(err, result) {
+        client.query(queryText, [lastName, firstName, username, emailAddress, false], function(err, result) {
             if (err) throw err;
             else{
-            done(); // close Clientconnection
-            console.log("Neuer Interessent eingefuegt in Zeile: " , result.rows[0].id);
+                done(); // close Clientconnection
+                console.log("Neuer Interessent eingefuegt in Zeile: " , result.rows[0].id);
+                callback (result.rows[0].id);
             }
         });
     });
