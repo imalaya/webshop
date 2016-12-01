@@ -1,9 +1,30 @@
-webShop.controller('InventoryController', ['$scope', '$http', function($scope, $http){
+webShop.controller('InventoryController', ['$scope', '$http', '$uibModal', '$log', function($scope, $http, $uibModal, $log){
 
   $scope.removeArticle = function(article) {
     var removedArticle = $scope.inventory.indexOf(article);
     $scope.inventory.splice(removedArticle, 1);
   };
+
+//Artikel hinzufuegen Modal
+$scope.createArticle = function (size) {
+
+  var modalInstance = $uibModal.open({
+    animation: true,
+    ariaLabelledBy: 'modal-title',
+    ariaDescribedBy: 'modal-body',
+    templateUrl: 'views/adminViews/new-article.html',
+    controller: function($scope, $uibModalInstance){
+      $scope.ok = function () {
+        $uibModalInstance.close();
+      };
+
+      $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+      };
+    },
+    size: size,
+  });
+};
 
   $scope.addArticle = function(){
     $scope.inventory.push({
@@ -15,78 +36,39 @@ webShop.controller('InventoryController', ['$scope', '$http', function($scope, $
       available: true,
       thumb: $scope.newArticle.thumb
     });
-
-//reset placeholder
-    $scope.newArticle = {};
-    $scope.addArticleForm.$setUntouched();
-
   };
 
-  $scope.editArticle = function(article) {
-    $scope.editProduct = true;
-    $scope.existingArticle = article;
-  };
+// Artikel bearbeiten Modal
+$scope.editArticle = function (size, selectedArticle) {
 
-  $scope.saveArticle = function () {
-    $scope.existingArticle = {};
-    $scope.editProduct = false;
-  };
+  var modalInstance = $uibModal.open({
+    animation: true,
+    ariaLabelledBy: 'modal-title',
+    ariaDescribedBy: 'modal-body',
+    templateUrl: 'views/adminViews/edit-article.html',
+    controller: function($scope, $uibModalInstance, article){
+      $scope.article = article;
 
+      $scope.ok = function () {
+        $uibModalInstance.close($scope.article);
+      };
+
+      $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+      };
+    },
+    size: size,
+    resolve: {
+      article: function () {
+        return selectedArticle;
+      }
+    }
+  });
+};
 
 //get test data
   $http.get('data/inventory.json').success(function(data){
     $scope.inventory = data;
   });
-
-}]);
-
-webShop.controller('ModalDemoCtrl', ['$scope', '$uibModal', '$log', function($scope, $uibModal, $log){
-
-  $scope.items = ['item1', 'item2', 'item3'];
-
-    $scope.animationsEnabled = true;
-
-    $scope.open = function (size) {
-
-      var modalInstance = $uibModal.open({
-        animation: $scope.animationsEnabled,
-        ariaLabelledBy: 'modal-title',
-        ariaDescribedBy: 'modal-body',
-        templateUrl: 'myModalContent.html',
-        controller: 'ModalInstanceCtrl',
-        size: size,
-        resolve: {
-          items: function () {
-            return $scope.items;
-          }
-        }
-      });
-
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-    };
-
-  }]);
-
-  // Please note that $uibModalInstance represents a modal window (instance) dependency.
-  // It is not the same as the $uibModal service used above.
-webShop.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'items', function($scope, $uibModalInstance, items){
-
-    $scope.items = items;
-    $scope.selected = {
-      item: $scope.items[0]
-    };
-
-    $scope.ok = function () {
-      $uibModalInstance.close($scope.selected.item);
-    };
-
-    $scope.cancel = function () {
-      $uibModalInstance.dismiss('cancel');
-    };
-
 
 }]);
