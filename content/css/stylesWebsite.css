@@ -13,7 +13,9 @@
 }
 
  .content {
-    padding-top: 120px;
+    padding-top: 280px;
+     width: auto;
+     height: auto;
 }
 
 #bootstrapOverride li a:hover {
@@ -22,10 +24,19 @@
 
 #bootstrapOverride li a {
     color: black;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
+    letter-spacing: 4px;
 }
 
+.navbar .navbar-collapse{
+    width: 100%;
+}
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
@@ -61,6 +72,98 @@
 #menuIconsXS {
     position: relative;
     bottom: -2px;
+}
+
+/* about page -> list of employees*/
+
+#members{
+    display: inline-block;
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+figure.member {
+    color: #fff;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 15px;
+    width: 200px;
+    color: #000000;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 1.5px;
+}
+figure.member * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+figure.member img {
+    opacity: 1;
+    width: 100%;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+figure.member:after {
+    background: #cc9900;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0.45;
+    -webkit-transform: skew(-45deg) scaleX(0);
+    transform: skew(-45deg) scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+figure.member figcaption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+figure.member h3,
+figure.member p {
+    width: 100%;
+    opacity: 0;
+}
+figure.member h3 {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 18px;
+}
+figure.member p {
+    font-size: 18px;
+    font-weight: 300;
+    padding-right: 100px;
+}
+
+figure.member:hover:after,
+figure.member.hover:after {
+    -webkit-transform: skew(-45deg) scaleX(1);
+    transform: skew(-45deg) scaleX(1);
+    transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+figure.member:hover figcaption h3,
+figure.member:hover figcaption p{
+    -webkit-transform: translate3d(0%, 0%, 0);
+    transform: translate3d(0%, 0%, 0);
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+figure.member:hover figcaption h3{
+    opacity: 1;
+}
+figure.member:hover figcaption p{
+    opacity: 0.9;
 }
 
 /* Footer */
@@ -180,22 +283,25 @@
     padding-left: 4px;
 }
 
-/* contact page + part of privacy page + part of site notice page*/
+/* contact page + part of privacy page + part of site notice page + part of about page*/
 
 #contact,
 #privacy,
-#sitenotice{
+#sitenotice,
+#about{
     width: auto;
     color: black;
     letter-spacing: 4px;
     margin-bottom: 50px;
+    padding-top: 130px;
 }
 
 #contact h1,
 #privacy h1,
 #privacy h3,
-#sitenotice h1{
-    font-size: 50px;
+#sitenotice h1,
+#about h1{
+    font-size: 30px;
     text-align: center;
     font-weight: 300;
     margin-top: 50px;
@@ -203,12 +309,23 @@
 
 #privacy p,
 #contact h2,
-#sitenotice p{
+#sitenotice p,
+#about p,
+#about h2{
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 100;
 }
 
+#about h2{
+    font-weight: 300;
+    margin-top: 50px;
+}
+
+#about #aboutimg{
+    width: 100%;
+    margin-top: 50px;
+}
 /* contact form */
 #contact-form-main{
     width:100%;
@@ -287,11 +404,12 @@ textarea {
     border: 1px solid #000;
 }
 
-/* privacy page + site notice page */
+/* privacy page + site notice page  */
 
 #privacy p,
-#sitenotice p{
-    font-size: 20px;
+#sitenotice p,
+#about p{
+    font-size: 18px;
     letter-spacing: 2px;
     margin-left: 50px;
     margin-right: 50px;
@@ -299,7 +417,7 @@ textarea {
 }
 
 #privacy h3{
-   font-size: 30px;
+   font-size: 22px;
    margin-top: 30px;
 }
 
