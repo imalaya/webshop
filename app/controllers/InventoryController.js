@@ -36,6 +36,9 @@ $scope.createArticle = function (size) {
       available: true,
       thumb: $scope.newArticle.thumb
     });
+    // $scope.saveArticle = function(newArticle) {
+    //   $http.post('data/inventory.json', {data: 'newArticle'});
+    // };
   };
 
 // Artikel bearbeiten Modal
