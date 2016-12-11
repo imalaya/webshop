@@ -10,30 +10,31 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     })
     .state('public.site', {
             url: '/home',
-            templateUrl: 'views/home-website.html',
+            templateUrl: 'views/customer/home-website.html',
             controller: 'CollapseController'
     })
-    .state('public.site.papier', {
-        url: '/papier',
-        templateUrl:'views/papier.html'
+    .state('public.site.articles', {
+        url: '/alle-artikel',
+        templateUrl:'views/customer/all-articles.html',
+        controller: 'DisplayArticlesCtrl'
     })
 
     //anchor tags footer
     .state('public.site.contact', {
         url: '/contact',
-        templateUrl:'views/footerLinks/contact.html'
+        templateUrl:'views/customer/footer/contact.html'
     })
     .state('public.site.privacy', {
         url: '/privacy',
-        templateUrl:'views/footerLinks/privacy.html'
+        templateUrl:'views/customer/footer/privacy.html'
     })
     .state('public.site.sitenotice', {
        url: '/sitenotice',
-       templateUrl:'views/footerLinks/siteNotice.html'
+       templateUrl:'views/customer/footer/siteNotice.html'
     })
     .state('public.site.about', {
           url: '/about',
-          templateUrl:'views/footerLinks/about.html'
+          templateUrl:'views/customer/footer/about.html'
     });
 
   $stateProvider
@@ -44,35 +45,35 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
 
     .state('private.admin', {
         url: '/admin',
-        templateUrl:'views/adminViews/home-admin.html'
+        templateUrl:'views/admin/home-admin.html'
       })
 
     .state('private.admin.inventory', {
         url: '/artikel-verwalten',
-        templateUrl:'views/adminViews/manage-articles.html',
+        templateUrl:'views/admin/manage-articles.html',
         controller: 'InventoryController'
       })
 
       .state('private.admin.inventory.add', {
-          templateUrl:'views/adminViews/new-article.html',
+          templateUrl:'views/admin/new-article.html',
           controller: 'InventoryController',
           parent: 'private.admin.inventory'
         })
 
         .state('private.admin.inventory.edit', {
-            templateUrl:'views/adminViews/edit-article.html',
+            templateUrl:'views/admin/edit-article.html',
             controller: 'InventoryController',
             parent: 'private.admin.inventory'
           })
 
       .state('private.admin.member', {
           url: '/mitarbeiter-verwalten',
-          templateUrl:'views/adminViews/manage-members.html',
+          templateUrl:'views/admin/manage-members.html',
           controller: 'MemberController'
       })
 
       .state('private.admin.member.add', {
-          templateUrl:'views/adminViews/new-member.html',
+          templateUrl:'views/admin/new-member.html',
           controller: 'MemberController',
           parent: 'private.admin.member'
       });

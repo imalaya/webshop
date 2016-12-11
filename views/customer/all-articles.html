@@ -1,0 +1,15 @@
+<div id="all-articles">
+
+  <ul class="list-articles">
+  <li ng-repeat="article in inventory" ng-show="article.thumb" ng-class="{'unavailable': !article.quantity}" class="list-item">
+  <div class="card">
+    <img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
+    <div class="container">
+      <h4><b>{{article.name}}</b></h4>
+      <p>{{article.price | currency: '€'}}</p>
+    </div>
+  </div>
+  </li>
+  </ul>
+
+</div>
