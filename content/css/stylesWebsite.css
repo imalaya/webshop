@@ -77,6 +77,7 @@
 .list-item {
   display: inline-block;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .card {
@@ -96,12 +97,18 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-img {
+.card img {
     border-radius: 5px 5px 0 0;
 }
 
 .container {
     padding: 2px 16px;
+}
+
+.container a {
+    position: relative;
+    left: 180px;
+    bottom: 32px;
 }
 
 /* about page -> list of employees*/
@@ -325,7 +332,7 @@ figure.member:hover figcaption p{
     width: auto;
     height: auto;
     padding-top: 200px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 #contact h1,
