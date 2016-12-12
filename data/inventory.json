@@ -18,11 +18,12 @@
 	"category": "Papier",
 	"price": 30,
 	"quantity": 0,
-	"thumb": "content/img/notebook1.jpg"
+	"thumb": "content/img/notebook3.jpg"
 }, {
 	"id": "4",
 	"name": "Kugelschreiber",
 	"category": "Stifte",
 	"price": 29.99,
-	"quantity": 1
+	"quantity": 1,
+	"thumb": "content/img/stift1.jpg"
 }]
