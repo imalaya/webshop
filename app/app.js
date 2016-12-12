@@ -19,6 +19,12 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         controller: 'DisplayArticlesCtrl'
     })
 
+    .state('public.site.details', {
+        url: '/artikel/{id}',
+        templateUrl:'views/customer/article-details.html',
+        controller: 'ArticleDetailsCtrl'
+    })
+
     //anchor tags footer
     .state('public.site.contact', {
         url: '/contact',

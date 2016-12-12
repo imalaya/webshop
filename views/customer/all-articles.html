@@ -2,15 +2,17 @@
 
   <ul class="list-articles">
   <li ng-repeat="article in inventory" ng-show="article.thumb" ng-class="{'unavailable': !article.quantity}" class="list-item">
-  <div class="card">
-    <img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
-    <div class="container">
-      <h4><b>{{article.name}}</b></h4>
-      <p>{{article.price | currency: '€'}}</p>
-      <p ng-if="!article.quantity">Ausverkauft</p>
-      <a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf">
+  <a ui-sref="public.site.details({id: article.id})">
+    <div class="card">
+      <img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
+      <div class="container">
+        <h4><b>{{article.name}}</b></h4>
+        <p style="color:#cc9900;">{{article.price | currency: '€'}}</p>
+        <p ng-if="!article.quantity">Ausverkauft</p>
+        <a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
+      </div>
     </div>
-  </div>
+  </a>
   </li>
   </ul>
 
