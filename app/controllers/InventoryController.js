@@ -12,7 +12,7 @@ $scope.createArticle = function (size) {
     animation: true,
     ariaLabelledBy: 'modal-title',
     ariaDescribedBy: 'modal-body',
-    templateUrl: 'views/adminViews/new-article.html',
+    templateUrl: 'views/admin/new-article.html',
     controller: function($scope, $uibModalInstance){
       $scope.ok = function () {
         $uibModalInstance.close();
@@ -46,7 +46,7 @@ $scope.editArticle = function (size, selectedArticle) {
     animation: true,
     ariaLabelledBy: 'modal-title',
     ariaDescribedBy: 'modal-body',
-    templateUrl: 'views/adminViews/edit-article.html',
+    templateUrl: 'views/admin/edit-article.html',
     controller: function($scope, $uibModalInstance, article){
       $scope.article = article;
 
