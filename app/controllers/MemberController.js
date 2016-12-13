@@ -6,10 +6,11 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
       animation: true,
       ariaLabelledBy: 'modal-title',
       ariaDescribedBy: 'modal-body',
-      templateUrl: 'views/adminViews/new-member.html',
+      templateUrl: 'views/admin/new-member.html',
       controller: function($scope, $uibModalInstance){
         $scope.ok = function () {
           $uibModalInstance.close();
+          $log.info('ok');
         };
 
         $scope.cancel = function () {
@@ -23,7 +24,7 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
     $scope.addMember = function(){
       $scope.staff.push({
         lastname: $scope.newMember.lastname,
-        firstname: $scope.newMember.firstname
+        firstname: $scope.newMember.firstname,
       });
     };
 
