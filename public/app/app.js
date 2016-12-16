@@ -50,8 +50,12 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     })
 
     .state('private.admin', {
-        url: '/admin',
         templateUrl:'views/admin/home-admin.html'
+      })
+
+     .state('private.admin.dashboard', {
+        url: '/admin',
+        templateUrl:'views/admin/member-calendar.html'
       })
 
     .state('private.admin.inventory', {
