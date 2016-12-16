@@ -1,31 +1,34 @@
-<div class="container">
-    <h2>Mitarbeiter</h2>
-    <div class="table-responsive">
-    <table class="table table-condensed table-hover">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Nachname</th>
-            <th>Vorname</th>
-            <th>Position</th>
-            <th>eMail</th>
-            <th>Handynummer</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="member in staff | orderBy:'lastname'">
-            <td><img ng-src="{{member.thumb}}" style="height:50px;"></td>
-            <td>{{member.lastname}}</td>
-            <td>{{member.firstname}}</td>
-            <td>{{member.jobtitle}}</td>
-            <td>{{member.email}}</td>
-            <td>{{member.mobile}}</td>
-        </tr>
-        </tbody>
-    </table>
+<div class="content">
+    <h2 class="heading">Mitarbeiter</h2>
+    <div id="member">
+        <button type="button" class="btn btn-default" ng-click="createMember()">Neuer Mitarbeiter</button>
     </div>
 
-    <button type="button" class="btn btn-default" ng-click="createMember()">Neuer Mitarbeiter</button>
+    <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Nachname</th>
+                <th>Vorname</th>
+                <th class="hidden-md hidden-xs">Position</th>
+                <th class="hidden-xs">eMail</th>
+                <th class="hidden-xs">Handynummer</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="member in staff | orderBy:'lastname'">
+                <td><img ng-src="{{member.thumb}}" style="height:50px;"></td>
+                <td>{{member.lastname}}</td>
+                <td>{{member.firstname}}</td>
+                <td class="hidden-md hidden-xs">{{member.jobtitle}}</td>
+                <td class="hidden-xs">{{member.email}}</td>
+                <td class="hidden-xs">{{member.mobile}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
 
     <div ui-view></div>
 

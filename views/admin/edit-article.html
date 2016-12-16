@@ -1,12 +1,12 @@
 <div class="content">
-  <div class="modal-header">
-      <h3 class="modal-title" id="modal-title">Artikel bearbeiten</h3>
-  </div>
-  <div class="modal-body" id="modal-body">
-   <form name="editArticleForm" novalidate>
-    <input type="text" placeholder="Name" name="name" ng-model="article.name" ng-required="true" />
-    <div ng-show="editArticleForm.name.$touched && editArticleForm.name.$invalid"
-      <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Artikel bearbeiten</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <form name="editArticleForm" novalidate>
+            <input type="text" placeholder="Name" name="name" ng-model="article.name" ng-required="true" />
+            <div ng-show="editArticleForm.name.$touched && editArticleForm.name.$invalid"
+            <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
     </div>
     <input type="text" placeholder="Kategorie" name="category" ng-model="article.category" ng-required="true" />
     <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
@@ -15,25 +15,25 @@
       <option value="pen">Stifte</option>
     </select>  Please uncomment and use when styling this field-->
     <div ng-show="editArticleForm.category.$touched && editArticleForm.category.$invalid"
-      <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
-    </div>
-    <input type="text" placeholder="Preis" name="price" ng-model="article.price" ng-required="true" />
-    <div ng-show="editArticleForm.price.$touched && editArticleForm.price.$invalid"
-      <small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
-    </div>
-    <!-- <textarea placeholder="Beschreibung" name="description" ng-model="article.description" ng-required="true" ></textarea>
-    <div ng-show="editArticleForm.description.$touched && editArticleForm.description.$invalid"
-      <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
-    </div> -->
-    <input type="number" placeholder="Menge" name="quantity" ng-model="article.quantity" ng-required="true" />
-    <div ng-show="editArticleForm.quantity.$touched && editArticleForm.quantity.$invalid"
-      <small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
-    </div>
-    <!-- <input type="file" placeholder="Bild" ng-model="article.thumb" />  -->
-  </form>
-  </div>
-  <div class="modal-footer">
-      <button class="btn btn-default" type="button" ng-click="saveArticle();ok()" ng-disabled="editArticleForm.$invalid">Artikel speichern</button>
-      <button class="btn btn-default" type="button" ng-click="cancel()">Schließen</button>
-  </div>
+    <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
+</div>
+<input type="text" placeholder="Preis" name="price" ng-model="article.price" ng-required="true" />
+<div ng-show="editArticleForm.price.$touched && editArticleForm.price.$invalid"
+<small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
+</div>
+<!-- <textarea placeholder="Beschreibung" name="description" ng-model="article.description" ng-required="true" ></textarea>
+<div ng-show="editArticleForm.description.$touched && editArticleForm.description.$invalid"
+  <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
+</div> -->
+<input type="number" placeholder="Menge" name="quantity" ng-model="article.quantity" ng-required="true" />
+<div ng-show="editArticleForm.quantity.$touched && editArticleForm.quantity.$invalid"
+<small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
+</div>
+<!-- <input type="file" placeholder="Bild" ng-model="article.thumb" />  -->
+</form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="saveArticle();ok()" ng-disabled="editArticleForm.$invalid">Artikel speichern</button>
+    <button class="btn btn-default" type="button" ng-click="cancel()">Schließen</button>
+</div>
 </div>

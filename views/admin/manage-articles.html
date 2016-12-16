@@ -1,20 +1,41 @@
 <div class="content">
-  <button ng-click="order = 'name'">Nach Name sortieren</button>
-  <button ng-click="order = 'category'">Nach Kategorie sortieren</button>
-  <input type="text" ng-model="search" placeholder="Nach Artikel suchen" />
-  <ul>
-    <li ng-repeat="article in inventory | orderBy: order | filter: search" ng-show="article.quantity">
-      <img ng-src="{{article.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px; height: 50px;"
-           ng-show="article.thumb"/>
-      <h3>{{article.name}} - {{article.price | currency: '€'}}</h3>
-      <div class="remove" ng-click="removeArticle(article)">x</div>
-      <div class="edit" ng-click="editArticle('lg', article)">#</div>
-      <span class="category">{{article.category}}</span>
-    </li>
-  </ul>
+  <h2 class="heading">Artikel</h2>
+  <div id="newArticle">
+    <button type="button" class="btn btn-default" ng-click="createArticle()">Neuer Artikel</button>
+  </div>
+  <div id="search">
+    <input type="text" ng-model="search" placeholder="Nach Artikel suchen"/>
+  </div>
+  <div id="sort">
+    <button class="sortButton" ng-click="order = 'name'">Nach Name sortieren</button>
+    <button class="sortButton" ng-click="order = 'category'">Nach Kategorie sortieren</button>
+  </div>
 
-  <button type="button" class="btn btn-default" ng-click="createArticle()">Neuer Artikel</button>
 
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Preis</th>
+        <th class="hidden-xs">Kategorie</th>
+        <th class="hidden-xs">Anzahl</th>
+        <th>Bearbeiten</th>
+        <th>Löschen</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="article in inventory | orderBy: order | filter: search" ng-show="article.quantity">
+        <td><img class="article-imgs" ng-src="{{article.thumb}}" ng-show="article.thumb"/>{{article.name}}</td>
+        <td>{{article.price | currency: '€'}}</td>
+        <td class="hidden-xs"><span class="category">{{article.category}}</span></td>
+        <td class="hidden-xs"><span class="quantity">{{article.quantity}}</span></td>
+        <td><div class="edit" ng-click="editArticle('lg', article)"><i class="fa fa-edit fa-lg"></i></div></td>
+        <td><div class="remove" ng-click="removeArticle(article)"><i class="fa fa-close fa-lg"></i></div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
   <div ui-view></div>
 
 </div>

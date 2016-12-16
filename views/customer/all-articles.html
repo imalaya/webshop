@@ -1,7 +1,7 @@
 <div id="all-articles">
 
   <ul class="list-articles">
-  <li ng-repeat="article in inventory" ng-show="article.thumb" ng-class="{'unavailable': !article.quantity}" class="list-item">
+  <li ng-repeat="article in inventory | filter:{category: activeCategory}" category="category" ng-click="makeActive()" ng-show="article.thumb" ng-class="{'unavailable': !article.quantity}" class="list-item">
   <a ui-sref="public.site.details({id: article.id})">
     <div class="card">
       <img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
