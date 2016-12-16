@@ -51,17 +51,12 @@
 			<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
 				<ul class="nav navbar-nav">
 
-					<li ng-repeat="category in categories" active-category="activeCategory">
-						<a  ng-class="{'active': categoryActive()}">{{ category.title }}</a>
-					</li>
-
-					<!-- navbar auskommentiert wegen filter für kategorien -->
-					<!-- <li><a ui-sref="">Neu</a></li>
+					<li><a ui-sref="">Neu</a></li>
 					<li><a ui-sref="">Papier</a></li>
 					<li><a ui-sref="">Stifte</a></li>
 					<li><a ui-sref="">Technik</a></li>
 					<li><a ui-sref="">Zubehör</a></li>
-					<li><a ui-sref="">Geschenke</a></li> -->
+					<li><a ui-sref="">Geschenke</a></li>
 
 					<li class="hidden-xs"><a ui-sref="">|</a></li>
 					<li class="hidden-xs"><a ui-sref=""><img src="content/img/lupe.png" id="menuIconsXL" width="17" height="17" alt="Suche">   Suche</a></li>
