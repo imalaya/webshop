@@ -1,9 +1,18 @@
 /**
  * Created by Ju on 13.12.2016.
  */
-var pg = require('pg');
+
+var promise = require('bluebird');
+
+var options = {
+    // Initialization Options
+    promiseLib: promise
+};
+
+// var pg = require('pg');
 //var connectionString = "postgres://postgres:admin@localhost:5432/webshop"; --> Syntax für Clientverbindung
-var dbconfig = {
+
+/*var dbconfig = {
     user: 'postgres', //env var: PGUSER
     database: 'webshop', //env var: PGDATABASE
     password: 'admin', //env var: PGPASSWORD
@@ -12,12 +21,20 @@ var dbconfig = {
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 3000 // how long a client is allowed to remain idle before being closed
 };
-var pool = new pg.Pool(dbconfig);
+*/
+//var pool = new pg.Pool(dbconfig);
+
+var pgp = require('pg-promise');
+var connectionString = 'postgres://postgres:admin@localhost:5432/webshop';
+var db = pgp(connectionString);
+
+module.exports = {
+    getAllArticles: getAllArticles
+};
 
 exports.saveArticle = function(name, category, price, description, amount, pic) {
     insertNewArticle(name, category, price, description, amount, pic, resultHandlerForQuery);
 };
-
 
 function resultHandlerForQuery(resultId, pic){
     console.log("Ergebnis: " + resultId);
@@ -64,4 +81,19 @@ function insertPicToArticle(id, imgData, callback) {
                 });
         });
     });
+}
+
+function getAllArticles(req, res, next) {
+    db.any('select * from articles')
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ALL puppies'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
 }

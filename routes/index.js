@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var db = require('../queries');
+var db = require('../core/db/articles');
 
 
 router.get('/api/article', db.getAllArticles);
