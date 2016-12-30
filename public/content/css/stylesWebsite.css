@@ -626,7 +626,7 @@ textarea {
     margin-bottom: -30px;
   }
 }
-=======
+
 @media (min-width: 735px) and (max-width:1200px)  {
 
     .footer{
@@ -707,4 +707,4 @@ textarea {
         width: 100%;
     }
 }
->>>>>>> dev
+
