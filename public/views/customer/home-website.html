@@ -60,18 +60,80 @@
 							<div id="dd-list-item-container">
 								<li><a ui-sref="">Karten</a></li>
 								<li><a ui-sref="">Bücher</a></li>
-								<li><a ui-sref=""></a></li>
-								<li><a ui-sref=""></a></li>
+								<li><a ui-sref="">Notizhefte</a></li>
+								<li><a ui-sref="">Papier</a></li>
 							</div>
 						</ul>
 					</li>
-					<li><a ui-sref="">Stifte</a></li>
-					<li><a ui-sref="">Technik</a></li>
-					<li><a ui-sref="">Zubehör</a></li>
-					<li><a ui-sref="">Geschenke</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" ui-sref="">Stifte</a>
+						<ul class="dropdown-menu" role="menu">
+							<div>
+								<img id="dropdown-img" src="content/img/pencils.png"/>
+							</div>
+							<div id="dd-list-item-container">
+								<li><a ui-sref="">Kugelschreiber</a></li>
+								<li><a ui-sref="">Füller</a></li>
+								<li><a ui-sref="">Bleistifte</a></li>
+								<li><a ui-sref="">Filzstifte</a></li>
+							</div>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" ui-sref="">Technik</a>
+						<ul class="dropdown-menu" role="menu">
+							<div>
+								<img id="dropdown-img" src="content/img/cards.jpeg"/>
+							</div>
+							<div id="dd-list-item-container">
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+							</div>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" ui-sref="">Zubehör</a>
+						<ul class="dropdown-menu" role="menu">
+							<div>
+								<img id="dropdown-img" src="content/img/accessories.png"/>
+							</div>
+							<div id="dd-list-item-container">
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+							</div>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" ui-sref="">Geschenke</a>
+						<ul class="dropdown-menu" role="menu">
+							<div>
+								<img id="dropdown-img" src="content/img/presents.png"/>
+							</div>
+							<div id="dd-list-item-container">
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+								<li><a ui-sref="">...</a></li>
+							</div>
+						</ul>
+					</li>
 
 					<li class="hidden-xs"><a ui-sref="">|</a></li>
-					<li class="hidden-xs"><a ui-sref=""><img src="content/img/lupe.png" id="menuIconsXL" width="17" height="17" alt="Suche">   Suche</a></li>
+					<li class="dropdown hidden-xs">
+						<a class="dropdown-toggle" data-toggle="dropdown" ui-sref=""><img src="content/img/lupe.png" id="menuIconsXL" width="17" height="17" alt="Suche">   Suche</a>
+						<div class="dropdown-menu">
+							<form class="navbar-form">
+								<div class="form-group">
+									<input id="search-input" type="text" class="form-control" placeholder="Nach Artikel suchen...">
+									<button type="submit" class="btn btn-default">Los!</button>
+								</div>
+							</form>
+						</div>
+					</li>
 					<!-- <input type="text" ng-model="search" placeholder="Nach Artikel suchen" /> -->
 					<li class="hidden-xs"><a ui-sref=""><img src="content/img/shopping-bag.png" id="menuIconsXL" width="20" height="20" alt="Warenkorb">   Warenkorb</a></li>
 				</ul>
