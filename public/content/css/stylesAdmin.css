@@ -1,34 +1,30 @@
 
-/*
-//////// DESKTOP VERSION ////////
-*/
-
-body, h2, ul {
+body {
   margin: 0;
   padding: 0;
   font-family: 'Trebuchet MS';
-  background-color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e7e8ea;
 }
+
 .header {
-  position: absolute;
-  width: 100%;
-  z-index: 3;
   height: 44px;
-  background-color: #fff;
   border-bottom: 2px dashed black;
 }
 
-/* side navigation styles */
+
+/*///////////////////////////////
+// Styling for Side Navigation //
+///////////////////////////////*/
+
 .side-nav {
   position: absolute;
-  width: 100%;
   height: 100%;
   top: 45px;
-  background-color: #fff;
-  z-index: 1;
+  border-right: 1px #7e7e7e;
 }
+
 
 .side-nav.visible {
   display: block;
@@ -79,29 +75,30 @@ body, h2, ul {
   font-weight: 600;
 }
 
-.navbar-collapse {
-  display: none;
+
+/*///////////////////////////////
+// Styling for mobile navigation //
+///////////////////////////////*/
+
+.navbar-toggle .icon-bar {
+  background-color: black;
 }
 
-.icon-bars {
+.navbar-default .navbar-toggle:hover {
+  background-color: #ffffff;
+}
+
+.icon-bar {
+  color: #222222;
+}
+
+.icon-bar:target {
   color: #cc9900;
 }
 
-/* main content styles */
-
-.menu {
-  display:  none;
-}
-
-#newArticle {
-  text-align: right;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-#newArticle:hover {
-  color: #cc9900;
-}
+/*///////////////////////////////
+// Styling for main-content //
+///////////////////////////////*/
 
 .main-content {
   padding: 40px;
@@ -109,6 +106,36 @@ body, h2, ul {
   padding: 0;
   padding-top: 44px;
   height: 100%;
+
+
+  width: 50%;
+  height: 80%;
+  margin: 0 auto;
+  padding: 6px 5px 4px 42px;
+  position: relative;
+  color: #444;
+  line-height: 20px;
+  border: 1px solid #d2d2d2;
+  background: #fff;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+  background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  -webkit-background-size: 100% 20px;
+  -moz-background-size: 100% 20px;
+  -ms-background-size: 100% 20px;
+  -o-background-size: 100% 20px;
+  background-size: 100% 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  width: 816px;
+  height: 1056px;
 }
 
 .main-content .title {
@@ -124,6 +151,24 @@ body, h2, ul {
   margin: 10px 0 0 25px;
 }
 
+/*///////////////////////////////
+// Styling for articles //
+///////////////////////////////*/
+
+#newArticle {
+  text-align: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#newArticle:hover {
+  color: #cc9900;
+}
+
+/*///////////////////////////////
+// Styling for members //
+///////////////////////////////*/
+
 #member {
   text-align: right;
 }
@@ -134,46 +179,19 @@ body, h2, ul {
   padding-top: 20px;
 }
 
-.navbar-toggle .icon-bar {
-  background-color: black;
-}
 
-.navbar-default .navbar-toggle:hover {
-  background-color: #ffffff;
-}
+/*///////////////////////////////
+// Styling for tablet version //
+///////////////////////////////*/
 
+@media(max-width: 1000px) {
 
-/*
-//////// TABLET AND DESKTOP ////////
-*/
-
-@media screen and (min-width: 600px) {
-  .header {
-    background-color: #fff;
-    z-index: 1;
-  }
-  .header .logo {
-    display: none;
-  }
-  .nav-trigger {
-    display: none;
-  }
-  .nav-trigger span, .nav-trigger span:before, span:after {
-    background-color: #fff;
-  }
   .side-nav {
     display: block;
     width: 140px;
-    z-index: 2;
-    border-right: 1px solid black;
   }
+
   .side-nav ul li span:nth-child(2) {
-    display: none;
-  }
-  .side-nav .logo i {
-    padding-left: 12px;
-  }
-  .side-nav .logo span {
     display: none;
   }
 
