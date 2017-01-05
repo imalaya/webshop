@@ -1,10 +1,21 @@
 
 
 .header {
-  height: 80px;
+  height: 120px;
   border-bottom: 2px dashed black;
 }
 
+.header, .side-nav {
+  background-color: #fbfbfb;
+}
+
+.header-brand {
+  text-align: center;
+}
+
+#logo {
+   max-height: 120px;
+ }
 
 /*///////////////////////////////
 // Styling for Side Navigation //
@@ -12,12 +23,7 @@
 
 .side-nav {
   position: relative;
-  height: 100%;
-}
-
-
-.side-nav.visible {
-  display: block;
+  height: 950px;
 }
 
 .side-nav ul {
@@ -94,14 +100,15 @@
 ///////////////////////////////*/
 
 .main-content {
-  padding: 10px 10px 10px 0;
-  height: 850px;
+  /*background-image: url("../img/GM_bg.png"); */
+  padding: 20px;
+  height: 950px;
   position: relative;
   color: #444;
   line-height: 20px;
   border: 1px solid #d2d2d2;
-  background: #fff;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+  background-color: #f7f7f7;
+ /* background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
   background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
   background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
   background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
@@ -117,7 +124,7 @@
   border-radius: 3px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07); */
 }
 
 
@@ -167,8 +174,8 @@
 .main {
   display: flex;
   flex-flow: row wrap;
-  padding: 20px;
 }
+
 .widget {
   width: 100%;
   height: auto;
@@ -249,11 +256,67 @@ input[disabled="disabled"] {
 
 /* CSS FOR MODALS */
 
+.modal-dialog {
+  width: 450px;
+  margin: auto;
+  top: 90px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  font-family: 'Lato', sans-serif;
+  padding: 15px;
+}
 
 .modal-header {
   text-align: center;
+  padding: 15px 15px 5px 15px;
 }
 
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+.addMemberName {
+  width: 100%;
+  padding-left: 15px;
+  font-size: 14px;
+  height: 40px;
+  border: 2px solid #cacaca;
+  margin: 20px 10px 10px 0;
+  text-align: left;
+  background-color: #f4f4f4;
+}
+
+.addMemberName:hover {
+  border-color: #cc9900;
+}
+
+.modal-footer {
+  text-align: center;
+  border: 0;
+  display: flex;
+}
+
+.modal-footer-button {
+  width: 200px;
+}
+
+.modal-footer-button:hover {
+  border: 2px solid #cc9900;
+  background-color: #c3c3c3;
+}
+
+.errorStatus {
+  color: red;
+  font-weight: 600;
+}
+
+.errorStatusArt {
+  margin-left: 4%;
+  color: red;
+}
 
 #search {
   position: relative;
@@ -276,41 +339,6 @@ input[disabled="disabled"] {
   border-color: black;
   border-width: 1px;
   margin: 40px auto 0;
-}
-
-.content input{
-  width: 250px;
-  padding: 5px 5px;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  margin: 10px 20px;
-  text-align: left;
-}
-
-.btn btn-default {
-  padding: 10px 12px;
-}
-
-.btn btn-default:hover {
-  color: #cc9900;
-}
-
-#descr {
-  margin-left: 15px;
-}
-
-#familyName {
-  margin-left: 28px;
-}
-
-.errorStatus {
-  margin-left: 20%;
-  color: red;
-}
-
-.errorStatusArt {
-  margin-left: 4%;
-  color: red;
 }
 
 /* tablet-version */

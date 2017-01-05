@@ -136,14 +136,14 @@ div.form-group{
     border-right: none;
 }
 
-button.btn.btn-default{
+button.btn {
     margin-left: 20px;
     width: 100px;
     border-radius: 0px;
     border-color: black;
 }
 
-button.btn.btn-default:hover{
+button.btn.modal-footer-buttons:hover{
     border-color: #cc9900;
     color: #cc9900;
     background-color: #ffffff;
