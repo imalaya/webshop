@@ -143,7 +143,7 @@ button.btn {
     border-color: black;
 }
 
-button.btn.modal-footer-buttons:hover{
+button.btn.btn-default:hover{
     border-color: #cc9900;
     color: #cc9900;
     background-color: #ffffff;
