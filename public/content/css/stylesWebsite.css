@@ -633,23 +633,6 @@ textarea {
     margin-bottom: 20px;
 }
 
-/*
-
-@media (max-width: 884px) and (min-width: 768px){
-  #bootstrapOverride li a {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 90%;
-  }
-  .navbar-nav li {
-    margin-top: 0;
-    margin-bottom: -30px;
-  }
-
-}
-
-*/
-
 /* Media Queries*/
 
 /* hier auf die Breite 375px angepasst (Safari, Firefox) zB iPhone 6, 6s bzw Devices mit 4,7 Zoll */
