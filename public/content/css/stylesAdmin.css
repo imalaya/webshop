@@ -13,8 +13,6 @@
 .side-nav {
   position: relative;
   height: 100%;
-  width: 180px;
-  float: left;
 }
 
 
@@ -97,9 +95,8 @@
 
 .main-content {
   padding: 10px 10px 10px 0;
-  height: 1056px;
+  height: 850px;
   position: relative;
-  margin-left: 190px;
   color: #444;
   line-height: 20px;
   border: 1px solid #d2d2d2;
@@ -160,20 +157,8 @@
 
 @media(max-width: 1000px) {
 
-  .side-nav {
-    display: block;
-    width: 140px;
-  }
-
-  .side-nav ul li span:nth-child(2) {
-    display: none;
-  }
-
   .side-nav ul li a {
     text-align: center;
-  }
-  .main-content {
-    margin-left: 70px;
   }
 }
 
@@ -330,7 +315,11 @@ input[disabled="disabled"] {
 
 /* tablet-version */
 
-@media(max-width: 800px) {
+@media(max-width: 700px) {
+
+  .header {
+    height: 50px;
+  }
 
   .navbar-fixed-top.navbar-absolute {
     position: absolute;
@@ -341,14 +330,6 @@ input[disabled="disabled"] {
     position: absolute;
     left: 50%;
     bottom: -10px;
-  }
-
-  .main-content {
-    margin-left: 160px;
-  }
-
-  .side-nav {
-    width: 170px;
   }
 
   .side-nav ul li i {
@@ -395,9 +376,6 @@ input[disabled="disabled"] {
     bottom: -10px;
   }
 
-  .main-content {
-    margin-left: 0;
-  }
   .category {
     display: none;
   }
@@ -436,10 +414,6 @@ input[disabled="disabled"] {
 
   .navbar-collapse.in {
     overflow-y: hidden;
-  }
-
-  .side-nav {
-    display: none;
   }
 
   thead {
