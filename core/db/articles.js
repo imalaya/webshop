@@ -121,9 +121,8 @@ function createArticle(req, res, next) {
     req.body.price = parseInt(req.body.price);
     req.body.quantity = parseInt(req.body.quantity);
     req.body.available = req.body.available.toString();
-    db.none('insert into articles(name, category, price, description, quantity, available)' +
-        'values(${name}, ${category}, ${price}, ${description}, ${amount}, ${quantity}, ${available})',
-        req.body)
+    db.none('insert into articles(name, category, price, description, quantity, available) values ($1, $2, $3, $4, $5, $6)',
+        [req.body.name, req.body.category, req.body.price, req.body.description, req.body.quantity, req.body.available])
         .then(function () {
             res.status(200)
                 .json({
@@ -137,8 +136,8 @@ function createArticle(req, res, next) {
 }
 
 function updateArticle(req, res, next) {
-    db.none('update pups set name=$1 where id=$2',
-        [req.body.name, parseInt(req.params.id)])
+    db.none('update pups set name=$1, category=$2, price=$3, description=$4, quantity=$5, available=$6 where id=$7',
+        [req.body.name, req.body.category, parseInt(req.body.price), req.body.description, parseInt(req.body.quantity), req.body.available.toString(), parseInt(req.params.id)])
         .then(function () {
             res.status(200)
                 .json({
