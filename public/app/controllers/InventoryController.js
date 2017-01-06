@@ -68,8 +68,8 @@ $scope.editArticle = function (size, selectedArticle) {
 };
 
 //get test data
-  $http.get('data/inventory.json').success(function(data){
-    $scope.inventory = data;
+  $http.get('/api/article').success(function(data){
+    $scope.inventory = data.data;
   });
 
 }]);
