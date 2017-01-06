@@ -5,9 +5,11 @@ var db = require('../core/db/articles');
 
 
 router.get('/api/article', db.getAllArticles);
-/*router.get('/api/puppies/:id', db.getSingleArticle);
- router.post('/api/puppies', db.createArticle);
- router.put('/api/puppies/:id', db.updateArticle);
+router.get('/api/article/:id', db.getSingleArticle);
+router.post('/api/article', db.createArticle);
+router.put('/api/puppies/:id', db.updateArticle);
+
+/*
  router.delete('/api/puppies/:id', db.removeArticle);*/
 
 

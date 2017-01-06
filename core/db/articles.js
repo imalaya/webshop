@@ -24,12 +24,15 @@ var options = {
 */
 //var pool = new pg.Pool(dbconfig);
 
-var pgp = require('pg-promise');
+var pgp = require('pg-promise')(options);
 var connectionString = 'postgres://postgres:admin@localhost:5432/webshop';
 var db = pgp(connectionString);
 
 module.exports = {
-    getAllArticles: getAllArticles
+    getAllArticles: getAllArticles,
+    getSingleArticle: getSingleArticle,
+    createArticle: createArticle,
+    updateArticle: updateArticle
 };
 
 exports.saveArticle = function(name, category, price, description, amount, pic) {
@@ -90,10 +93,61 @@ function getAllArticles(req, res, next) {
                 .json({
                     status: 'success',
                     data: data,
-                    message: 'Retrieved ALL puppies'
+                    message: 'Retrieved ALL articles'
                 });
         })
         .catch(function (err) {
             return next(err);
         });
 }
+
+function getSingleArticle(req, res, next) {
+    var articleID = parseInt(req.params.id);
+    db.one('select * from articles where id = $1', articleID)
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ONE article'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function createArticle(req, res, next) {
+    req.body.price = parseInt(req.body.price);
+    req.body.quantity = parseInt(req.body.quantity);
+    req.body.available = req.body.available.toString();
+    db.none('insert into articles(name, category, price, description, quantity, available)' +
+        'values(${name}, ${category}, ${price}, ${description}, ${amount}, ${quantity}, ${available})',
+        req.body)
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Inserted one article'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function updateArticle(req, res, next) {
+    db.none('update pups set name=$1 where id=$2',
+        [req.body.name, parseInt(req.params.id)])
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Updated puppy'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
