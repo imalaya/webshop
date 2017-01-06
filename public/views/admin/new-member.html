@@ -2,32 +2,25 @@
     <div class="modal-header">
         <h3 class="modal-title" id="modal-title">Neuer Mitarbeiter</h3>
     </div>
+
     <div class="modal-body" id="modal-body">
-
-        <p>Bitte geben Sie den vollständigen Vor- und Nachnamen ein und bestätigen Sie den Eintrag um einen Mitarbeiter hinzuzufügen.</p>
-
         <form name="addMemberForm" novalidate>
-            <label>
-                Nachname
-                <input type="text" placeholder="Nachname" name="lastname" ng-model="newMember.lastname" ng-required="true" />
-            </label>
+            <p>Bitte geben Sie den vollständigen Vor- und Nachnamen ein und bestätigen Sie den Eintrag um einen Mitarbeiter hinzuzufügen.</p>
+            <input type="text" class="addMemberName" placeholder="Nachname" name="lastname" ng-model="newMember.lastname" ng-required="true" />
             <div class="errorStatus" ng-show="addMemberForm.lastname.$touched && addMemberForm.lastname.$invalid">
                 <small> Gültigen Nachnamen eingeben </small>
             </div>
 
-            <label>
-                Vorname
-                <input id="familyName" type="text" placeholder="Vorname" name="firstname" ng-model="newMember.firstname" ng-required="true" />
-            </label>
+            <input class="addMemberName" type="text" placeholder="Vorname" name="firstname" ng-model="newMember.firstname" ng-required="true" />
             <div class="errorStatus" ng-show="addMemberForm.firstname.$touched && addMemberForm.firstname.$invalid">
                 <small> Gültigen Vornamen eingeben </small>
             </div>
-            <p>@gutemine.de</p>
+            <p>{{newMember.lastname | json}}.{{newMember.firstname | json}}@gutemine.de</p>
         </form>
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-default" type="button" ng-click="addMember();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
-        <button class="btn btn-default" type="button" ng-click="cancel()">Schließen</button>
+        <button class="btn modal-footer-button" type="button" ng-click="addMember();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
+        <button class="btn modal-footer-button" type="button" ng-click="cancel()">Schließen</button>
     </div>
 </div>

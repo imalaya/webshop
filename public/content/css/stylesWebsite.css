@@ -136,7 +136,7 @@ div.form-group{
     border-right: none;
 }
 
-button.btn.btn-default{
+button.btn.btn-default {
     margin-left: 20px;
     width: 100px;
     border-radius: 0px;
@@ -893,9 +893,19 @@ textarea {
         padding-top: 31px !important;
     }
 
+
+  .navbar-nav li {
+    margin-top: 5px;
+    margin-bottom: -30px;
+  }
+}
+
+@media (min-width: 735px) and (max-width:1200px)  {
+
     #search-input{
         width:85%;
     }
+
 
     .footer{
         font-size: 86%;

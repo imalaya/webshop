@@ -1,9 +1,7 @@
 <div class="content">
-    <h2 class="heading">Mitarbeiter</h2>
-    <div id="member">
-        <button type="button" class="btn btn-default" ng-click="createMember()">Neuer Mitarbeiter</button>
+    <div class="content-memberButton">
+        <button type="button" class="btn newMember" ng-click="createMember()">Neuer Mitarbeiter</button>
     </div>
-
     <div class="table-responsive">
         <table class="table table-condensed table-hover">
             <thead>
@@ -13,7 +11,7 @@
                 <th>Vorname</th>
                 <th class="hidden-md hidden-xs">Position</th>
                 <th class="hidden-xs">eMail</th>
-                <th class="hidden-xs">Handynummer</th>
+                <th>Handynummer</th>
             </tr>
             </thead>
             <tbody>
@@ -23,7 +21,7 @@
                 <td>{{member.firstname}}</td>
                 <td class="hidden-md hidden-xs">{{member.jobtitle}}</td>
                 <td class="hidden-xs">{{member.email}}</td>
-                <td class="hidden-xs">{{member.mobile}}</td>
+                <td>{{member.mobile}}</td>
             </tr>
             </tbody>
         </table>

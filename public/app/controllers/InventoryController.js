@@ -68,8 +68,11 @@ $scope.editArticle = function (size, selectedArticle) {
 };
 
 //get test data
-  $http.get('data/inventory.json').success(function(data){
-    $scope.inventory = data;
+  // Wenn man noch keine Datenbank hat noch die Verweisung zur json-Datei anpassen.
+  // $http.get('data/inventory.json').success(function(data){
+  //    $scope.inventory = data;
+  $http.get('/api/article').success(function(data){
+    $scope.inventory = data.data;
   });
 
 }]);
