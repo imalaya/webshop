@@ -1,14 +1,11 @@
 <div class="content">
-  <div id="newArticle">
-    <button type="button" class="newArticle" ng-click="createArticle()">Neuer Artikel</button>
-  </div>
-  <div id="search">
-    <input type="text" ng-model="search" placeholder="Nach Artikel suchen"/>
-  </div>
-  <div id="sort">
+  <div class="sortGroup">
+    <button type="button" class="newArticle hidden-xs" ng-click="createArticle()">Neuer Artikel</button>
     <button class="sortButton" ng-click="order = 'name'">Nach Name sortieren</button>
     <button class="sortButton" ng-click="order = 'category'">Nach Kategorie sortieren</button>
   </div>
+  <input type="text" class="search" ng-model="search" placeholder="Nach Artikel suchen"/>
+
 
 
   <div class="table-responsive">

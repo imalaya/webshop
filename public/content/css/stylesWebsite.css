@@ -136,7 +136,7 @@ div.form-group{
     border-right: none;
 }
 
-button.btn {
+button.btn.btn-default {
     margin-left: 20px;
     width: 100px;
     border-radius: 0px;

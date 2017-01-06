@@ -24,6 +24,7 @@
 .side-nav {
   position: relative;
   height: 950px;
+  text-align: center;
 }
 
 .side-nav ul {
@@ -36,6 +37,10 @@
   padding: 25px 10px;
   border-bottom: 1px solid #eef1f7;
   position: relative;
+}
+
+.side-nav ul li:hover {
+  background-color: #c3c3c3;
 }
 
 .side-nav ul li span i:hover{
@@ -61,7 +66,6 @@
 .side-nav ul li i {
   color: black;
   min-width: 20px;
-  text-align: center;
   margin-left: 5px;
 }
 
@@ -127,46 +131,20 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.07); */
 }
 
-
-
-/*///////////////////////////////
-// Styling for articles //
-///////////////////////////////*/
-
-#newArticle {
-  text-align: right;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-#newArticle:hover {
-  color: #cc9900;
-}
-
 /*///////////////////////////////
 // Styling for members //
 ///////////////////////////////*/
 
-#member {
+.content-memberButton {
   text-align: right;
 }
 
 .table-responsive {
-  width: 80%;
+  max-width: 100%;
   margin: auto;
   padding-top: 20px;
-}
-
-
-/*///////////////////////////////
-// Styling for tablet version //
-///////////////////////////////*/
-
-@media(max-width: 1000px) {
-
-  .side-nav ul li a {
-    text-align: center;
-  }
+  background-color: #fff;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -180,42 +158,8 @@
   width: 100%;
   height: auto;
   border-radius: 6px;
-  background-color: #ffffff;
   position: relative;
 }
-
-
-input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-  border: 2px solid red;
-}
-input[disabled="disabled"] {
-  opacity: 0.4;
-  cursor: not-allowed !important;
-}
-
-.content select{
-  width: 90%;
-  height: 20%;
-  margin: 10px 0;
-}
-
-
-.content input[type="submit"]:last-child{
-  width: 250px;
-  display: block;
-  margin: 15px auto;
-}
-
-
-
-.content textarea{
-  width: 90%;
-  padding: 10px 5%;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  margin: 10px 0;
-}
-
 
 /* CSS FOR MANAGE ARTICLES */
 
@@ -252,6 +196,67 @@ input[disabled="disabled"] {
   margin-left: 10px;
 }
 
+/* CSS FOR BUTTONS */
+
+.modal-footer-button {
+  width: 200px;
+}
+
+.modal-footer-button:hover {
+  border: 2px solid #cc9900;
+  background-color: #c3c3c3;
+}
+
+.newMember {
+  margin: 30px 0;
+}
+
+.sortGroup {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+/* Input Field */
+
+.search {
+  width: 200px;
+  height: 25px;
+  border: 1px solid #444444;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  padding-right: 10px;
+  text-align: right;
+  background-image: url("../img/lupe.png");
+  background-repeat: no-repeat;
+  /*background-size: cover; */
+  background-position: left;
+}
+
+.sortButton,
+.newArticle,
+.newMember {
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  border: 1px solid #444444;
+  border-radius: 4px;
+}
+
+.sortButton, .newArticle {
+  margin: 40px auto 0;
+}
+
+.newArticle {
+  float: left;
+}
+
+.menu li:hover,
+.newArticle:hover,
+.sortButton:hover,
+.newMember:hover{
+  color: #cc9900;
+}
 
 
 /* CSS FOR MODALS */
@@ -278,7 +283,7 @@ input[disabled="disabled"] {
   padding: 15px;
 }
 
-.addMemberName {
+.addMemberName, .addArticle {
   width: 100%;
   padding-left: 15px;
   font-size: 14px;
@@ -289,8 +294,35 @@ input[disabled="disabled"] {
   background-color: #f4f4f4;
 }
 
-.addMemberName:hover {
+.addMemberName:hover,
+.addArticle:hover {
   border-color: #cc9900;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+input[disabled="disabled"] {
+  opacity: 0.4;
+  cursor: not-allowed !important;
+}
+
+.content select{
+  width: 90%;
+  height: 20%;
+  margin: 10px 0;
+}
+
+.content input[type="submit"]:last-child{
+  width: 250px;
+  display: block;
+  margin: 15px auto;
+}
+
+.content textarea{
+  width: 100%;
+  padding: 10px 0 10px 15px;
+  margin: 10px 0;
 }
 
 .modal-footer {
@@ -299,46 +331,9 @@ input[disabled="disabled"] {
   display: flex;
 }
 
-.modal-footer-button {
-  width: 200px;
-}
-
-.modal-footer-button:hover {
-  border: 2px solid #cc9900;
-  background-color: #c3c3c3;
-}
-
-.errorStatus {
+.errorStatus, .errorStatusArt {
   color: red;
   font-weight: 600;
-}
-
-.errorStatusArt {
-  margin-left: 4%;
-  color: red;
-}
-
-#search {
-  position: relative;
-  text-align: left;
-  margin-left: 20px;
-  display: inline-block;
-}
-
-#sort {
-  text-align: right;
-  margin: 0 20px 40px 0;
-}
-
-.sortButton,
-.newArticle {
-  width: 200px;
-  height: 40px;
-  background-color: white;
-  color: black;
-  border-color: black;
-  border-width: 1px;
-  margin: 40px auto 0;
 }
 
 /* tablet-version */
@@ -368,7 +363,7 @@ input[disabled="disabled"] {
     text-align: left;
   }
 
-  #member {
+  .member {
     text-align: right;
     margin: 20px;
   }
@@ -475,12 +470,6 @@ input[disabled="disabled"] {
     float: left;
   }
 
-  .menu li:hover,
-  .newArticle:hover,
-  .sortButton:hover{
-    color: #cc9900;
-  }
-
   /* Effect 2a */
   .hovicon.effect-2.sub-a:hover, .hovicon.effect-2.sub-a:hover i {
     color: #eea303;
@@ -499,25 +488,20 @@ input[disabled="disabled"] {
     border: 2px dashed black;
   }
 
-  /* MEMBER SECTION */
+  .search {
+    margin: 0 0px 15px;
+  }
 
-  .table-responsive {
-    width: 100%;
+  .sortButton, .newArticle {
+    margin: 16px auto 0;
+    text-align: center;
+  }
+  
+  .sortGroup {
+    text-align: center;
   }
 
   /* ARTICLE SECTION */
-
-  #sort {
-    margin: 0 0 40px 0;
-    display: flex;
-  }
-
-  .sortButton,
-  .newArticle {
-    width: 150px;
-    height: 30px;
-    font-size: 12px;
-  }
 
   #calendar {
     width: 500px;
@@ -525,23 +509,152 @@ input[disabled="disabled"] {
   }
 }
 
-/* REALLY SMALL MOBILES
-@media(max-width: 380px) {
+/*///////////////////////////////
+// Styling for login area //
+///////////////////////////////*/
 
-  .menu li {
-    height: 80px;
-    width: 110px;
-    padding-top: 9%;
+.login {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 20rem;
+  height: 20rem;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.login:hover > .login-header, .login.focused > .login-header {
+  width: 2rem;
+}
+.login:hover > .login-header > .text, .login.focused > .login-header > .text {
+  font-size: 1rem;
+  transform: rotate(-90deg);
+}
+.login.loading > .login-header {
+  width: 20rem;
+}
+.login.loading > .login-header > .text {
+  display: none;
+}
+.login.loading > .login-header > .loader {
+  display: block;
+}
+
+.login-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 20rem;
+  height: 20rem;
+  background: #444444;
+  transition: width 0.5s ease-in-out;
+}
+.login-header > .text {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 20rem;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.login-header > .loader {
+  display: none;
+  position: absolute;
+  left: 5rem;
+  top: 5rem;
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  animation: loading 2s linear infinite;
+}
+.login-header > .loader:after {
+  content: "";
+  position: absolute;
+  left: 4.5rem;
+  top: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border-radius: 50%;
+  border-right: 2px solid #444444;
+}
+.login-header > .loader:before {
+  content: "";
+  position: absolute;
+  left: 4rem;
+  top: -0.5rem;
+  width: 0;
+  height: 0;
+  border-right: 1rem solid #fff;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+}
+
+@keyframes loading {
+  50% {
+    opacity: 0.5;
   }
-
-  #newArticle {
-    margin: 40px 0 0 20px;
-    display: inline-block;
-  }
-
-  #search {
-    margin-left: 40px;
-    display: inline-block;
+  100% {
+    transform: rotate(360deg);
   }
 }
-*/
+.login-form {
+  margin: 0 0 0 2rem;
+  padding: 0.5rem;
+}
+
+.login-input {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+  border-color: #ccc;
+  border-width: 0 0 2px 0;
+}
+.login-input + .login-input {
+  margin: 10px 0 0;
+}
+.login-input:focus {
+  outline: none;
+  border-bottom-color: #444444;
+}
+
+.login-btn {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  background: #444444;
+  border-radius: 50%;
+  font-size: 0;
+  border: 0.6rem solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.login-btn:after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+  width: 0;
+  height: 0;
+  border-left: 2.4rem solid #fff;
+  border-top: 1.2rem solid transparent;
+  border-bottom: 1.2rem solid transparent;
+  transition: border 0.3s ease-in-out 0s;
+}
+.login-btn:hover, .login-btn:focus, .login-btn:active {
+  background: #fff;
+  border-color: #444444;
+  outline: none;
+}
+.login-btn:hover:after, .login-btn:focus:after, .login-btn:active:after {
+  border-left-color: #444444;
+}
