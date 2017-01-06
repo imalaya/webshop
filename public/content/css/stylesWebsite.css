@@ -58,7 +58,7 @@
     height:auto;
 }
 
-#menuIconsXL {
+.menuIconsXL {
     position: relative;
     bottom: 2px;
 }
@@ -91,22 +91,22 @@
     height: 50px;
 }
 
-#dropdown-img{
+.dropdown-img{
     width: 155px;
     height:195px;
 }
 
-#dd-list-item-container{
+.dd-list-item-container{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-#dd-list-item-container li{
+.dd-list-item-container li{
     padding-top: 20px;
 }
 
-#dd-list-item-container li a:hover{
+.dd-list-item-container li a:hover{
     text-decoration: none;
 }
 
@@ -638,7 +638,7 @@ textarea {
 /* hier auf die Breite 375px angepasst (Safari, Firefox) zB iPhone 6, 6s bzw Devices mit 4,7 Zoll */
 @media screen and (max-width: 375px) {
 
-    #dropdown-img{
+    .dropdown-img{
         display: none;
     }
 
@@ -673,23 +673,24 @@ textarea {
         padding: 8px !important;
     }
 
-    .footer div.footer-left,
+/*    .footer div.footer-left,
     .footer div.footer-center,
     .footer div.footer-right{
         width: 100%;
         margin: auto;
         padding-top: 10px;
     }
+    */
 
     div#map{
         width: auto;
         height: 250px;
     }
-
+/*
     div.footer{
         display: block;
         padding: 25px;
-    }
+    } */
 
     i.fa.fa-map-marker,
     i.fa.fa-phone,
@@ -712,12 +713,12 @@ textarea {
         margin-left: 2px;
         padding-right: 10px !important;
     }
-
+/*
     .footer-right div{
         display: flex;
         margin-bottom: 10px !important;
     }
-
+*/
     div.icons{
         display: flex;
     }
@@ -773,7 +774,7 @@ textarea {
         height: 150px !important;
     }
 
-    ul.dropdown-menu div#dd-list-item-container li {
+    ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 31px !important;
     }
 
@@ -794,7 +795,7 @@ textarea {
     #map{
         width:100%;
     }
-
+/*
     div.footer{
         display: block;
         padding: 25px;
@@ -814,7 +815,7 @@ textarea {
         padding-left: 23px;
         margin-bottom: 16px !important;
     }
-
+*/
     .footer-center div p{
         font-size: 90%;
     }
@@ -836,14 +837,14 @@ textarea {
         margin-left: 42px;
         padding-right: 12px !important;
     }
-
+/*
     .footer-right div{
         display: flex;
         margin-bottom: 20px !important;
         margin-left: 15px;
         margin-right: 15px;
     }
-
+*/
     div.icons p.name{
         font-size: 50% !important;
         width: auto !important;
@@ -889,7 +890,7 @@ textarea {
         margin-bottom: -30px;
     }
 
-    ul.dropdown-menu div#dd-list-item-container li {
+    ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 31px !important;
     }
 
@@ -911,7 +912,7 @@ textarea {
         font-size: 86%;
         padding: 40px;
     }
-
+/*
     .footer .footer-left,
     .footer .footer-center,
     .footer .footer-right{
@@ -919,7 +920,7 @@ textarea {
         margin: auto;
         width: 40%;
     }
-
+*/
     #map{
         width: 90%;
         height: 240px;
@@ -931,11 +932,11 @@ textarea {
         height: 38px;
         line-height: 33px;
     }
-
+/*
     .footer .footer-right div{
         margin-bottom: 10px;
     }
-
+*/
     .footer .footer-right div a{
         padding: 3px;
     }
@@ -965,7 +966,7 @@ textarea {
         font-size: 90%;
     }
 
-    ul.dropdown-menu div#dd-list-item-container li {
+    ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 38px !important;
     }
 
@@ -990,7 +991,7 @@ textarea {
         font-size: 90%;
     }
 
-    ul.dropdown-menu div#dd-list-item-container li {
+    ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 38px !important;
     }
 
