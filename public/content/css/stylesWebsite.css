@@ -359,26 +359,22 @@ figure.member:hover figcaption p{
 
 /* Footer */
 .footer{
-    width: auto;
-    height: auto;
     background-color: white;
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 3px;
     color: black;
-    padding: 50px;
     border-top-style: solid;
     border-color: black;
     border-width:1.5px;
-    display: flex;
 }
-
+/*
 .footer div.footer-left,
 .footer div.footer-center,
 .footer div.footer-right{
     width: 33%;
 }
-
+*/
 /* Footer Google Maps */
 
 #map{
@@ -389,7 +385,7 @@ figure.member:hover figcaption p{
     border-width: 1.5px;
 }
 
-/* Footer center*/
+/* Footer center */
 
 .footer .footer-center i{
     background-color: white;
@@ -430,10 +426,6 @@ figure.member:hover figcaption p{
 }
 
 /* Footer right*/
-
-.footer .footer-right div{
-    margin-bottom: 25px;
-}
 
 .footer .footer-right div a{
     display: flex;
@@ -725,11 +717,11 @@ textarea {
 
     div.icons p.name{
         font-size: 39% !important;
-        width: auto !important;
+     /*   width: auto !important;
         margin-left: 4px;
         margin-bottom: 0px !important;
         line-height: 26px;
-        margin-right: 100px !important;
+        margin-right: 100px !important; */
     }
 
     i.fa.fa-facebook,
