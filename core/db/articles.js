@@ -91,9 +91,9 @@ function getAllArticles(req, res, next) {
         .then(function (data) {
             res.status(200)
                 .json({
-                    status: 'success',
-                    data: data,
-                    message: 'Retrieved ALL articles'
+                    //status: 'success',
+                    data: data
+                    //message: 'Retrieved ALL articles'
                 });
         })
         .catch(function (err) {
