@@ -8,9 +8,7 @@ router.get('/api/article', db.getAllArticles);
 router.get('/api/article/:id', db.getSingleArticle);
 router.post('/api/article', db.createArticle);
 router.put('/api/article/:id', db.updateArticle);
-
-/*
- router.delete('/api/puppies/:id', db.removeArticle);*/
+router.delete('/api/article/:id', db.removeArticle);
 
 
 module.exports = router;
