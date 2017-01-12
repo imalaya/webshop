@@ -18,9 +18,8 @@
 
 #bootstrapOverride li a {
     color: black;
-    padding-left: 32px;
-    padding-right: 32px;
-    letter-spacing: 4px;
+    margin-left: 15px;
+    letter-spacing: 2px;
 }
 
 .navbar .navbar-collapse{
@@ -874,7 +873,6 @@ textarea {
     #bootstrapOverride li a {
         font-size: 90%;
         padding-left: 20px;
-        padding-right: 20px;
     }
 
     .navbar-nav li {
