@@ -9,7 +9,7 @@
     border-bottom: 2px dashed black;
     border-radius: 0;
     font-family: 'Lato', sans-serif;
-    font-size: 110%;
+    font-size: 100%;
 }
 
 #bootstrapOverride li a:hover {
@@ -24,11 +24,6 @@
 
 .navbar .navbar-collapse{
     width: 100%;
-}
-
-.container-fluid{
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .navbar-default .navbar-toggle {
@@ -68,12 +63,12 @@
 }
 
 /* dropdown */
-
+/*
 .navbar-nav li{
     position: static;
     margin: 0px;!important;
 }
-
+*/
 .navbar-nav > li:hover > .dropdown-menu{
     display: flex;
     border-radius: 0px;
@@ -633,11 +628,6 @@ textarea {
         display: none;
     }
 
-    a.navbar-brand {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
     #bootstrapOverride  .divider {
         height: 1px;
         width:100%;
@@ -755,10 +745,6 @@ textarea {
         padding-right: 10px;
         font-size: 74%;
     }
-    .navbar-nav li {
-        margin-top: 0;
-        margin-bottom: -30px;
-    }
 
     ul.dropdown-menu div img {
         width: 126px !important;
@@ -856,7 +842,7 @@ textarea {
 
 /* hier auf die Breite 1024px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
 @media screen and (min-width: 769px) and (max-width: 1024px){
-
+/*
     .navbar .navbar-nav {
         display: inline-block;
         float: none;
@@ -865,7 +851,7 @@ textarea {
     .navbar .navbar-collapse {
         text-align: center;
     }
-
+*/
     #logoBig {
         padding-top: 10px;
     }
@@ -874,21 +860,14 @@ textarea {
         font-size: 90%;
         padding-left: 20px;
     }
-
+/*
     .navbar-nav li {
         margin-top: 5px;
-        margin-bottom: -30px;
     }
-
+*/
     ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 31px !important;
     }
-
-
-  .navbar-nav li {
-    margin-top: 5px;
-    margin-bottom: -30px;
-  }
 }
 
 @media (min-width: 735px) and (max-width:1200px)  {
@@ -950,11 +929,6 @@ textarea {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .navbar-nav li {
-        margin-top: 0;
-        margin-bottom: -30px;
-        font-size: 90%;
-    }
 
     ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 38px !important;
@@ -974,12 +948,6 @@ textarea {
 }
 
 @media screen and (max-width: 981px) {
-
-    .navbar-nav li {
-        margin-top: 0;
-        margin-bottom: -30px;
-        font-size: 90%;
-    }
 
     ul.dropdown-menu div.dd-list-item-container li {
         padding-top: 38px !important;
