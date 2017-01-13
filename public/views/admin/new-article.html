@@ -30,11 +30,21 @@
       <div class="errorStatusArt" ng-show="addArticleForm.quantity.$touched && addArticleForm.quantity.$invalid">
         <small> Gültige Menge eingeben </small>
       </div>
-      <input type="file" placeholder="Bild" ng-model="newArticle.thumb" />
+      <!-- <input type="file" placeholder="Bild" ng-model="newArticle.thumb" /> -->
+      <input type="file" ngf-select ng-model="artThumb" name="file"
+             accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile">
+      <img ng-show="addArticleForm.file.$valid" ngf-thumbnail="artThumb" class="thumb">
+      <!-- <span class="progress" ng-show="artThumb.progress >= 0">
+        <div style="width:{{artThumb.progress}}%"
+            ng-bind="artThumb.progress + '%'"></div>
+      </span>
+      <span ng-show="artThumb.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span> -->
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn modal-footer-button" type="button" ng-click="addArticle();ok()" ng-disabled="addArticleForm.$invalid">Artikel hinzufügen</button>
+    <button class="btn modal-footer-button" type="button" ng-click="addArticle(artThumb)" ng-disabled="addArticleForm.$invalid">Artikel hinzufügen</button>
     <button class="btn modal-footer-button" type="button" ng-click="cancel()">Schließen</button>
   </div>
 </div>

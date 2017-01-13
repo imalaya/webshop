@@ -1,4 +1,5 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch']);
+
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
@@ -24,6 +25,11 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl:'views/customer/article-details.html',
         controller: 'ArticleDetailsCtrl'
     })
+
+      .state('public.site.startpage', {
+          url: '/startseite',
+          templateUrl: 'views/customer/content-startpage.html'
+      })
 
     //anchor tags footer
     .state('public.site.contact', {
@@ -68,6 +74,12 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl:'views/admin/manage-articles.html',
         controller: 'InventoryController'
       })
+
+      .state('private.admin.test', {
+          url: '/test',
+          templateUrl:'views/admin/test.html',
+          controller: 'TestController'
+        })
 
       .state('private.admin.inventory.add', {
           templateUrl:'views/admin/new-article.html',
