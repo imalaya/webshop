@@ -496,7 +496,7 @@ input[disabled="disabled"] {
     margin: 16px auto 0;
     text-align: center;
   }
-  
+
   .sortGroup {
     text-align: center;
   }
@@ -657,4 +657,30 @@ input[disabled="disabled"] {
 }
 .login-btn:hover:after, .login-btn:focus:after, .login-btn:active:after {
   border-left-color: #444444;
+}
+
+/*Test*/
+.thumb {
+    width: 110px;
+    height: 80px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
 }

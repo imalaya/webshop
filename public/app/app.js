@@ -1,4 +1,4 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload']);
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
@@ -68,6 +68,12 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl:'views/admin/manage-articles.html',
         controller: 'InventoryController'
       })
+
+      .state('private.admin.test', {
+          url: '/test',
+          templateUrl:'views/admin/test.html',
+          controller: 'TestController'
+        })
 
       .state('private.admin.inventory.add', {
           templateUrl:'views/admin/new-article.html',
