@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
 #bootstrapOverride {
     /*background-image: url(https://daks2k3a4ib2z.cloudfront.net/57289665989457a16b40023a/57289665989457a16b400261_noise.png);*/
     background-color: white;
@@ -18,7 +22,6 @@
 
 #bootstrapOverride li a {
     color: black;
-    margin-left: 15px;
     letter-spacing: 2px;
 }
 
@@ -41,6 +44,12 @@
 
 .navbar-collapse.in {
     overflow-y: hidden;
+    display: inline-block;
+}
+
+.navbar-brand {
+    height: auto;
+    padding: 0 0 0 5px;
 }
 
 #logoBig {
@@ -59,10 +68,15 @@
 
 #menuIconsXS {
     position: relative;
-    bottom: -2px;
+    top: 4px;
 }
 
 /* dropdown */
+
+.navbar-nav {
+    margin: 0;
+    font-size: 18px;
+}
 
 .navbar-nav li{
     position: static;
@@ -94,10 +108,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.dd-list-item-container li{
-    padding-top: 20px;
 }
 
 .dd-list-item-container li a:hover{
@@ -734,21 +744,16 @@ textarea {
 }
 
 /* hier auf die Breite 768px angepasst (Safari, Firefox) zB iPad mini 4 bzw. Devices mit 7,9 Zoll */
-@media (min-width: 376px) and (max-width: 768px){
+@media (min-width: 376px) and (max-width: 920px){
 
     #bootstrapOverride li a {
         padding-left: 10px;
         padding-right: 10px;
-        font-size: 74%;
     }
 
     ul.dropdown-menu div img {
         width: 126px !important;
         height: 150px !important;
-    }
-
-    ul.dropdown-menu div.dd-list-item-container li {
-        padding-top: 31px !important;
     }
 
     #logoBig{
@@ -763,6 +768,14 @@ textarea {
 
     #search-input{
         width:80%;
+    }
+
+    .navbar-nav {
+        font-size: 16px;
+    }
+
+    .navbar-nav li {
+        margin: 2px;
     }
 
     #map{
@@ -847,22 +860,21 @@ textarea {
     .navbar .navbar-collapse {
         text-align: center;
     }
+
 */
+    .navbar-nav li {
+        margin: 0;
+    }
+
     #logoBig {
         padding-top: 10px;
     }
 
-    #bootstrapOverride li a {
-        padding-left: 20px;
-    }
 /*
     .navbar-nav li {
         margin-top: 5px;
     }
 */
-    ul.dropdown-menu div.dd-list-item-container li {
-        padding-top: 31px !important;
-    }
 }
 
 @media (min-width: 735px) and (max-width:1200px)  {
@@ -925,12 +937,12 @@ textarea {
         padding-right: 10px;
     }
 
-    ul.dropdown-menu div.dd-list-item-container li {
-        padding-top: 38px !important;
-    }
-
     #search-input{
         width:80%;
+    }
+
+    .dropdown-toggle {
+        padding: 5px;
     }
 
     .footer .footer-center i{
@@ -940,12 +952,4 @@ textarea {
         line-height: 31px;
         margin: 4px;
     }
-}
-
-@media screen and (max-width: 981px) {
-
-    ul.dropdown-menu div.dd-list-item-container li {
-        padding-top: 38px !important;
-    }
-
 }
