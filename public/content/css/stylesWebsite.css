@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.content-section {
+    padding: 5%;
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -272,9 +276,11 @@ button.btn.btn-default:hover{
 /* about page -> list of employees*/
 
 #members{
-    display: inline-block;
     margin-left:50px;
     margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 figure.member {
