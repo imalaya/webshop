@@ -1,4 +1,4 @@
-  <form name="myForm">
+  <!-- <form name="myForm">
     <fieldset>
       <legend>Upload on form submit</legend>
       Username:
@@ -23,4 +23,44 @@
       <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
     </fieldset>
     <br>
+  </form> -->
+
+  <form name="addArticleForm" novalidate>
+    <input type="text" class="addArticle" placeholder="Name" name="name" ng-model="newArticle.name" ng-required="true" />
+    <div class="errorStatusArt" ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid">
+      <small> Gültigen Namen eingeben </small>
+    </div>
+    <input type="text" class="addArticle" placeholder="Kategorie" name="category" ng-model="newArticle.category" ng-required="true" />
+    <!-- <select name="category" ng-model="newArticle.category" ng-required="true" />
+      <option selected hidden>Kategorie wählen</option>
+      <option value="paper">Papier</option>
+      <option value="pen">Stifte</option>
+    </select> -->
+    <div class="errorStatusArt" ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid">
+      <small> Gültige Kategorie eingeben </small>
+    </div>
+    <input type="text" class="addArticle" placeholder="Preis" name="price" ng-model="newArticle.price" ng-required="true" />
+    <div class="errorStatusArt" ng-show="addArticleForm.price.$touched && addArticleForm.price.$invalid">
+      <small> Gültigen Preis eingeben </small>
+    </div>
+    <textarea id="descr" placeholder="Beschreibung" name="description" ng-model="newArticle.description" ng-required="true" ></textarea>
+    <div class="errorStatusArt" ng-show="addArticleForm.description.$touched && addArticleForm.description.$invalid">
+      <small> Gültige Beschreibung eingeben </small>
+    </div>
+    <input type="number" class="addArticle" placeholder="Menge" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
+    <div class="errorStatusArt" ng-show="addArticleForm.quantity.$touched && addArticleForm.quantity.$invalid">
+      <small> Gültige Menge eingeben </small>
+    </div>
+    <!-- <input type="file" placeholder="Bild" ng-model="newArticle.thumb" /> -->
+    <input type="file" ngf-select ng-model="artThumb" name="file"
+           accept="image/*" ngf-max-size="2MB" required
+           ngf-model-invalid="errorFile">
+    <img ng-show="addArticleForm.file.$valid" ngf-thumbnail="artThumb" class="thumb">
+    <span class="progress" ng-show="artThumb.progress >= 0">
+      <div style="width:{{artThumb.progress}}%"
+          ng-bind="artThumb.progress + '%'"></div>
+    </span>
+    <span ng-show="artThumb.result">Upload Successful</span>
+    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    <button class="btn modal-footer-button" type="button" ng-click="addArticle(artThumb)" ng-disabled="addArticleForm.$invalid">Artikel hinzufügen</button>
   </form>
