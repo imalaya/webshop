@@ -1,4 +1,4 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ui.bootstrap']);
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
@@ -24,6 +24,11 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl:'views/customer/article-details.html',
         controller: 'ArticleDetailsCtrl'
     })
+
+      .state('public.site.startpage', {
+          url: '/startseite',
+          templateUrl: 'views/customer/content-startpage.html'
+      })
 
     //anchor tags footer
     .state('public.site.contact', {
