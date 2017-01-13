@@ -1,5 +1,4 @@
 
-
 .header {
   height: 120px;
   border-bottom: 2px dashed black;
@@ -25,36 +24,25 @@
   position: relative;
   height: 950px;
   text-align: center;
+  display: table-caption;
 }
 
 .side-nav ul {
   list-style-type: none;
   padding: 0;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  font-size: 16px;
 }
 
 .side-nav ul li {
-  padding: 25px 10px;
+  padding: 25px 0px;
   border-bottom: 1px solid #eef1f7;
   position: relative;
+  width: 100%;
 }
 
-.side-nav ul li:hover {
-  background-color: #c3c3c3;
-}
-
-.side-nav ul li span i:hover{
-  color: #cc9900;
-}
-
-.side-nav ul li.active:before {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #fff;
+.side-nav:hover {
+  color: #c3c3c3;
 }
 
 .side-nav ul li a {
@@ -63,20 +51,12 @@
   text-decoration: none;
 }
 
-.side-nav ul li i {
-  color: black;
-  min-width: 20px;
-  margin-left: 5px;
+.side-nav ul li a:hover {
+  color: #cc9900;
 }
 
-.side-nav ul li span:nth-child(2) {
-  margin-left: 10px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.nav {
-  margin: 10px 0 0 25px;
+.navbar-collapse {
+  widt: 100%;
 }
 
 /*///////////////////////////////
@@ -251,7 +231,6 @@
   float: left;
 }
 
-.menu li:hover,
 .newArticle:hover,
 .sortButton:hover,
 .newMember:hover{
@@ -410,16 +389,13 @@ input[disabled="disabled"] {
   }
 
   .navbar .navbar-collapse{
-    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .navbar-collapse.in {
     overflow-y: hidden;
     padding-top: 40px;
-  }
-
-  .navbar .navbar-collapse{
-    width: 100%;
   }
 
   .navbar-default .navbar-toggle {
@@ -443,32 +419,6 @@ input[disabled="disabled"] {
     font-size: 16px;
   }
 
-
-  .menu {
-    padding: 15px;
-    list-style: none;
-    display: flex;
-    background: #eee;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
-    -ms-box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
-    -o-box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-  }
-
-  .menu li {
-    cursor: pointer;
-    height: 120px;
-    width: 150px;
-    padding-top: 10%;
-    margin: 10px 0 0 10px;
-    background: #ddd;
-    position: relative;
-    float: left;
-  }
 
   /* Effect 2a */
   .hovicon.effect-2.sub-a:hover, .hovicon.effect-2.sub-a:hover i {

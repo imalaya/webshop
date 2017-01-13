@@ -276,8 +276,6 @@ button.btn.btn-default:hover{
 /* about page -> list of employees*/
 
 #members{
-    margin-left:50px;
-    margin-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -378,13 +376,18 @@ figure.member:hover figcaption p{
     border-color: black;
     border-width:1.5px;
 }
-/*
-.footer div.footer-left,
-.footer div.footer-center,
-.footer div.footer-right{
-    width: 33%;
+
+.footer-center,
+.footer-left,
+.footer-right{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-*/
+
+.footer-center div{
+    white-space: nowrap;
+}
+
 /* Footer Google Maps */
 
 #map{
@@ -446,19 +449,17 @@ figure.member:hover figcaption p{
 }
 
 .footer .footer-right div.icons {
-    margin-top: 10px;
+    margin-top: 25px;
+    display: inline-flex;
 }
 
 .footer .footer-right .icons .name{
-    display: inline-flex;
-    margin-right: 45px;
-    font-size: 10px;
+    margin-top: 10px;
 }
 
 .footer .footer-right .icons a{
     display: inline-block;
-    padding: 0;
-    margin: 1px;
+    margin: 0 0 0 5px;
 }
 
 .footer .footer-right .icons i {
@@ -487,7 +488,7 @@ figure.member:hover figcaption p{
     letter-spacing: 4px;
     width: auto;
     height: auto;
-    padding-top: 200px;
+    padding-top: 120px;
     padding-bottom: 20px;
 }
 
@@ -499,7 +500,6 @@ figure.member:hover figcaption p{
     font-size: 30px;
     text-align: center;
     font-weight: 300;
-    margin-top: 50px;
 }
 
 #privacy p,
@@ -618,7 +618,7 @@ textarea {
 
 #sitenotice h4{
     font-size: 18px;
-    margin-top: 100px;
+    margin-top: 20px;
     text-align: justify;
     margin-left: 50px;
     font-weight: 300;
@@ -666,28 +666,14 @@ textarea {
         padding: 8px !important;
     }
 
-/*    .footer div.footer-left,
-    .footer div.footer-center,
-    .footer div.footer-right{
-        width: 100%;
-        margin: auto;
-        padding-top: 10px;
-    }
-    */
-
     div#map{
         width: auto;
         height: 250px;
     }
-/*
-    div.footer{
-        display: block;
-        padding: 25px;
-    } */
 
     i.fa.fa-map-marker,
     i.fa.fa-phone,
-    i.fa.fa-envelope{
+    i.fa.fa-envelope {
         font-size: 15px;
         width: 30px;
         height: 30px;
@@ -695,34 +681,17 @@ textarea {
         margin: 7px;
     }
 
-    .footer-center div p{
-        font-size: 82%;
-    }
-
     .footer-right div a{
         font-size: 50%;
         letter-spacing: 1.5px;
-        padding: 1px !important;
-        margin-left: 2px;
-        padding-right: 10px !important;
     }
-/*
-    .footer-right div{
-        display: flex;
-        margin-bottom: 10px !important;
-    }
-*/
+
     div.icons{
         display: flex;
     }
 
-    div.icons p.name{
-        font-size: 39% !important;
-     /*   width: auto !important;
-        margin-left: 4px;
-        margin-bottom: 0px !important;
-        line-height: 26px;
-        margin-right: 100px !important; */
+    div.icons p.name {
+        font-size: 50% !important;
     }
 
     i.fa.fa-facebook,
@@ -733,19 +702,6 @@ textarea {
         height: 26px !important;
         line-height: 24px !important;
         padding-left: 2px !important;
-    }
-}
-
-/*  hier auf die Breite 320px angepasst (Safari, Firefox) zB. iPhone 5, 5s bzw Devices mit 4 Zoll*/
-@media screen and (max-width: 320px) {
-
-    .footer-right div a{
-        font-size: 44%;
-        padding-right: 6px !important;
-    }
-
-    div.icons p.name{
-        margin-right: 58px !important;
     }
 }
 
@@ -787,30 +743,6 @@ textarea {
     #map{
         width:100%;
     }
-/*
-    div.footer{
-        display: block;
-        padding: 25px;
-    }
-
-    .footer div.footer-left,
-    .footer div.footer-center,
-    .footer div.footer-right{
-        width: 100%;
-        margin: auto;
-        padding-top: 8px;
-    }
-
-    div.footer-center{
-        display: flex;
-        font-size: 80%;
-        padding-left: 23px;
-        margin-bottom: 16px !important;
-    }
-*/
-    .footer-center div p{
-        font-size: 90%;
-    }
 
     i.fa.fa-map-marker,
     i.fa.fa-phone,
@@ -823,24 +755,14 @@ textarea {
     }
 
     .footer-right div a{
-        font-size: 80%;
         letter-spacing: 3px;
         padding: 0px !important;
         margin-left: 42px;
         padding-right: 12px !important;
     }
-/*
-    .footer-right div{
-        display: flex;
-        margin-bottom: 20px !important;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-*/
+
     div.icons p.name{
-        font-size: 50% !important;
         width: auto !important;
-        margin-left: 402px;
         line-height: 38px;
     }
 
@@ -857,17 +779,7 @@ textarea {
 
 /* hier auf die Breite 1024px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
 @media screen and (min-width: 769px) and (max-width: 1024px){
-/*
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
-    }
 
-    .navbar .navbar-collapse {
-        text-align: center;
-    }
-
-*/
     .navbar-nav li {
         margin: 0;
     }
@@ -875,15 +787,9 @@ textarea {
     #logoBig {
         padding-top: 10px;
     }
-
-/*
-    .navbar-nav li {
-        margin-top: 5px;
-    }
-*/
 }
 
-@media (min-width: 735px) and (max-width:1200px)  {
+@media (min-width: 735px) and (max-width:1400px)  {
 
     #search-input{
         width:85%;
@@ -894,15 +800,23 @@ textarea {
         font-size: 86%;
         padding: 40px;
     }
-/*
-    .footer .footer-left,
-    .footer .footer-center,
-    .footer .footer-right{
-        display: block;
-        margin: auto;
-        width: 40%;
+
+    .footer-right div a {
+        width: 100%;
+        clear: both;
     }
-*/
+
+    .footer .footer-right div.icons {
+        display: inline;
+        padding-left: 0;
+    }
+
+    .footer .footer-right .icons a{
+        display: inline;
+    }
+
+
+
     #map{
         width: 90%;
         height: 240px;
@@ -914,18 +828,13 @@ textarea {
         height: 38px;
         line-height: 33px;
     }
-/*
-    .footer .footer-right div{
-        margin-bottom: 10px;
-    }
-*/
+
     .footer .footer-right div a{
         padding: 3px;
     }
 
     .footer .footer-right .icons .name{
         margin-right: 15px;
-        font-size: 7px;
     }
 
     .footer .footer-right .icons i {
