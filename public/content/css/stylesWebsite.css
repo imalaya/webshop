@@ -79,12 +79,16 @@
 
 .navbar-nav {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .navbar-nav li{
     position: static;
-    margin: 0px;!important;
+    margin: 0 12px;
+}
+
+.navbar-nav li a{
+    padding: 10px 0;
 }
 
 .navbar-nav > li:hover > .dropdown-menu{
@@ -710,7 +714,6 @@ textarea {
 
     #bootstrapOverride li a {
         padding-left: 10px;
-        padding-right: 10px;
     }
 
     ul.dropdown-menu div img {
@@ -736,10 +739,6 @@ textarea {
         font-size: 16px;
     }
 
-    .navbar-nav li {
-        margin: 2px;
-    }
-
     #map{
         width:100%;
     }
@@ -756,9 +755,6 @@ textarea {
 
     .footer-right div a{
         letter-spacing: 3px;
-        padding: 0px !important;
-        margin-left: 42px;
-        padding-right: 12px !important;
     }
 
     div.icons p.name{
@@ -777,11 +773,17 @@ textarea {
     }
 }
 
-/* hier auf die Breite 1024px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
-@media screen and (min-width: 769px) and (max-width: 1024px){
+/* hier auf die Breite 1400px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
+@media screen and (min-width: 921px) and (max-width: 1400px){
 
-    .navbar-nav li {
-        margin: 0;
+    .navbar-collapse .navbar-nav{
+        margin: 0 50px;
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    .navbar-collapse .navbar-nav>li{
+        margin: 0 10px;
     }
 
     #logoBig {
@@ -789,12 +791,21 @@ textarea {
     }
 }
 
-@media (min-width: 735px) and (max-width:1400px)  {
+@media (min-width: 735px) and (max-width: 900px)  {
+
+    .navbar-collapse .navbar-nav {
+        margin: 5px 6px;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .navbar-nav>li {
+        margin: 0 0;
+    }
 
     #search-input{
         width:85%;
     }
-
 
     .footer{
         font-size: 86%;
@@ -814,8 +825,6 @@ textarea {
     .footer .footer-right .icons a{
         display: inline;
     }
-
-
 
     #map{
         width: 90%;
@@ -866,5 +875,11 @@ textarea {
         height: 34px;
         line-height: 31px;
         margin: 4px;
+    }
+}
+
+@media(min-width: 1440px) {
+    .navbar-collapse .navbar-nav li {
+        margin: 0 40px;
     }
 }
