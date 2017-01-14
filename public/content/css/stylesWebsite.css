@@ -31,6 +31,7 @@
 
 .navbar .navbar-collapse{
     width: 100%;
+    padding-top: 20px;
 }
 
 .navbar-default .navbar-toggle {
@@ -395,7 +396,7 @@ figure.member:hover figcaption p{
 /* Footer Google Maps */
 
 #map{
-    width: 350px;
+    width: 100%;
     height: 350px;
     border-style: solid;
     border-color: black;
@@ -454,7 +455,6 @@ figure.member:hover figcaption p{
 
 .footer .footer-right div.icons {
     margin-top: 25px;
-    display: inline-flex;
 }
 
 .footer .footer-right .icons .name{
@@ -709,7 +709,7 @@ textarea {
     }
 }
 
-/* hier auf die Breite 768px angepasst (Safari, Firefox) zB iPad mini 4 bzw. Devices mit 7,9 Zoll */
+/* hier auf die Breite 920px angepasst (Safari, Firefox) zB iPad mini 4 bzw. Devices mit 7,9 Zoll */
 @media (min-width: 376px) and (max-width: 920px){
 
     #bootstrapOverride li a {
@@ -753,6 +753,20 @@ textarea {
         padding-left: 2.5px;
     }
 
+    .footer-center {
+        font-size: 12px;
+    }
+
+
+    .footer-right {
+        font-size: 9px;
+        padding-left: 20px;
+    }
+
+    .footer-right div {
+        padding-left: 0;
+    }
+
     .footer-right div a{
         letter-spacing: 3px;
     }
@@ -774,24 +788,28 @@ textarea {
 }
 
 /* hier auf die Breite 1400px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
-@media screen and (min-width: 921px) and (max-width: 1400px){
+@media screen and (min-width: 1020px) and (max-width: 1400px){
 
     .navbar-collapse .navbar-nav{
-        margin: 0 50px;
+        margin: 0 0 0 50px;
         font-size: 20px;
         white-space: nowrap;
     }
 
     .navbar-collapse .navbar-nav>li{
-        margin: 0 10px;
+        margin: 0 15px;
     }
 
     #logoBig {
         padding-top: 10px;
     }
+
+    .footer-center div {
+        display: inline-block;
+    }
 }
 
-@media (min-width: 735px) and (max-width: 900px)  {
+@media (min-width: 850px) and (max-width: 900px)  {
 
     .navbar-collapse .navbar-nav {
         margin: 5px 6px;
@@ -800,7 +818,7 @@ textarea {
     }
 
     .navbar-nav>li {
-        margin: 0 0;
+        margin: 0 8px;
     }
 
     #search-input{
@@ -854,11 +872,15 @@ textarea {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
     #bootstrapOverride li a {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .navbar-nav>li {
+        margin: 0 0px;
     }
 
     #search-input{
