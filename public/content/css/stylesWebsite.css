@@ -2,6 +2,14 @@
     cursor: pointer;
 }
 
+.content-section {
+    padding: 5%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
 #bootstrapOverride {
     /*background-image: url(https://daks2k3a4ib2z.cloudfront.net/57289665989457a16b40023a/57289665989457a16b400261_noise.png);*/
     background-color: white;
@@ -9,7 +17,7 @@
     border-bottom: 2px dashed black;
     border-radius: 0;
     font-family: 'Lato', sans-serif;
-    font-size: 110%;
+    font-size: 100%;
 }
 
 #bootstrapOverride li a:hover {
@@ -18,18 +26,12 @@
 
 #bootstrapOverride li a {
     color: black;
-    padding-left: 32px;
-    padding-right: 32px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
 .navbar .navbar-collapse{
     width: 100%;
-}
-
-.container-fluid{
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: 20px;
 }
 
 .navbar-default .navbar-toggle {
@@ -47,6 +49,12 @@
 
 .navbar-collapse.in {
     overflow-y: hidden;
+    display: inline-block;
+}
+
+.navbar-brand {
+    height: auto;
+    padding: 0 0 0 5px;
 }
 
 #logoBig {
@@ -56,23 +64,33 @@
     width: 40%;
     max-width: 100%;
     height:auto;
+    cursor: pointer;
 }
 
-#menuIconsXL {
+.menuIconsXL {
     position: relative;
     bottom: 2px;
 }
 
 #menuIconsXS {
     position: relative;
-    bottom: -2px;
+    top: 4px;
 }
 
 /* dropdown */
 
+.navbar-nav {
+    margin: 0;
+    font-size: 18px;
+}
+
 .navbar-nav li{
     position: static;
-    margin: 0px;!important;
+    margin: 0 12px;
+}
+
+.navbar-nav li a{
+    padding: 10px 0;
 }
 
 .navbar-nav > li:hover > .dropdown-menu{
@@ -91,22 +109,18 @@
     height: 50px;
 }
 
-#dropdown-img{
+.dropdown-img{
     width: 155px;
     height:195px;
 }
 
-#dd-list-item-container{
+.dd-list-item-container{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-#dd-list-item-container li{
-    padding-top: 20px;
-}
-
-#dd-list-item-container li a:hover{
+.dd-list-item-container li a:hover{
     text-decoration: none;
 }
 
@@ -257,6 +271,7 @@ button.btn.btn-default:hover{
 
 .container {
     padding: 2px 16px;
+    width: 100%;
 }
 
 .container img {
@@ -268,9 +283,9 @@ button.btn.btn-default:hover{
 /* about page -> list of employees*/
 
 #members{
-    display: inline-block;
-    margin-left:50px;
-    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 figure.member {
@@ -359,37 +374,38 @@ figure.member:hover figcaption p{
 
 /* Footer */
 .footer{
-    width: auto;
-    height: auto;
     background-color: white;
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 3px;
     color: black;
-    padding: 50px;
     border-top-style: solid;
     border-color: black;
     border-width:1.5px;
-    display: flex;
 }
 
-.footer div.footer-left,
-.footer div.footer-center,
-.footer div.footer-right{
-    width: 33%;
+.footer-center,
+.footer-left,
+.footer-right{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer-center div{
+    white-space: nowrap;
 }
 
 /* Footer Google Maps */
 
 #map{
-    width: 350px;
+    width: 100%;
     height: 350px;
     border-style: solid;
     border-color: black;
     border-width: 1.5px;
 }
 
-/* Footer center*/
+/* Footer center */
 
 .footer .footer-center i{
     background-color: white;
@@ -431,10 +447,6 @@ figure.member:hover figcaption p{
 
 /* Footer right*/
 
-.footer .footer-right div{
-    margin-bottom: 25px;
-}
-
 .footer .footer-right div a{
     display: flex;
     flex-direction: row;
@@ -444,19 +456,16 @@ figure.member:hover figcaption p{
 }
 
 .footer .footer-right div.icons {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .footer .footer-right .icons .name{
-    display: inline-flex;
-    margin-right: 45px;
-    font-size: 10px;
+    margin-top: 10px;
 }
 
 .footer .footer-right .icons a{
     display: inline-block;
-    padding: 0;
-    margin: 1px;
+    margin: 0 0 0 5px;
 }
 
 .footer .footer-right .icons i {
@@ -485,7 +494,7 @@ figure.member:hover figcaption p{
     letter-spacing: 4px;
     width: auto;
     height: auto;
-    padding-top: 200px;
+    padding-top: 180px;
     padding-bottom: 20px;
 }
 
@@ -497,7 +506,6 @@ figure.member:hover figcaption p{
     font-size: 30px;
     text-align: center;
     font-weight: 300;
-    margin-top: 50px;
 }
 
 #privacy p,
@@ -616,7 +624,7 @@ textarea {
 
 #sitenotice h4{
     font-size: 18px;
-    margin-top: 100px;
+    margin-top: 20px;
     text-align: justify;
     margin-left: 50px;
     font-weight: 300;
@@ -638,13 +646,16 @@ textarea {
 /* hier auf die Breite 375px angepasst (Safari, Firefox) zB iPhone 6, 6s bzw Devices mit 4,7 Zoll */
 @media screen and (max-width: 375px) {
 
-    #dropdown-img{
-        display: none;
+    #contact,
+    #privacy,
+    #sitenotice,
+    #about,
+    #all-articles {
+        padding-top: 100px;
     }
 
-    a.navbar-brand {
-        padding: 0 !important;
-        margin: 0 !important;
+    .dropdown-img{
+        display: none;
     }
 
     #bootstrapOverride  .divider {
@@ -660,10 +671,6 @@ textarea {
         clear: right;
     }
 
-    .navbar-nav li {
-        font-size: 80%;
-    }
-
     img.visible-xs{
         margin: -4px auto !important;
         padding-left: 5px;
@@ -673,27 +680,14 @@ textarea {
         padding: 8px !important;
     }
 
-    .footer div.footer-left,
-    .footer div.footer-center,
-    .footer div.footer-right{
-        width: 100%;
-        margin: auto;
-        padding-top: 10px;
-    }
-
     div#map{
         width: auto;
         height: 250px;
     }
 
-    div.footer{
-        display: block;
-        padding: 25px;
-    }
-
     i.fa.fa-map-marker,
     i.fa.fa-phone,
-    i.fa.fa-envelope{
+    i.fa.fa-envelope {
         font-size: 15px;
         width: 30px;
         height: 30px;
@@ -701,34 +695,17 @@ textarea {
         margin: 7px;
     }
 
-    .footer-center div p{
-        font-size: 82%;
-    }
-
     .footer-right div a{
         font-size: 50%;
         letter-spacing: 1.5px;
-        padding: 1px !important;
-        margin-left: 2px;
-        padding-right: 10px !important;
-    }
-
-    .footer-right div{
-        display: flex;
-        margin-bottom: 10px !important;
     }
 
     div.icons{
         display: flex;
     }
 
-    div.icons p.name{
-        font-size: 39% !important;
-        width: auto !important;
-        margin-left: 4px;
-        margin-bottom: 0px !important;
-        line-height: 26px;
-        margin-right: 100px !important;
+    div.icons p.name {
+        font-size: 50% !important;
     }
 
     i.fa.fa-facebook,
@@ -742,39 +719,16 @@ textarea {
     }
 }
 
-/*  hier auf die Breite 320px angepasst (Safari, Firefox) zB. iPhone 5, 5s bzw Devices mit 4 Zoll*/
-@media screen and (max-width: 320px) {
-
-    .footer-right div a{
-        font-size: 44%;
-        padding-right: 6px !important;
-    }
-
-    div.icons p.name{
-        margin-right: 58px !important;
-    }
-}
-
-/* hier auf die Breite 768px angepasst (Safari, Firefox) zB iPad mini 4 bzw. Devices mit 7,9 Zoll */
-@media (min-width: 376px) and (max-width: 768px){
+/* hier auf die Breite 920px angepasst (Safari, Firefox) zB iPad mini 4 bzw. Devices mit 7,9 Zoll */
+@media (min-width: 376px) and (max-width: 920px){
 
     #bootstrapOverride li a {
         padding-left: 10px;
-        padding-right: 10px;
-        font-size: 74%;
-    }
-    .navbar-nav li {
-        margin-top: 0;
-        margin-bottom: -30px;
     }
 
     ul.dropdown-menu div img {
         width: 126px !important;
         height: 150px !important;
-    }
-
-    ul.dropdown-menu div#dd-list-item-container li {
-        padding-top: 31px !important;
     }
 
     #logoBig{
@@ -791,32 +745,12 @@ textarea {
         width:80%;
     }
 
+    .navbar-nav {
+        font-size: 16px;
+    }
+
     #map{
         width:100%;
-    }
-
-    div.footer{
-        display: block;
-        padding: 25px;
-    }
-
-    .footer div.footer-left,
-    .footer div.footer-center,
-    .footer div.footer-right{
-        width: 100%;
-        margin: auto;
-        padding-top: 8px;
-    }
-
-    div.footer-center{
-        display: flex;
-        font-size: 80%;
-        padding-left: 23px;
-        margin-bottom: 16px !important;
-    }
-
-    .footer-center div p{
-        font-size: 90%;
     }
 
     i.fa.fa-map-marker,
@@ -829,25 +763,26 @@ textarea {
         padding-left: 2.5px;
     }
 
-    .footer-right div a{
-        font-size: 80%;
-        letter-spacing: 3px;
-        padding: 0px !important;
-        margin-left: 42px;
-        padding-right: 12px !important;
+    .footer-center {
+        font-size: 12px;
     }
 
-    .footer-right div{
-        display: flex;
-        margin-bottom: 20px !important;
-        margin-left: 15px;
-        margin-right: 15px;
+
+    .footer-right {
+        font-size: 9px;
+        padding-left: 20px;
+    }
+
+    .footer-right div {
+        padding-left: 0;
+    }
+
+    .footer-right div a{
+        letter-spacing: 3px;
     }
 
     div.icons p.name{
-        font-size: 50% !important;
         width: auto !important;
-        margin-left: 402px;
         line-height: 38px;
     }
 
@@ -862,62 +797,61 @@ textarea {
     }
 }
 
-/* hier auf die Breite 1024px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
-@media screen and (min-width: 769px) and (max-width: 1024px){
+/* hier auf die Breite 1400px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
+@media screen and (min-width: 1020px) and (max-width: 1400px){
 
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
+    .navbar-collapse .navbar-nav{
+        margin: 0 0 0 50px;
+        font-size: 18px;
+        white-space: nowrap;
     }
 
-    .navbar .navbar-collapse {
-        text-align: center;
+    .navbar-collapse .navbar-nav>li{
+        margin: 0 15px;
     }
 
     #logoBig {
         padding-top: 10px;
     }
 
-    #bootstrapOverride li a {
-        font-size: 90%;
-        padding-left: 20px;
-        padding-right: 20px;
+    .footer-center div {
+        display: inline-block;
     }
-
-    .navbar-nav li {
-        margin-top: 5px;
-        margin-bottom: -30px;
-    }
-
-    ul.dropdown-menu div#dd-list-item-container li {
-        padding-top: 31px !important;
-    }
-
-
-  .navbar-nav li {
-    margin-top: 5px;
-    margin-bottom: -30px;
-  }
 }
 
-@media (min-width: 735px) and (max-width:1200px)  {
+@media (min-width: 850px) and (max-width: 900px)  {
+
+    .navbar-collapse .navbar-nav {
+        margin: 5px 6px;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .navbar-nav>li {
+        margin: 0 8px;
+    }
 
     #search-input{
         width:85%;
     }
-
 
     .footer{
         font-size: 86%;
         padding: 40px;
     }
 
-    .footer .footer-left,
-    .footer .footer-center,
-    .footer .footer-right{
-        display: block;
-        margin: auto;
-        width: 40%;
+    .footer-right div a {
+        width: 100%;
+        clear: both;
+    }
+
+    .footer .footer-right div.icons {
+        display: inline;
+        padding-left: 0;
+    }
+
+    .footer .footer-right .icons a{
+        display: inline;
     }
 
     #map{
@@ -932,17 +866,12 @@ textarea {
         line-height: 33px;
     }
 
-    .footer .footer-right div{
-        margin-bottom: 10px;
-    }
-
     .footer .footer-right div a{
         padding: 3px;
     }
 
     .footer .footer-right .icons .name{
         margin-right: 15px;
-        font-size: 7px;
     }
 
     .footer .footer-right .icons i {
@@ -953,24 +882,23 @@ textarea {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
     #bootstrapOverride li a {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .navbar-nav li {
-        margin-top: 0;
-        margin-bottom: -30px;
-        font-size: 90%;
-    }
 
-    ul.dropdown-menu div#dd-list-item-container li {
-        padding-top: 38px !important;
+    .navbar-nav>li {
+        margin: 0 0px;
     }
 
     #search-input{
         width:80%;
+    }
+
+    .dropdown-toggle {
+        padding: 5px;
     }
 
     .footer .footer-center i{
@@ -982,16 +910,8 @@ textarea {
     }
 }
 
-@media screen and (max-width: 981px) {
-
-    .navbar-nav li {
-        margin-top: 0;
-        margin-bottom: -30px;
-        font-size: 90%;
+@media(min-width: 1440px) {
+    .navbar-collapse .navbar-nav li {
+        margin: 0 40px;
     }
-
-    ul.dropdown-menu div#dd-list-item-container li {
-        padding-top: 38px !important;
-    }
-
 }
