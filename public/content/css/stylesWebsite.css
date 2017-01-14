@@ -81,7 +81,7 @@
 
 .navbar-nav {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .navbar-nav li{
@@ -493,7 +493,7 @@ figure.member:hover figcaption p{
     letter-spacing: 4px;
     width: auto;
     height: auto;
-    padding-top: 120px;
+    padding-top: 180px;
     padding-bottom: 20px;
 }
 
@@ -645,6 +645,14 @@ textarea {
 /* hier auf die Breite 375px angepasst (Safari, Firefox) zB iPhone 6, 6s bzw Devices mit 4,7 Zoll */
 @media screen and (max-width: 375px) {
 
+    #contact,
+    #privacy,
+    #sitenotice,
+    #about,
+    #all-articles {
+        padding-top: 100px;
+    }
+
     .dropdown-img{
         display: none;
     }
@@ -793,7 +801,7 @@ textarea {
 
     .navbar-collapse .navbar-nav{
         margin: 0 0 0 50px;
-        font-size: 20px;
+        font-size: 18px;
         white-space: nowrap;
     }
 
