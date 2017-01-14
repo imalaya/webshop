@@ -25,7 +25,7 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
       $scope.staff.push({
         lastname: $scope.newMember.lastname,
         firstname: $scope.newMember.firstname,
-      });
+      }); 
     };
 
 
