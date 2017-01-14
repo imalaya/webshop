@@ -271,6 +271,7 @@ button.btn.btn-default:hover{
 
 .container {
     padding: 2px 16px;
+    width: 100%;
 }
 
 .container img {
