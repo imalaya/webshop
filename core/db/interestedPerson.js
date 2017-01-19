@@ -1,6 +1,7 @@
 /**
  * Created by Ju on 18.11.2016.
  */
+    /*
 var pg = require('pg');
 //var connectionString = "postgres://postgres:admin@localhost:5432/webshop"; --> Syntax für Clientverbindung
 var dbconfig = {
@@ -68,4 +69,52 @@ function insertNewInterestedPerson(firstName, lastName, username, emailAddress) 
             }
         });
     });
+}
+        */
+var promise = require('bluebird');
+
+var options = {
+    // Initialization Options
+    promiseLib: promise
+};
+
+var pgp = require('pg-promise')(options);
+var connectionString = 'postgres://postgres:admin@localhost:5432/webshop';
+var db = pgp(connectionString);
+
+module.exports = {
+    saveInterestedPerson: saveInterestedPerson,
+    getAllPersons: getAllPersons
+};
+
+function getAllPersons(req, res, next) {
+    db.any('select * from interested_persons')
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    //status: 'success',
+                    data: data
+                    //message: 'Retrieved ALL articles'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+
+function saveInterestedPerson(req, res, next) {
+    req.body.isRegisteredUser = req.body.isRegisteredUser.toString();
+    db.none('insert into interested_persons(name, firstname, username, email, isRegisteredUser\"isRegisteredUser\") values ($1, $2, $3, $4, $5)',
+        [req.body.name, req.body.firstname, req.body.username, req.body.email, req.body.isRegisteredUser])
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Inserted one interested_persons'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
 }

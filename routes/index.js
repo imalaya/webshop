@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var db = require('../core/db/articles');
+var interestedPersonDb = require('../core/db/interestedPerson');
 
 
 router.get('/api/article', db.getAllArticles);
@@ -10,5 +11,7 @@ router.post('/api/article', db.createArticle);
 router.put('/api/article/:id', db.updateArticle);
 router.delete('/api/article/:id', db.removeArticle);
 
+router.get('/api/interestedPersons', interestedPersonDb.getAllPersons);
+router.post('/api/interestedPerson', interestedPersonDb.saveInterestedPerson);
 
 module.exports = router;
