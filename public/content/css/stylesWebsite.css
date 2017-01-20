@@ -30,7 +30,6 @@
 }
 
 .navbar .navbar-collapse{
-    width: 100%;
     padding-top: 20px;
 }
 
@@ -801,7 +800,7 @@ textarea {
 @media screen and (min-width: 1020px) and (max-width: 1400px){
 
     .navbar-collapse .navbar-nav{
-        margin: 0 0 0 50px;
+        margin: 0 0 0 12%;
         font-size: 18px;
         white-space: nowrap;
     }
