@@ -10,6 +10,7 @@
         <p style="color:#cc9900;">{{article.price | currency: '€'}}</p>
         <p ng-if="!article.quantity">Ausverkauft</p>
         <a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
+        <!-- <p ng-if="article.quantity && article.quantity < 5">Nur noch {{article.quantity}} verfügbar</p> -->
       </div>
     </div>
   </a>
