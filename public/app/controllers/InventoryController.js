@@ -16,7 +16,7 @@ $scope.createArticle = function (size) {
     controller: function($scope, $uibModalInstance){
       $scope.addArticle = function(thumb) {
       thumb.upload = Upload.upload({
-        url: '/api/article',
+        url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
         // url: '/api/article',
         data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: thumb},
       });
@@ -74,10 +74,10 @@ $scope.editArticle = function (size, selectedArticle) {
 
 //get test data
   // Wenn man noch keine Datenbank hat noch die Verweisung zur json-Datei anpassen.
-  $http.get('data/inventory.json').success(function(data){
-     $scope.inventory = data;
-  // $http.get('/api/article').success(function(data){
-  //   $scope.inventory = data.data;
+  // $http.get('data/inventory.json').success(function(data){
+    //  $scope.inventory = data;
+  $http.get('/api/article').success(function(data){
+    $scope.inventory = data.data;
   });
 
 }]);

@@ -1,5 +1,9 @@
 <div id="all-articles">
 
+<img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
 <h4><b>{{article.name}}</b></h4>
+<p style="color:#cc9900;">{{article.price | currency: '€'}}</p>
+<p ng-if="!article.quantity">Ausverkauft</p>
+<a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
 
 </div>
