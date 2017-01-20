@@ -16,7 +16,7 @@ $scope.createArticle = function (size) {
     controller: function($scope, $uibModalInstance){
       $scope.addArticle = function(thumb) {
       thumb.upload = Upload.upload({
-        url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+        url: '/api/article',
         // url: '/api/article',
         data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: thumb},
       });

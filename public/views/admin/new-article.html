@@ -32,7 +32,7 @@
       </div>
       <!-- <input type="file" placeholder="Bild" ng-model="newArticle.thumb" /> -->
       <input type="file" ngf-select ng-model="artThumb" name="thumb"
-             accept="image/*" ngf-max-size="2MB" required
+             accept="image/*" ngf-max-size="2MB" 
              ngf-model-invalid="errorFile">
       <img ng-show="addArticleForm.thumb.$valid" ngf-thumbnail="artThumb" class="thumb">
       <!-- <span class="progress" ng-show="artThumb.progress >= 0">
