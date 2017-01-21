@@ -45,6 +45,8 @@
 .navbar-collapse.in {
     overflow-y: hidden;
     display: inline-block;
+    width: 100%;
+    max-height: 300px;
 }
 
 .navbar-brand {
