@@ -29,10 +29,6 @@
     letter-spacing: 2px;
 }
 
-.navbar .navbar-collapse{
-    padding-top: 20px;
-}
-
 .navbar-default .navbar-toggle {
     border-color: transparent;
     background-color: #ffffff;
@@ -746,6 +742,8 @@ textarea {
 
     .navbar-nav {
         font-size: 16px;
+        margin: 0;
+        padding-top: 10px;
     }
 
     #map{
@@ -796,17 +794,54 @@ textarea {
     }
 }
 
-/* hier auf die Breite 1400px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
-@media screen and (min-width: 1020px) and (max-width: 1400px){
+/* hier auf die Breite bis - 1800px angepasst */
+@media screen and (min-width: 1500px) and (max-width: 1800px) {
 
-    .navbar-collapse .navbar-nav{
-        margin: 0 0 0 12%;
+    .navbar-collapse .navbar-nav {
+        margin: 0 0 0 8%;
         font-size: 18px;
         white-space: nowrap;
     }
 
     .navbar-collapse .navbar-nav>li{
-        margin: 0 15px;
+        margin: 0 40px;
+    }
+}
+
+/* hier auf die Breite 1300px - unendlich angepasst */
+@media screen and (min-width: 1300px) {
+    .navbar-collapse .navbar-nav {
+        margin: 0 0 0 8%;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .navbar-collapse .navbar-nav>li {
+        margin: 0 30px;
+    }
+}
+
+/* hier auf die Breite 1050 - 1300px angepasst */
+@media screen and (min-width: 1050px) and (max-width: 1300px) {
+
+    .navbar-collapse .navbar-nav {
+        margin: 0 0 0 3%;
+    }
+
+    .navbar-collapse .navbar-nav>li {
+        margin: 0 20px;
+    }
+}
+
+/* hier auf die Breite 1100px angepasst (safari, Firefox) zB iPad Pro bzw Devices mit 1024px Breite*/
+@media screen and (min-width: 1100px) and (max-width: 1250px){
+
+    .navbar-collapse .navbar-nav{
+        margin: 0;
+    }
+
+    .navbar-collapse .navbar-nav>li{
+        margin: 0 25px;
     }
 
     #logoBig {
@@ -818,12 +853,13 @@ textarea {
     }
 }
 
-@media (min-width: 850px) and (max-width: 900px)  {
+@media (min-width: 700px) and (max-width: 900px)  {
 
     .navbar-collapse .navbar-nav {
-        margin: 5px 6px;
+        margin: 5px 0px;
         font-size: 16px;
         white-space: nowrap;
+        padding-top: 10px;
     }
 
     .navbar-nav>li {
@@ -906,11 +942,5 @@ textarea {
         height: 34px;
         line-height: 31px;
         margin: 4px;
-    }
-}
-
-@media(min-width: 1440px) {
-    .navbar-collapse .navbar-nav li {
-        margin: 0 40px;
     }
 }
