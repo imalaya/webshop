@@ -14,23 +14,24 @@ $scope.createArticle = function (size) {
     ariaDescribedBy: 'modal-body',
     templateUrl: 'views/admin/new-article.html',
     controller: function($scope, $uibModalInstance){
-      $scope.addArticle = function(file) {
-      file.upload = Upload.upload({
+      $scope.addArticle = function(thumb) {
+      thumb.upload = Upload.upload({
         url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-        data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: file},
+        // url: '/api/article',
+        data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: thumb},
       });
 
-      file.upload.then(function (response) {
+      thumb.upload.then(function (response) {
         $timeout(function () {
-          file.result = response.data;
-          console.log(file.result);
+          thumb.result = response.data;
+          console.log(thumb.result);
         });
       }, function (response) {
         if (response.status > 0)
           $scope.errorMsg = response.status + ': ' + response.data;
       }, function (evt) {
         // Math.min is to fix IE which reports 200% sometimes
-        file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+        thumb.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
       });
       $uibModalInstance.close();
       }
@@ -42,39 +43,6 @@ $scope.createArticle = function (size) {
     size: size,
   });
 };
-
-  // $scope.addArticle = function(){
-  //   $scope.inventory.push({
-  //     name: $scope.newArticle.name,
-  //     category: $scope.newArticle.category,
-  //     price: parseInt($scope.newArticle.price),
-  //     description: $scope.newArticle.description,
-  //     quantity: $scope.newArticle.quantity,
-  //     available: true,
-  //     thumb: $scope.newArticle.thumb
-  //   });
-  // };
-
-//Text + Bild hochladen
-// $scope.addArticle = function(file) {
-// file.upload = Upload.upload({
-//   url: 'https://jules-api.de',
-//   data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: file},
-// });
-//
-// file.upload.then(function (response) {
-//   $timeout(function () {
-//     file.result = response.data;
-//     console.log(file.result);
-//   });
-// }, function (response) {
-//   if (response.status > 0)
-//     $scope.errorMsg = response.status + ': ' + response.data;
-// }, function (evt) {
-//   // Math.min is to fix IE which reports 200% sometimes
-//   file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-// });
-// }
 
 // Artikel bearbeiten Modal
 $scope.editArticle = function (size, selectedArticle) {
@@ -106,10 +74,10 @@ $scope.editArticle = function (size, selectedArticle) {
 
 //get test data
   // Wenn man noch keine Datenbank hat noch die Verweisung zur json-Datei anpassen.
-  $http.get('data/inventory.json').success(function(data){
-     $scope.inventory = data;
-  // $http.get('/api/article').success(function(data){
-  //   $scope.inventory = data.data;
+  // $http.get('data/inventory.json').success(function(data){
+    //  $scope.inventory = data;
+  $http.get('/api/article').success(function(data){
+    $scope.inventory = data.data;
   });
 
 }]);

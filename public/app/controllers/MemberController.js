@@ -21,12 +21,27 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
     });
   };
 
-    $scope.addMember = function(){
-      $scope.staff.push({
+    // $scope.addMember = function(){
+    //   $scope.staff.push({
+    //     lastname: $scope.newMember.lastname,
+    //     firstname: $scope.newMember.firstname
+    //   });
+    // };
+
+    this.sendMail = function () {
+
+      var data = ({
+
         lastname: $scope.newMember.lastname,
         firstname: $scope.newMember.firstname,
+        email: $scope.newMember.email
       });
-    };
+
+      $http.post('/addMemberForm', data).success(function(data, status, headers, config)
+      {
+        //app.route('/addMemberForm').post(core.sendMail); Muss in den Route Controller!
+      })
+    }
 
 
     $http.get('data/staff.json').success(function(data){

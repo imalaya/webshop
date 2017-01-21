@@ -24,7 +24,7 @@ module.exports = {
 
 
 function getAllArticles(req, res, next) {
-    db.any('select * from articles')
+    db.any('select * from public.articles')
         .then(function (data) {
             res.status(200)
                 .json({
