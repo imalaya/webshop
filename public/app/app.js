@@ -1,8 +1,27 @@
 var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch']);
 
 
-webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/home');
+webShop.config(['$stateProvider', '$urlRouterProvider'/*,'$locationProvider'*/, function($stateProvider, $urlRouterProvider/*, $locationProvider*/){
+
+            $urlRouterProvider
+                .otherwise('/home' );
+
+/*
+        webShop.run(['$rootScope', '$location', '$cookies', '$http', function($rootScope, $location, $cookies, $http) {
+            // keep user logged in after page refresh
+            $rootScope.globals = $cookies.getObject('globals') || {};
+            if ($rootScope.globals.currentUser) {
+                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+            }
+
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                // redirect to login page if not logged in and trying to access a restricted page
+                var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
+                var loggedIn = $rootScope.globals.currentUser;
+                if (restrictedPage && !loggedIn) {
+                    $location.path('/login');
+                }
+            }); */
 
   $stateProvider
     .state('public', {
@@ -49,7 +68,20 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           templateUrl:'views/customer/footer/about.html'
     });
 
-  $stateProvider
+    $stateProvider
+      .state('restricted', {
+          abstract: true,
+          template: "<ui-view/>"
+      })
+
+      .state('restricted.login', {
+          url: '/login',
+          templateUrl: 'views/admin/login/login.html',
+          controller: 'LoginController',
+          controllerAs: 'auth'
+      })
+
+    $stateProvider
     .state('private', {
       abstract: true,
       template: "<ui-view/>"
@@ -57,11 +89,6 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
 
     .state('private.admin', {
         templateUrl:'views/admin/home-admin.html'
-      })
-
-      .state('private.admin.login', {
-          url: '/login',
-          templateUrl:'views/admin/login.html'
       })
 
      .state('private.admin.dashboard', {
