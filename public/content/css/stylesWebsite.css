@@ -151,18 +151,37 @@ div.form-group{
     border-right: none;
 }
 
-button.btn.btn-default {
-    margin-left: 20px;
-    width: 100px;
+/* startpage */
+
+div.startpage-content.container-fluid{
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-left: 50px;
+    border-top: 1.5px solid;
+    text-align: center;
+}
+
+div.startpage-content a.btn.btn-default {
+    width: 15%;
     border-radius: 0px;
     border-color: black;
+    color: white;
+    background-color: black;
 }
-a.btn.btn-default:hover,
-button.btn.btn-default:hover{
+div.startpage-content a.btn.btn-default:hover{
     border-color: #cc9900;
     color: #cc9900;
-    background-color: #ffffff;
+    background-color: white;
 }
+
+div.content-img div{
+    padding: 0px;
+}
+
+div.content-img div img{
+    width: 60%;
+}
+
 /*Lichterkette*/
 
 #wire{
