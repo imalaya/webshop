@@ -1,10 +1,19 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch', 'auth0', 'angular-storage', 'angular-jwt']);
 
 
-webShop.config(['$stateProvider', '$urlRouterProvider'/*,'$locationProvider'*/, function($stateProvider, $urlRouterProvider/*, $locationProvider*/){
+webShop.config(function($stateProvider, $urlRouterProvider, authProvider, $provide, $httpProvider, jwtInterceptorProvider) {
 
-            $urlRouterProvider
-                .otherwise('/home' );
+            authProvider.init({
+                domain: 'angularjs-webshop.eu.auth0.com',
+                clientID: 'isUbGeB1HMvLalvQ9U6G69vBQwnQaFpZ'
+            });
+
+
+            $urlRouterProvider.otherwise('/home' );
+
+            jwtInterceptorProvider.tokenGetter = function(store) {
+                return store.get('id_token');
+            }
 
 /*
         webShop.run(['$rootScope', '$location', '$cookies', '$http', function($rootScope, $location, $cookies, $http) {
@@ -74,12 +83,17 @@ webShop.config(['$stateProvider', '$urlRouterProvider'/*,'$locationProvider'*/, 
           template: "<ui-view/>"
       })
 
-      .state('restricted.login', {
+    $stateProvider
+      .state('login', {
           url: '/login',
           templateUrl: 'views/admin/login/login.html',
-          controller: 'LoginController',
-          controllerAs: 'auth'
+          controllerAs: 'LoginController as user'
       })
+    $stateProvider
+        .state('private', {
+            url: '/admin',
+            templateUrl: 'views/admin/home-admin.html'
+        });
 
     $stateProvider
     .state('private', {
@@ -131,4 +145,6 @@ webShop.config(['$stateProvider', '$urlRouterProvider'/*,'$locationProvider'*/, 
           controller: 'MemberController',
           parent: 'private.admin.member'
       });
-}]);
+
+    $httpProvider.interceptors.push('jwtInterceptor');
+});
