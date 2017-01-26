@@ -1,3 +1,7 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
 .nav, .pagination, .carousel, .panel-title a {
     cursor: pointer;
 }
@@ -156,7 +160,7 @@ button.btn.btn-default {
     border-radius: 0px;
     border-color: black;
 }
-
+a.btn.btn-default:hover,
 button.btn.btn-default:hover{
     border-color: #cc9900;
     color: #cc9900;
@@ -229,6 +233,31 @@ button.btn.btn-default:hover{
         background: rgba(255,65,185,0.5);
         box-shadow: 0px 2px 20px 4px rgba(255,65,185,0.3);
     }
+}
+
+/* heading articles*/
+
+#heading-articles{
+    border: 2px solid;
+    margin-top: 14% !important;
+    margin: 4%;
+    margin-bottom: 4%;
+    height: 160px;
+}
+
+div #heading-articles h1{
+    text-align: center;
+    line-height: 400%;
+}
+
+/* select box articles user*/
+
+#select-box{
+
+}
+
+div #select-box select{
+    width: auto;
 }
 
 /* show all articles*/
@@ -488,8 +517,7 @@ figure.member:hover figcaption p{
 #contact,
 #privacy,
 #sitenotice,
-#about,
-#all-articles {
+#about{
     color: black;
     letter-spacing: 4px;
     width: auto;
