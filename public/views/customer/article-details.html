@@ -1,9 +1,58 @@
-<div id="all-articles">
+<div class="all-articles container-fluid">
 
-<img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
+    <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            
+            <div class="col-md-8 col-sm-8 col-xs-8 main-img">
+                <img ng-src="{{article.thumb}}" alt="Artikel">
+            </div>
+            
+            <div class="col-md-4 col-sm-4 col-xs-4 thumbnails">
+                <a ui-sref=""><img src="content/img/notebook1.jpg"></a>
+                <a ui-sref=""><img src="content/img/notebook1.jpg"></a>
+            </div>
+            
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 product-info">
+            <div class="container-fluid" id="info">
+                <div class="col-md-6 col-sm-8 col-xs-6">
+                    <h4 style="font-size: 160%;"><b>{{article.name}}</b></h4>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-6">
+                    <h4 ng-if="!article.quantity" style="font-size: 110%; text-align: end;" class="sold-out">Ausverkauft</h4>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <p>{{article.price | currency: '€'}}</p>
+            </div>
+
+
+            <div class="add-to-card container-fluid">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <input placeholder="1">
+                </div>
+
+                <div class="col-md-8 col-sm-6 col-xs-8">
+                    <button>Zum Warenkorb</button>
+                </div>
+            </div>
+
+            <div>
+                <p style="border: none;">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+<!--<img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
 <h4><b>{{article.name}}</b></h4>
 <p style="color:#cc9900;">{{article.price | currency: '€'}}</p>
 <p ng-if="!article.quantity">Ausverkauft</p>
-<a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
+<a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>-->
 
 </div>
