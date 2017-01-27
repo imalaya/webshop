@@ -21,7 +21,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="article in inventory | orderBy: order | filter: search" ng-show="article.quantity">
+      <tr ng-repeat="article in inventory | orderBy: order | filter: search" >
         <td><img class="article-imgs" ng-src="{{article.thumb}}" ng-show="article.thumb"/>{{article.name}}</td>
         <td>{{article.price | currency: '€'}}</td>
         <td class="hidden-xs"><span class="category">{{article.category}}</span></td>

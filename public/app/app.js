@@ -88,6 +88,7 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         })
 
         .state('private.admin.inventory.edit', {
+            url:'/artikel/{article.id}',
             templateUrl:'views/admin/edit-article.html',
             controller: 'InventoryController',
             parent: 'private.admin.inventory'

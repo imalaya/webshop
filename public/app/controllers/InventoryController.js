@@ -1,8 +1,12 @@
-webShop.controller('InventoryController', ['$scope', '$http', '$uibModal', '$log', 'Upload', '$timeout', function($scope, $http, $uibModal, $log, Upload, $timeout){
+webShop.controller('InventoryController', ['$scope', '$http', '$stateParams', '$uibModal', '$log', 'Upload', '$timeout', function($scope, $http, $stateParams, $uibModal, $log, Upload, $timeout){
 
   $scope.removeArticle = function(article) {
-    var removedArticle = $scope.inventory.indexOf(article);
-    $scope.inventory.splice(removedArticle, 1);
+    var deleteID = article.id;
+    $http.delete('/api/article/' + deleteID).success(function (data) {
+      $scope.inventory = data.data;
+    });
+    // var removedArticle = $scope.inventory.indexOf(article);
+    // $scope.inventory.splice(removedArticle, 1);
   };
 
 //Artikel hinzufuegen Modal
@@ -16,8 +20,8 @@ $scope.createArticle = function (size) {
     controller: function($scope, $uibModalInstance){
       $scope.addArticle = function(thumb) {
       thumb.upload = Upload.upload({
-        url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-        // url: '/api/article',
+        // url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+        url: '/api/article',
         data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: thumb},
       });
 
@@ -55,6 +59,13 @@ $scope.editArticle = function (size, selectedArticle) {
     controller: function($scope, $uibModalInstance, article){
       $scope.article = article;
 
+      $scope.update = function () {
+      var editID = $scope.article.id;
+      $http.put('/api/article/' + editID).success(function (data) {
+        $scope.inventory = data.data;
+      });
+      };
+
       $scope.ok = function () {
         $uibModalInstance.close($scope.article);
       };
@@ -75,7 +86,7 @@ $scope.editArticle = function (size, selectedArticle) {
 //get test data
   // Wenn man noch keine Datenbank hat noch die Verweisung zur json-Datei anpassen.
   // $http.get('data/inventory.json').success(function(data){
-    //  $scope.inventory = data;
+  //    $scope.inventory = data;
   $http.get('/api/article').success(function(data){
     $scope.inventory = data.data;
   });

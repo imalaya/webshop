@@ -8,7 +8,7 @@ exports.sendMail = function(req, res) {
   transporter.sendMail({
     from:'gutemineshop@gmail.com',
     to:'data.newMember.email',
-    subject:'Dein Invite Code' + data.newMember.firstname,
+    subject:'Dein Invite Code, ' + data.newMember.firstname,
     text: 'Test'
   });
 
