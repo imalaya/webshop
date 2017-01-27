@@ -153,7 +153,7 @@ webShop.config(function($stateProvider, $urlRouterProvider, authProvider, $provi
                     }
                 }
             } else {
-                $location.path('/home');
+                $location.path('/login');
             }
         })
     });
