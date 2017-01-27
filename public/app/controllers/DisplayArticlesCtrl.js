@@ -5,3 +5,8 @@ webShop.controller('DisplayArticlesCtrl', ['$scope', '$http', function($scope, $
   });
 
 }]);
+
+
+//$http.get('data/inventory.json').success(function(data){
+//    $scope.inventory = data;
+//});
