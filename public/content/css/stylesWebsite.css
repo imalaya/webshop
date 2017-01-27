@@ -268,10 +268,6 @@ div #heading-articles h1{
 
 /* select box articles user*/
 
-#select-box{
-
-}
-
 div #select-box select{
     width: 50%;
     height: 40px;
@@ -286,8 +282,8 @@ select.form-control:focus{
 
 /* show all articles*/
 
-.all-articles{
-    margin-top: 200px;
+#all-articles{
+    margin-top: 60px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
@@ -341,6 +337,13 @@ select.form-control:focus{
 }
 
 /* article details */
+
+.one-article{
+    margin-top: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
 
 .main-img{
     display: flex;
