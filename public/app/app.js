@@ -3,34 +3,16 @@ var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize',
 
 webShop.config(function($stateProvider, $urlRouterProvider, authProvider, $provide, $httpProvider, jwtInterceptorProvider) {
 
-            authProvider.init({
-                domain: 'angularjs-webshop.eu.auth0.com',
-                clientID: 'isUbGeB1HMvLalvQ9U6G69vBQwnQaFpZ'
-            });
+    authProvider.init({
+        domain: 'angularjs-webshop.eu.auth0.com',
+        clientID: 'isUbGeB1HMvLalvQ9U6G69vBQwnQaFpZ'
+    });
 
+    jwtInterceptorProvider.tokenGetter = function(store) {
+        return store.get('id_token');
+    }
 
-            $urlRouterProvider.otherwise('/home' );
-
-            jwtInterceptorProvider.tokenGetter = function(store) {
-                return store.get('id_token');
-            }
-
-/*
-        webShop.run(['$rootScope', '$location', '$cookies', '$http', function($rootScope, $location, $cookies, $http) {
-            // keep user logged in after page refresh
-            $rootScope.globals = $cookies.getObject('globals') || {};
-            if ($rootScope.globals.currentUser) {
-                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-            }
-
-            $rootScope.$on('$locationChangeStart', function (event, next, current) {
-                // redirect to login page if not logged in and trying to access a restricted page
-                var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
-                var loggedIn = $rootScope.globals.currentUser;
-                if (restrictedPage && !loggedIn) {
-                    $location.path('/login');
-                }
-            }); */
+    $urlRouterProvider.otherwise('/home' );
 
   $stateProvider
     .state('public', {
@@ -78,22 +60,11 @@ webShop.config(function($stateProvider, $urlRouterProvider, authProvider, $provi
     });
 
     $stateProvider
-      .state('restricted', {
-          abstract: true,
-          template: "<ui-view/>"
-      })
-
-    $stateProvider
       .state('login', {
           url: '/login',
           templateUrl: 'views/admin/login/login.html',
           controllerAs: 'LoginController as user'
-      })
-    $stateProvider
-        .state('private', {
-            url: '/admin',
-            templateUrl: 'views/admin/home-admin.html'
-        });
+      });
 
     $stateProvider
     .state('private', {
@@ -145,6 +116,45 @@ webShop.config(function($stateProvider, $urlRouterProvider, authProvider, $provi
           controller: 'MemberController',
           parent: 'private.admin.member'
       });
+    /*
+    function redirect($q, $injector, auth, store, $location) {
+        return {
+            responseError: function(rejection) {
 
-    $httpProvider.interceptors.push('jwtInterceptor');
-});
+                if(rejection.status === 401) {
+                    auth.signout();
+                    store.remove('profile');
+                    store.remove('id_token');
+                    $location.path('/login');
+                }
+
+                return $q.reject(rejection);
+            }
+        }
+    }
+
+    $provide.factory('redirect', redirect);
+    $httpProvider.interceptors.push('redirect');
+    $httpProvider.interceptors.push('jwtInterceptor'); */
+  })
+    //Any time the routing changes (refreshing happens)
+    // the $rootScope watches and finds out what state the user has
+    //if the token of the user is not expired and if the user is not authenticate
+    //the user gets authenticated
+    // else: the user gets redirected to login in order to login again
+    .run(function($rootScope, auth, store, jwtHelper, $location) {
+        $rootScope.$on('$locationChangeStart', function() {
+
+            var token = store.get('id_token');
+            if (token) {
+                if(!jwtHelper.isTokenExpired(token)) {
+                    if(!auth.isAuthenticated) {
+                        auth.authenticate(store.get('profile'), token);
+                    }
+                }
+            } else {
+                $location.path('/home');
+            }
+        })
+    });
+

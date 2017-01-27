@@ -19,6 +19,10 @@ webShop.get('/api/private', authCheck, function(req, res) {
     res.json({message:"hello from private endpoint. You need to be authenticated to see this"});
 });
 
+//webShop.listen(4000);
+//console.log("listening on localhost:4000 to check if api works");
+
+
 
 var db = require('../core/db/articles');
 var interestedPersonDb = require('../core/db/interestedPerson');
