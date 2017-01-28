@@ -57,9 +57,9 @@ function getSingleArticle(req, res, next) {
 function createArticle(req, res, next) {
     req.body.price = parseInt(req.body.price);
     req.body.quantity = parseInt(req.body.quantity);
-    req.body.available = req.body.available.toString();
-    db.none('insert into articles(name, category, price, description, quantity, available, thumb) values ($1, $2, $3, $4, $5, $6, $7)',
-        [req.body.name, req.body.category, req.body.price, req.body.description, req.body.quantity, req.body.available, req.body.thumb])
+    // req.body.available = req.body.available.toString();
+    db.none('insert into articles(name, category, price, description, quantity, thumb) values ($1, $2, $3, $4, $5, $6)',
+        [req.body.name, req.body.category, req.body.price, req.body.description, req.body.quantity, req.body.thumb])
         .then(function () {
             res.status(200)
                 .json({
