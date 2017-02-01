@@ -18,27 +18,37 @@ $scope.createArticle = function (size) {
     ariaDescribedBy: 'modal-body',
     templateUrl: 'views/admin/new-article.html',
     controller: function($scope, $uibModalInstance){
-      $scope.addArticle = function(thumb) {
-      thumb.upload = Upload.upload({
-        // url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-        url: '/api/article',
-        data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: parseInt($scope.newArticle.price), description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: thumb},
-      });
+      // $scope.addArticle = function(thumb) {
+      // thumb.upload = Upload.upload({
+      //   // url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+      //   url: '/api/article',
+      //   data: {name: $scope.newArticle.name, category: $scope.newArticle.category, price: $scope.newArticle.price, description: $scope.newArticle.description, quantity: $scope.newArticle.quantity, file: thumb},
+      // });
+      //
+      // thumb.upload.then(function (response) {
+      //   $timeout(function () {
+      //     thumb.result = response.data;
+      //     console.log(thumb.result);
+      //   });
+      // }, function (response) {
+      //   if (response.status > 0)
+      //     $scope.errorMsg = response.status + ': ' + response.data;
+      // }, function (evt) {
+      //   // Math.min is to fix IE which reports 200% sometimes
+      //   thumb.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+      // });
+      // $uibModalInstance.close();
+      // }
 
-      thumb.upload.then(function (response) {
-        $timeout(function () {
-          thumb.result = response.data;
-          console.log(thumb.result);
-        });
-      }, function (response) {
-        if (response.status > 0)
-          $scope.errorMsg = response.status + ': ' + response.data;
-      }, function (evt) {
-        // Math.min is to fix IE which reports 200% sometimes
-        thumb.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+      $scope.create = function () {
+      $http.post('/api/article/', $scope.newArticle).success(function (data) {
+        $scope.inventory = data.data;
       });
-      $uibModalInstance.close();
-      }
+      };
+
+      $scope.ok = function () {
+        $uibModalInstance.close();
+      };
 
       $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
@@ -61,7 +71,7 @@ $scope.editArticle = function (size, selectedArticle) {
 
       $scope.update = function () {
       var editID = $scope.article.id;
-      $http.put('/api/article/' + editID).success(function (data) {
+      $http.put('/api/article/' + editID, $scope.article).success(function (data) {
         $scope.inventory = data.data;
       });
       };
