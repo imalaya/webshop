@@ -6,16 +6,23 @@
     <div class="modal-body" id="modal-body">
         <form name="addMemberForm" novalidate>
             <p>Bitte geben Sie den vollständigen Vor- und Nachnamen ein und bestätigen Sie den Eintrag um einen Mitarbeiter hinzuzufügen.</p>
-            <input class="addMemberName" type="text" placeholder="Vorname" name="firstname" ng-model="newMember.firstname" ng-required="true" />
+
+            <label class="formModalLabel">Vorname</label>
+            <input class="addMemberName" type="text" name="firstname" ng-model="newMember.firstname" ng-required="true" />
             <div class="errorStatus" ng-show="addMemberForm.firstname.$touched && addMemberForm.firstname.$invalid">
                 <small> Gültigen Vornamen eingeben </small>
-
             </div>
-            <input type="text" class="addMemberName" placeholder="Nachname" name="lastname" ng-model="newMember.lastname" ng-required="true" />
+
+            <label class="formModalLabel">Nachname</label>
+            <input type="text" class="addMemberName" name="lastname" ng-model="newMember.lastname" ng-required="true" />
             <div class="errorStatus" ng-show="addMemberForm.lastname.$touched && addMemberForm.lastname.$invalid">
                 <small> Gültigen Nachnamen eingeben </small>
             </div>
             <p name="email" ng-model="newMember.email">{{newMember.firstname}}.{{newMember.lastname}}@gutemine.de</p>
+
+            <label class="formModalLabel">E-Mail Adresse</label>
+            <input type="text" class="addMemberName" name="email" ng-model="newMember.email" ng-required="true"/>
+            <p name="emailYavuz" ng-model="newMember.email">{{newMember.email}}</p>
         </form>
     </div>
 

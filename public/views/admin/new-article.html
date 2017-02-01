@@ -5,11 +5,14 @@
   <div class="modal-body" id="modal-body">
 
     <form name="addArticleForm" novalidate>
-      <input type="text" class="addArticle" placeholder="Name" name="name" ng-model="newArticle.name" ng-required="true" />
+
+      <label class="formModalLabel">Name</label>
+      <input type="text" class="addArticle" name="name" ng-model="newArticle.name" ng-required="true" />
       <div class="errorStatusArt" ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid">
         <small> Gültigen Namen eingeben </small>
       </div>
-      <input type="text" class="addArticle" placeholder="Kategorie" name="category" ng-model="newArticle.category" ng-required="true" />
+      <label class="formModalLabel">Kategorie</label>
+      <input type="text" class="addArticle" name="category" ng-model="newArticle.category" ng-required="true" />
       <!-- <select name="category" ng-model="newArticle.category" ng-required="true" />
         <option selected hidden>Kategorie wählen</option>
         <option value="paper">Papier</option>
@@ -18,15 +21,21 @@
       <div class="errorStatusArt" ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid">
         <small> Gültige Kategorie eingeben </small>
       </div>
-      <input type="text" class="addArticle" placeholder="Preis" name="price" ng-model="newArticle.price" ng-required="true" />
+
+      <label class="formModalLabel">Preis</label>
+      <input type="text" class="addArticle" name="price" ng-model="newArticle.price" ng-required="true" />
       <div class="errorStatusArt" ng-show="addArticleForm.price.$touched && addArticleForm.price.$invalid">
         <small> Gültigen Preis eingeben </small>
       </div>
-      <textarea id="descr" placeholder="Beschreibung" name="description" ng-model="newArticle.description" ng-required="true" ></textarea>
+
+      <label class="formModalLabel">Beschreibung</label>
+      <textarea id="descr" name="description" ng-model="newArticle.description" ng-required="true" ></textarea>
       <div class="errorStatusArt" ng-show="addArticleForm.description.$touched && addArticleForm.description.$invalid">
         <small> Gültige Beschreibung eingeben </small>
       </div>
-      <input type="number" class="addArticle" placeholder="Menge" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
+
+      <label class="formModalLabel">Menge</label>
+      <input type="number" class="addArticle" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
       <div class="errorStatusArt" ng-show="addArticleForm.quantity.$touched && addArticleForm.quantity.$invalid">
         <small> Gültige Menge eingeben </small>
       </div>
