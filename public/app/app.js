@@ -3,6 +3,7 @@ var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize',
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
+
     $stateProvider
         .state('login', {
             url: '/login',
@@ -26,45 +27,53 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         abstract: true,
         template: "<ui-view/>"
     })
-    .state('public.site', {
+        .state('public.site', {
+
             url: '/home',
             templateUrl: 'views/customer/home-website.html',
             controller: 'CollapseController'
-    })
-    .state('public.site.articles', {
-        url: '/alle-artikel',
-        templateUrl:'views/customer/all-articles.html',
-        controller: 'DisplayArticlesCtrl'
-    })
+        })
+        .state('public.site.articles', {
+            url: '/alle-artikel',
+            templateUrl:'views/customer/all-articles.html',
+            controller: 'DisplayArticlesCtrl'
+        })
+        .state('public.site.category', {
+            url: '/artikel-kategorie/{category}',
+            templateUrl:'views/customer/articleCategory.html',
+            controller: 'ArticleCategory'
+        })
 
-    .state('public.site.details', {
-        url: '/artikel/{id}',
-        templateUrl:'views/customer/article-details.html',
-        controller: 'ArticleDetailsCtrl'
-    })
+        .state('public.site.details', {
+            url: '/artikel/{id}',
+            templateUrl:'views/customer/article-details.html',
+            controller: 'ArticleDetailsCtrl'
+        })
 
-      .state('public.site.startpage', {
-          url: '/startseite',
-          templateUrl: 'views/customer/content-startpage.html'
-      })
+        .state('public.site.startpage', {
+            url: '/startseite',
+            templateUrl: 'views/customer/content-startpage.html'
+        })
 
-    //anchor tags footer
-    .state('public.site.contact', {
-        url: '/contact',
-        templateUrl:'views/customer/footer/contact.html'
-    })
-    .state('public.site.privacy', {
-        url: '/privacy',
-        templateUrl:'views/customer/footer/privacy.html'
-    })
-    .state('public.site.sitenotice', {
-       url: '/sitenotice',
-       templateUrl:'views/customer/footer/siteNotice.html'
-    })
-    .state('public.site.about', {
-          url: '/about',
-          templateUrl:'views/customer/footer/about.html'
-    });
+        //anchor tags footer
+        .state('public.site.contact', {
+            url: '/contact',
+            templateUrl:'views/customer/footer/contact.html'
+        })
+        .state('public.site.privacy', {
+            url: '/privacy',
+            templateUrl:'views/customer/footer/privacy.html'
+        })
+        .state('public.site.sitenotice', {
+            url: '/sitenotice',
+            templateUrl:'views/customer/footer/siteNotice.html'
+        })
+        .state('public.site.about', {
+            url: '/about',
+            templateUrl:'views/customer/footer/about.html'
+        });
+    $urlRouterProvider.otherwise('/home');
+
 
   $stateProvider
     .state('private', {

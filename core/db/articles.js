@@ -15,6 +15,7 @@ var db = pgp(connectionString);
 
 module.exports = {
     getAllArticles: getAllArticles,
+    getArticleCategory: getArticleCategory,
     getSingleArticle: getSingleArticle,
     createArticle: createArticle,
     updateArticle: updateArticle,
@@ -31,6 +32,22 @@ function getAllArticles(req, res, next) {
                     //status: 'success',
                     data: data
                     //message: 'Retrieved ALL articles'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function getArticleCategory(req, res, next) {
+    var articleCategory = req.params.category;
+    db.one('select * from articles where category = $1', articleCategory)
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ONE category'
                 });
         })
         .catch(function (err) {
