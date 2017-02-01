@@ -1,22 +1,32 @@
-webShop.controller('LoginController', ['$scope', '$rootScope', '$http', '$location', 'AuthenticationService', '$log', function($scope, $rootScope, $http, $location, AuthenticationService, $log){
+'use strict';
 
-    'use strict';
-
-    angular.module('AuthenticationService');
-
-                    // reset login status
-                    AuthenticationService.ClearCredentials();
+webShop.controller('LoginController', ['$scope', '$cookies',
+    function($scope, $cookies){
 
                     $scope.login = function () {
-                        $scope.dataLoading = true;
-                        AuthenticationService.Login($scope.username, $scope.password, function(response) {
-                            if(response.success) {
-                                AuthenticationService.SetCredentials($scope.username, $scope.password);
-                                $location.path('/admin');
-                            } else {
-                                $scope.error = response.message;
-                                $scope.dataLoading = false;
-                            }
-                        });
+//                       debugger;
+                       var username = $scope.username;
+                       var password = $scope.password;
+
+                       // call ans backend
+                       var isValidCredential = dummyLogin(username, password);
+                       if (isValidCredential) {
+                           // session cookie speichern
+                           $cookies.put('isLoggedIn', true);
+
+                           //debugger;
+                       } else {
+                           // fehlermeldung anzeigen
+                       }
                     };
+
+
+
+                    //Cookies removal setzen
                 }]);
+
+function dummyLogin(username, password) {
+    if(username === "aaa")
+        return false;
+    return true;
+}

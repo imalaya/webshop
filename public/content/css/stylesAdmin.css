@@ -192,7 +192,7 @@
 .sortButton,
 .newArticle,
 .newMember,
-.modal-footer-button{
+.modal-footer-button {
   width: 200px;
   padding: 6px 12px;
   background-color: black;
@@ -204,7 +204,7 @@
 .sortButton:hover,
 .newArticle:hover,
 .newMember:hover,
-.modal-footer-button{
+.modal-footer-button:hover {
   border-color: #cc9900;
   color: #cc9900;
   background-color: white;

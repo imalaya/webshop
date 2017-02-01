@@ -1,17 +1,10 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch' /*'ngCookie', 'AuthenticationService'*/]);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch', 'ngCookies']);
 
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
 
-    $stateProvider
-        .state('login', {
-            url: '/login',
-            controller: 'LoginController',
-            templateUrl: 'views/admin/login/login.html'
-        });
 
-   $urlRouterProvider.otherwise('/home');
 
 
 
@@ -71,11 +64,8 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         .state('public.site.about', {
             url: '/about',
             templateUrl:'views/customer/footer/about.html'
-        });
-    $urlRouterProvider.otherwise('/home');
+        })
 
-
-  $stateProvider
     .state('private', {
       abstract: true,
       template: "<ui-view/>"
@@ -125,22 +115,38 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           templateUrl:'views/admin/new-member.html',
           controller: 'MemberController',
           parent: 'private.admin.member'
-      });
-/*
-    .run(['$rootScope', '$location', '$cookieStore', '$http',
-        function ($rootScope, $location, $cookieStore, $http) {
-            // keep user logged in after page refresh
-            $rootScope.globals = $cookieStore.get('globals') || {};
-            if ($rootScope.globals.currentUser) {
-                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-            }
-
-            $rootScope.$on('$locationChangeStart', function (event, next, current) {
-                // redirect to login page if not logged in
-                if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
-                    $location.path('/login');
-                }
-            });
-        }
-    ]); */
+      })
+      .state('private.login', {
+          url: '/login',
+          controller: 'LoginController',
+          templateUrl: 'views/admin/login/login.html'
+      })
+    $urlRouterProvider.otherwise('/home');
 }]);
+
+webShop.run(function ($rootScope, $state) {
+    $rootScope.$on('$stateChangeStart',
+        function (event, toState) {
+            $state.go('private.login');
+            console.log('funktioniert');
+            event.preventDefault();
+
+        }
+    )});
+/*webShop.run(['$rootScope', '$location', '$cookieStore', '$http',
+    function ($rootScope, $location, $cookieStore, $http) {
+        debugger;
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        }
+
+        $rootScope.$on('$locationChangeStart', function (/*event, next, current) {
+            /* redirect to login page if not logged in
+            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+                $location.path('/login');
+            }
+        });
+    }
+]); */
