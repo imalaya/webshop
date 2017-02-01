@@ -6,6 +6,7 @@ var interestedPersonDb = require('../core/db/interestedPerson');
 
 
 router.get('/api/article', db.getAllArticles);
+router.get('/api/article/category/:category', db.getArticleCategory);
 router.get('/api/article/:id', db.getSingleArticle);
 router.post('/api/article', db.createArticle);
 router.put('/api/article/:id', db.updateArticle);
