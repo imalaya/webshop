@@ -1,0 +1,22 @@
+
+  <div class="all-articles">
+
+    <ul class="list-articles">
+      <li ng-repeat="article in inventory" ng-class="{'unavailable': !article.quantity}" class="list-item">
+        <a ui-sref="public.site.details({id: article.id})">
+          <div class="card">
+            <img ng-src="{{article.thumb}}" alt="Artikel" style="width:220px; height:250px;"/>
+            <div class="container">
+              <h4><b>{{article.name}}</b></h4>
+              <p style="color:#cc9900;">{{article.price | currency: '€'}}</p>
+              <p ng-if="!article.quantity">Ausverkauft</p>
+              <a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
+              <!-- <p ng-if="article.quantity && article.quantity < 5">Nur noch {{article.quantity}} verfügbar</p> -->
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
