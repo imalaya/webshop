@@ -4,6 +4,8 @@ var router = express.Router();
 var db = require('../core/db/articles');
 var interestedPersonDb = require('../core/db/interestedPerson');
 
+var core = require('../core/core.server.controller');
+
 
 router.get('/api/article', db.getAllArticles);
 router.get('/api/article/category/:category', db.getArticleCategory);
@@ -14,5 +16,8 @@ router.delete('/api/article/:id', db.removeArticle);
 
 router.get('/api/interestedPersons', interestedPersonDb.getAllPersons);
 router.post('/api/interestedPerson', interestedPersonDb.saveInterestedPerson);
+
+
+router.post('/contact-form', core.sendMail);
 
 module.exports = router;
