@@ -1,19 +1,22 @@
-webShop.controller('LoginController', ['$scope', '$http','$uibModal', '$log', function($scope, $http, $uibModal, $log){
+webShop.controller('LoginController', ['$scope', '$rootScope', '$http', '$location', 'AuthenticationService', '$log', function($scope, $rootScope, $http, $location, AuthenticationService, $log){
 
-    $scope.loginPage = function() {
-        return function ( scope, element, attrs ) {
-            var path;
+    'use strict';
 
-            attrs.$observe( 'loginPage', function (val) {
-                path = val;
-            });
+    angular.module('AuthenticationService');
 
-            element.bind( 'click', function () {
-                scope.$apply( function () {
-                    $location.path( path );
-                });
-            });
-        };
-    };
+                    // reset login status
+                    AuthenticationService.ClearCredentials();
 
-}]);
+                    $scope.login = function () {
+                        $scope.dataLoading = true;
+                        AuthenticationService.Login($scope.username, $scope.password, function(response) {
+                            if(response.success) {
+                                AuthenticationService.SetCredentials($scope.username, $scope.password);
+                                $location.path('/admin');
+                            } else {
+                                $scope.error = response.message;
+                                $scope.dataLoading = false;
+                            }
+                        });
+                    };
+                }]);

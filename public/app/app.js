@@ -1,8 +1,25 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch' /*'ngCookie', 'AuthenticationService'*/]);
 
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+        .state('login', {
+            url: '/login',
+            controller: 'LoginController',
+            templateUrl: 'views/admin/login/login.html'
+        });
+
+   $urlRouterProvider.otherwise('/home');
+
+
+
+   /* $stateProvider
+    .state('login', {
+        url: '/login',
+        controller: 'LoginController',
+        templateUrl:'views/admin/login/login.html'
+    }); */
 
   $stateProvider
     .state('public', {
@@ -59,11 +76,6 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl:'views/admin/home-admin.html'
       })
 
-      .state('private.admin.login', {
-          url: '/login',
-          templateUrl:'views/admin/login.html'
-      })
-
      .state('private.admin.dashboard', {
         url: '/admin',
         templateUrl:'views/admin/member-calendar.html'
@@ -105,4 +117,21 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           controller: 'MemberController',
           parent: 'private.admin.member'
       });
+/*
+    .run(['$rootScope', '$location', '$cookieStore', '$http',
+        function ($rootScope, $location, $cookieStore, $http) {
+            // keep user logged in after page refresh
+            $rootScope.globals = $cookieStore.get('globals') || {};
+            if ($rootScope.globals.currentUser) {
+                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+            }
+
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                // redirect to login page if not logged in
+                if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+                    $location.path('/login');
+                }
+            });
+        }
+    ]); */
 }]);
