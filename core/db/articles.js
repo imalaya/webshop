@@ -41,13 +41,13 @@ function getAllArticles(req, res, next) {
 
 function getArticleCategory(req, res, next) {
     var articleCategory = req.params.category;
-    db.one('select * from articles where category = $1', articleCategory)
+    db.any('select * from public.articles where category = $1', articleCategory)
         .then(function (data) {
             res.status(200)
                 .json({
-                    status: 'success',
-                    data: data,
-                    message: 'Retrieved ONE category'
+                   // status: 'success',
+                    data: data
+                   // message: 'Retrieved ONE category'
                 });
         })
         .catch(function (err) {

@@ -1,5 +1,10 @@
 var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch', 'ngCookies']);
 
+webShop.run(function ($rootScope) {
+   $rootScope.global = {
+       search: ''
+   };
+});
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
@@ -38,7 +43,8 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         //anchor tags footer
         .state('public.site.contact', {
             url: '/contact',
-            templateUrl:'views/customer/footer/contact.html'
+            templateUrl:'views/customer/footer/contact.html',
+            controller: 'ContactController'
         })
         .state('public.site.privacy', {
             url: '/privacy',
