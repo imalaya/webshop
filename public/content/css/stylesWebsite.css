@@ -503,6 +503,7 @@ figure.member:hover figcaption p{
 }
 
 /* Footer */
+
 .footer{
     background-color: white;
     font-size: 16px;
@@ -512,6 +513,12 @@ figure.member:hover figcaption p{
     border-top-style: solid;
     border-color: black;
     border-width:1.5px;
+}
+
+#footer-content{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
 .footer-center,
