@@ -35,7 +35,7 @@
       </div>
 
       <label class="formModalLabel">Menge</label>
-      <input type="number" class="addArticle" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
+      <input type="number" min="1" class="addArticle" name="quantity" ng-model="newArticle.quantity" ng-required="true" />
       <div class="errorStatusArt" ng-show="addArticleForm.quantity.$touched && addArticleForm.quantity.$invalid">
         <small> Gültige Menge eingeben </small>
       </div>

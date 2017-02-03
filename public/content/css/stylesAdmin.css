@@ -195,10 +195,10 @@
 .modal-footer-button {
   width: 200px;
   padding: 6px 12px;
+  border-radius: 0px;
   background-color: black;
   color: white;
-  border-color: black;
-  border-radius: 0px;
+  border: 1px solid transparent;
 }
 
 .sortButton:hover,
@@ -221,12 +221,6 @@
 
 /* CSS FOR MODALS */
 
-.modal-dialog {
-  width: 450px;
-  margin: auto;
-  top: 90px;
-}
-
 .modal-content {
   background-color: #fefefe;
   font-family: 'Lato', sans-serif;
@@ -235,12 +229,15 @@
 
 .modal-header {
   text-align: center;
-  padding: 15px 15px 5px 15px;
 }
 
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 0 15px;
+}
+
+#modalParagraph {
+  margin-top: 10px;
 }
 
 .addMemberName, .addArticle {
@@ -249,7 +246,7 @@
   font-size: 14px;
   height: 40px;
   border: 2px solid #cacaca;
-  margin: 0px 10px 10px 0;
+  margin-right: 10px;
   text-align: left;
   background-color: #f4f4f4;
 }
@@ -260,7 +257,7 @@
 }
 
 .formModalLabel {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
@@ -286,13 +283,11 @@ input[disabled="disabled"] {
 .content textarea{
   width: 100%;
   padding: 10px 0 10px 15px;
-  margin: 10px 0;
 }
 
 .modal-footer {
   text-align: center;
   border: 0;
-  display: flex;
 }
 
 .errorStatus, .errorStatusArt {
@@ -438,27 +433,8 @@ input[disabled="disabled"] {
     font-size: 16px;
   }
 
-
-  /* Effect 2a */
-  .hovicon.effect-2.sub-a:hover, .hovicon.effect-2.sub-a:hover i {
-    color: #eea303;
-  }
-  .hovicon.effect-2.sub-a:hover:after {
-    -webkit-transform: scale(0.85);
-    -moz-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    transform: scale(0.85);
-  }
-
-  #boxOne:hover,
-  #boxTwo:hover,
-  #boxThree:hover,
-  #boxFour:hover{
-    border: 2px dashed black;
-  }
-
   .search {
-    margin: 0 0px 15px 80px;
+    margin: 0;
   }
 
   .sortButton, .newArticle {
@@ -468,6 +444,10 @@ input[disabled="disabled"] {
 
   .sortGroup {
     text-align: center;
+  }
+
+  .modal-footer {
+    display: flex;
   }
 
   /* ARTICLE SECTION */
@@ -480,7 +460,7 @@ input[disabled="disabled"] {
 
 /*///////////////////////////////
 // Styling for login area //
-///////////////////////////////*/
+///////////////////////////////
 
 .login {
   position: absolute;

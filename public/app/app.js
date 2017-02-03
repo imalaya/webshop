@@ -3,25 +3,12 @@ var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize',
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
-
-
-
-
-
-   /* $stateProvider
-    .state('login', {
-        url: '/login',
-        controller: 'LoginController',
-        templateUrl:'views/admin/login/login.html'
-    }); */
-
   $stateProvider
     .state('public', {
         abstract: true,
         template: "<ui-view/>"
     })
         .state('public.site', {
-
             url: '/home',
             templateUrl: 'views/customer/home-website.html',
             controller: 'CollapseController'
@@ -64,8 +51,9 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         .state('public.site.about', {
             url: '/about',
             templateUrl:'views/customer/footer/about.html'
-        })
+        });
 
+    $stateProvider
     .state('private', {
       abstract: true,
       template: "<ui-view/>"
@@ -116,35 +104,25 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           controller: 'MemberController',
           parent: 'private.admin.member'
       })
-      .state('private.login', {
+      .state('login', {
           url: '/login',
           controller: 'LoginController',
           templateUrl: 'views/admin/login/login.html'
-      })
+      });
     $urlRouterProvider.otherwise('/home');
 }]);
 
-webShop.run(function ($rootScope, $state) {
-    $rootScope.$on('$stateChangeStart',
-        function (event, toState) {
-            $state.go('private.login');
-            console.log('funktioniert');
-            event.preventDefault();
-
-        }
-    )});
-/*webShop.run(['$rootScope', '$location', '$cookieStore', '$http',
-    function ($rootScope, $location, $cookieStore, $http) {
+/*
+webShop.run(['$rootScope', '$location', '$cookies', //'$http',
+    function ($rootScope, $location, $cookies /*$http) {
         debugger;
         // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-        }
+        $rootScope.isLoggedIn = $cookies.get('globals');
 
-        $rootScope.$on('$locationChangeStart', function (/*event, next, current) {
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
             /* redirect to login page if not logged in
-            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+            if ($location.path() !== '/login' && !$rootScope.isLoggedIn.currentUser) {
                 $location.path('/login');
             }
         });

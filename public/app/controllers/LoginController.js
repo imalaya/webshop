@@ -1,32 +1,52 @@
 'use strict';
 
-webShop.controller('LoginController', ['$scope', '$cookies',
-    function($scope, $cookies){
+webShop.controller('LoginController', ['$scope', '$cookies', '$location',
+    function($scope, $cookies, $location){
+        debugger;
 
-                    $scope.login = function () {
-//                       debugger;
-                       var username = $scope.username;
-                       var password = $scope.password;
-
-                       // call ans backend
-                       var isValidCredential = dummyLogin(username, password);
-                       if (isValidCredential) {
-                           // session cookie speichern
-                           $cookies.put('isLoggedIn', true);
-
-                           //debugger;
-                       } else {
-                           // fehlermeldung anzeigen
-                       }
-                    };
+        $scope.clearCredentials = function() {
+            debugger;
+            $cookies.remove('isLoggedIn', false);
+        };
 
 
+        $scope.login = function () {
+                debugger;
+                var username = $scope.username;
+                var password = $scope.password;
 
-                    //Cookies removal setzen
-                }]);
+                /*
+                  real authentication
 
-function dummyLogin(username, password) {
-    if(username === "aaa")
-        return false;
-    return true;
-}
+                $http.post('/api/...', { username: username, password: password })
+               .success(function (response) {
+                  callback(response);
+                });
+            */
+
+                // call ans backend
+                var isValidCredential = username === 'Paule' && password === 'admin';
+                if (isValidCredential) {
+                    // session cookie speichern
+                    $cookies.put('isLoggedIn', 'true');
+                    console.log('isLoggedIn');
+                    $location.path('/admin');
+
+                    //debugger;
+                } else if(!isValidCredential) {
+                    debugger;
+                    //isValidCredential.message = 'Username oder Passwort ist falsch.'
+                    console.log('Username oder Passwort ist falsch');
+                    //isValidCredential.message = 'Username oder Passwort ist falsch';
+                }
+                //callback(isValidCredential);
+        };
+
+        //Cookies removal setzen
+
+        $scope.logout = function() {
+            debugger;
+            $location.path('/login');
+            $cookies.remove('isLoggedIn', 'false');
+        };
+    }]);
