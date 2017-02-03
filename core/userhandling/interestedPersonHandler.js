@@ -3,7 +3,8 @@
  */
 
 var interestedPerson = require('../db/interestedPerson');
-//var nodemailer = require('./nodemailer');
+// var nodemailer = require('./nodemailer');
+// var transporter = nodemailer.createTransport();
 
 exports.createInterestedPerson = function(emailAddress) {
     var username = generateUsername(emailAddress);
@@ -35,4 +36,3 @@ interestedPerson.saveInterestedPerson(firstName, lastName, username, emailAddres
 function sendEmail(interestedPersonId, username, emailAddress){
     //TODO
 }
-
