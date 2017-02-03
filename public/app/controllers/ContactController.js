@@ -16,6 +16,13 @@ webShop.controller('ContactController', ['$scope', '$http', function($scope, $ht
         //asynchronous call in case of error
       })
 
+      //reset placeholder
+    $scope.contactName = "";
+    $scope.contactEmail = "";
+    $scope.contactMsg = "";
+    $scope.contactForm.$setUntouched();
+
+
   };
 
 }]);
