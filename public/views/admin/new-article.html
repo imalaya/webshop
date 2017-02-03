@@ -42,6 +42,7 @@
       <span ng-show="artThumb.result">Upload Successful</span>
       <span class="err" ng-show="errorMsg">{{errorMsg}}</span> -->
     </form>
+      <div uib-alert class="alert-success" ng-if="showAlert">Artikel erfolgreich hinzugefügt</div>
   </div>
   <div class="modal-footer">
     <button class="btn modal-footer-button" type="button" ng-click="create();ok();" ng-disabled="addArticleForm.$invalid">Artikel hinzufügen</button>
