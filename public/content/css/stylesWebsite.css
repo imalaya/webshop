@@ -87,38 +87,21 @@ body{
 
 .navbar-nav li{
     position: static;
-    margin: 0 12px;
+    margin: 18px 12px;
 }
 
 .navbar-nav li a{
     padding: 10px 0;
+
 }
 
-.navbar-nav > li:hover > .dropdown-menu{
-    display: flex;
-    border-radius: 0px;
-    width: 100%;
-    margin-top: 2.5px;
-    border-style: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.dropdown-menu > li {
-    height: 50px;
+.dropdown-menu{
+    width: 100% !important;
 }
 
 .dropdown-img{
     width: 155px;
     height:195px;
-}
-
-.dd-list-item-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .dd-list-item-container li a:hover{
@@ -149,6 +132,21 @@ div.form-group{
     border-top: none;
     border-left: none;
     border-right: none;
+}
+
+button.btn.btn-default{
+    border: 1.5px solid;
+    margin-left: 2%;
+    width: 100px;
+    border-radius: 0;
+    background-color: black;
+    color: white;
+}
+
+button.btn.btn-default:hover{
+    background-color: white;
+    color: #cc9900;
+    border-color: #cc9900;
 }
 
 /* startpage */
@@ -268,10 +266,6 @@ div #heading-articles h1{
 
 /* select box articles user*/
 
-#select-box{
-
-}
-
 div #select-box select{
     width: 50%;
     height: 40px;
@@ -286,8 +280,8 @@ select.form-control:focus{
 
 /* show all articles*/
 
-.all-articles{
-    margin-top: 200px;
+#all-articles{
+    margin-top: 60px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
@@ -341,6 +335,13 @@ select.form-control:focus{
 }
 
 /* article details */
+
+.one-article{
+    margin-top: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
 
 .main-img{
     display: flex;
@@ -502,6 +503,7 @@ figure.member:hover figcaption p{
 }
 
 /* Footer */
+
 .footer{
     background-color: white;
     font-size: 16px;
@@ -511,6 +513,12 @@ figure.member:hover figcaption p{
     border-top-style: solid;
     border-color: black;
     border-width:1.5px;
+}
+
+#footer-content{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
 .footer-center,

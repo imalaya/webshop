@@ -7,7 +7,7 @@ webShop.controller('SliderCtrl', ['$scope', '$http', function($scope, $http){
         $scope.slides = data;
     });
 
-    $scope.myInterval = 3000;
+    $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.noPauseSlide = true;
     $scope.active = 0;
