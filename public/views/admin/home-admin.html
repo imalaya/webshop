@@ -8,6 +8,7 @@
 <!-- sidebar and menu -->
 <div class="admin-page">
   <div class="header">
+    <button type="button" class="pull-right" ng-click="logout()">Logout</button>
     <div class="header-brand">
       <img class="hidden-xs" id="logo" src="content/img/logoGM.png" alt="Gute Mine logo">
     </div>
@@ -21,13 +22,12 @@
     </div>
 
     <!--<div class="navbar navbar-fixed-top navbar-absolute"> -->
-    <div class="collapse navbar-collapse col-md-2" uib-collapse="isNavCollapsed">
+    <div class="collapse navbar-collapse col-md-2 col-sm-2" uib-collapse="isNavCollapsed">
       <div class="side-nav">
         <ul class="nav navbar-nav">
           <li><a ui-sref="private.admin.dashboard">Home</a></li>
           <li><a ui-sref="private.admin.inventory">Inventar</a></li>
           <li><a ui-sref="private.admin.member">Mitarbeiter</a></li>
-          <li><a ui-sref="#">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -36,7 +36,7 @@
 
 
   <!-- Content of page starts -->
-  <div class="main-content col-md-10">
+  <div class="main-content col-md-10 col-sm-10">
     <div class="main">
       <div class="widget">
           <div ui-view>

@@ -1,19 +1,52 @@
-webShop.controller('LoginController', ['$scope', '$http','$uibModal', '$log', function($scope, $http, $uibModal, $log){
+'use strict';
 
-    $scope.loginPage = function() {
-        return function ( scope, element, attrs ) {
-            var path;
+webShop.controller('LoginController', ['$scope', '$cookies', '$location',
+    function($scope, $cookies, $location){
+        debugger;
 
-            attrs.$observe( 'loginPage', function (val) {
-                path = val;
-            });
-
-            element.bind( 'click', function () {
-                scope.$apply( function () {
-                    $location.path( path );
-                });
-            });
+        $scope.clearCredentials = function() {
+            debugger;
+            $cookies.remove('isLoggedIn', false);
         };
-    };
 
-}]);
+
+        $scope.login = function () {
+                debugger;
+                var username = $scope.username;
+                var password = $scope.password;
+
+                /*
+                  real authentication
+
+                $http.post('/api/...', { username: username, password: password })
+               .success(function (response) {
+                  callback(response);
+                });
+            */
+
+                // call ans backend
+                var isValidCredential = username === 'Paule' && password === 'admin';
+                if (isValidCredential) {
+                    // session cookie speichern
+                    $cookies.put('isLoggedIn', 'true');
+                    console.log('isLoggedIn');
+                    $location.path('/admin');
+
+                    //debugger;
+                } else if(!isValidCredential) {
+                    debugger;
+                    //isValidCredential.message = 'Username oder Passwort ist falsch.'
+                    console.log('Username oder Passwort ist falsch');
+                    //isValidCredential.message = 'Username oder Passwort ist falsch';
+                }
+                //callback(isValidCredential);
+        };
+
+        //Cookies removal setzen
+
+        $scope.logout = function() {
+            debugger;
+            $location.path('/login');
+            $cookies.remove('isLoggedIn', 'false');
+        };
+    }]);
