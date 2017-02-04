@@ -22,7 +22,7 @@ module.exports = {
 
 
 function isLoggedIn(req, res, next) {
-    db.one('select id from user where username=$1, pwd=$2',[req.body.username, req.body.password])
+    db.one('select id from public.user where username=$1 and pwd=$2', [req.body.username, req.body.password])
         .then(function (data) {
             res.status(200)
                 .json({
@@ -32,7 +32,6 @@ function isLoggedIn(req, res, next) {
                 });
         })
         .catch(function (err) {
-            console.log("Kein user!");
             return next(err);
         });
 }
