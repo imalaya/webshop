@@ -1,4 +1,4 @@
-var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch']);
+var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch', 'ngCookies']);
 
 webShop.run(function ($rootScope) {
    $rootScope.global = {
@@ -7,11 +7,12 @@ webShop.run(function ($rootScope) {
 });
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-    $stateProvider
-        .state('public', {
-            abstract: true,
-            template: "<ui-view/>"
-        })
+
+  $stateProvider
+    .state('public', {
+        abstract: true,
+        template: "<ui-view/>"
+    })
         .state('public.site', {
             url: '/home',
             templateUrl: 'views/customer/home-website.html',
@@ -57,10 +58,8 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
             url: '/about',
             templateUrl:'views/customer/footer/about.html'
         });
-    $urlRouterProvider.otherwise('/home');
 
-
-  $stateProvider
+    $stateProvider
     .state('private', {
       abstract: true,
       template: "<ui-view/>"
@@ -68,11 +67,6 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
 
     .state('private.admin', {
         templateUrl:'views/admin/home-admin.html'
-      })
-
-      .state('private.admin.login', {
-          url: '/login',
-          templateUrl:'views/admin/login.html'
       })
 
      .state('private.admin.dashboard', {
@@ -115,5 +109,28 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           templateUrl:'views/admin/new-member.html',
           controller: 'MemberController',
           parent: 'private.admin.member'
+      })
+      .state('login', {
+          url: '/login',
+          controller: 'LoginController',
+          templateUrl: 'views/admin/login/login.html'
       });
+    $urlRouterProvider.otherwise('/home');
 }]);
+
+/*
+webShop.run(['$rootScope', '$location', '$cookies', //'$http',
+    function ($rootScope, $location, $cookies /*$http) {
+        debugger;
+        // keep user logged in after page refresh
+        $rootScope.isLoggedIn = $cookies.get('globals');
+
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            /* redirect to login page if not logged in
+            if ($location.path() !== '/login' && !$rootScope.isLoggedIn.currentUser) {
+                $location.path('/login');
+            }
+        });
+    }
+]); */
