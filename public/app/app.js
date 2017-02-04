@@ -11,7 +11,8 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
   $stateProvider
     .state('public', {
         abstract: true,
-        template: "<ui-view/>"
+        template: "<ui-view/>",
+        authenticate: false
     })
         .state('public.site', {
             url: '/home',
@@ -62,16 +63,18 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     $stateProvider
     .state('private', {
       abstract: true,
-      template: "<ui-view/>"
+      template: "<ui-view/>",
+        authenticate: true
     })
 
     .state('private.admin', {
-        templateUrl:'views/admin/home-admin.html'
+        templateUrl:'views/admin/home-admin.html',
+        controller: 'LoginController'
       })
 
      .state('private.admin.dashboard', {
         url: '/admin',
-        templateUrl:'views/admin/member-calendar.html'
+        templateUrl:'views/admin/member-calendar.html',
       })
 
     .state('private.admin.inventory', {
@@ -114,22 +117,24 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           url: '/login',
           controller: 'LoginController',
           templateUrl: 'views/admin/login/login.html'
-      });
+      })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'views/admin/register.html'
+        });
     $urlRouterProvider.otherwise('/home');
 }]);
 
 
-/*
-webShop.run(['$rootScope', '$location', '$cookies', //'$http',
+/*webShop.run(['$rootScope', '$location', '$cookies', //'$http',
     function ($rootScope, $location, $cookies /*$http) {
         debugger;
         // keep user logged in after page refresh
-        $rootScope.isLoggedIn = $cookies.get('globals');
+        $rootScope.isLoggedIn = $cookies.get('isLoggedIn');
 
-
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            /* redirect to login page if not logged in
-            if ($location.path() !== '/login' && !$rootScope.isLoggedIn.currentUser) {
+        $rootScope.$on('$locationChangeStart', function () {
+             //redirect to login page if not logged in
+            if ($location.path() !== '/login' && !$rootScope.isValidCredential()) {
                 $location.path('/login');
             }
         });
