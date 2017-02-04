@@ -18,19 +18,18 @@
             <div class="errorStatus" ng-show="addMemberForm.lastname.$touched && addMemberForm.lastname.$invalid">
                 <small> Gültigen Nachnamen eingeben </small>
             </div>
-<<<<<<< HEAD
+
             <p name="email" ng-model="newMember.email">{{newMember.firstname}}.{{newMember.lastname}}@gutemine.de</p>
 
             <label class="formModalLabel">E-Mail Adresse</label>
             <input type="text" class="addMemberName" name="email" ng-model="newMember.email" ng-required="true"/>
             <p name="emailYavuz" ng-model="newMember.email">{{newMember.email}}</p>
-=======
+
             <input type="text" class="addMemberEmail" placeholder="Email" name="email" ng-model="newMember.email" ng-required="true" />
             <div class="errorStatus" ng-show="addMemberForm.email.$touched && addMemberForm.email.$invalid">
                 <small> Gültige Email eingeben </small>
             </div>
             <p name="email">{{newMember.firstname}}.{{newMember.lastname}}@gutemine.de</p>
->>>>>>> 72a4bfb0a9e6b34e03af385ea850a6d835bf5dd6
         </form>
     </div>
 
