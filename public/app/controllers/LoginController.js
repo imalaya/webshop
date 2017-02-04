@@ -1,28 +1,31 @@
 'use strict';
 
-webShop.controller('LoginController', ['$scope', '$cookies', '$location',
-    function($scope, $cookies, $location){
-        debugger;
+webShop.controller('LoginController', ['$scope', '$http', '$cookies', '$location',
+    function($scope, $http, $cookies, $location){
+        //debugger;
 
         $scope.clearCredentials = function() {
-            debugger;
+            //debugger;
             $cookies.remove('isLoggedIn', false);
         };
 
 
         $scope.login = function () {
-                debugger;
+                //debugger;
                 var username = $scope.username;
                 var password = $scope.password;
 
-                /*
-                  real authentication
+            console.log("--------------------------------------------------------" + username);
+            console.log("--------------------------------------------------------" + password);
 
-                $http.post('/api/...', { username: username, password: password })
+
+                $http.post('/api/userLogin', {username :username , password : password})
                .success(function (response) {
-                  callback(response);
+                  //callback(response);
+                        console.log("Jippi geschafft.");
                 });
-            */
+
+
 
                 // call ans backend
                 var isValidCredential = username === 'Paule' && password === 'admin';
@@ -34,7 +37,7 @@ webShop.controller('LoginController', ['$scope', '$cookies', '$location',
 
                     //debugger;
                 } else if(!isValidCredential) {
-                    debugger;
+                    //debugger;
                     //isValidCredential.message = 'Username oder Passwort ist falsch.'
                     console.log('Username oder Passwort ist falsch');
                     //isValidCredential.message = 'Username oder Passwort ist falsch';
@@ -45,7 +48,7 @@ webShop.controller('LoginController', ['$scope', '$cookies', '$location',
         //Cookies removal setzen
 
         $scope.logout = function() {
-            debugger;
+            //debugger;
             $location.path('/login');
             $cookies.remove('isLoggedIn', 'false');
         };
