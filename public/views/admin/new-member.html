@@ -15,12 +15,16 @@
             <div class="errorStatus" ng-show="addMemberForm.lastname.$touched && addMemberForm.lastname.$invalid">
                 <small> Gültigen Nachnamen eingeben </small>
             </div>
-            <p name="email" ng-model="newMember.email">{{newMember.firstname}}.{{newMember.lastname}}@gutemine.de</p>
+            <input type="text" class="addMemberEmail" placeholder="Email" name="email" ng-model="newMember.email" ng-required="true" />
+            <div class="errorStatus" ng-show="addMemberForm.email.$touched && addMemberForm.email.$invalid">
+                <small> Gültige Email eingeben </small>
+            </div>
+            <p name="email">{{newMember.firstname}}.{{newMember.lastname}}@gutemine.de</p>
         </form>
     </div>
 
     <div class="modal-footer">
-        <button class="btn modal-footer-button" type="button" ng-click="sendMail();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
+        <button class="btn modal-footer-button" type="button" ng-click="sendEmail();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
         <button class="btn modal-footer-button" type="button" ng-click="cancel()">Schließen</button>
-    </div>
+    </div>..
 </div>

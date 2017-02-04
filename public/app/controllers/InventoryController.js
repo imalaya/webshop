@@ -1,12 +1,11 @@
-webShop.controller('InventoryController', ['$scope', '$http', '$stateParams', '$uibModal', '$log', 'Upload', '$timeout', function($scope, $http, $stateParams, $uibModal, $log, Upload, $timeout){
+webShop.controller('InventoryController', ['$scope', '$http', '$stateParams', '$uibModal', '$log', 'Upload', '$timeout', '$state', function($scope, $http, $stateParams, $uibModal, $log, Upload, $timeout, $state){
 
   $scope.removeArticle = function(article) {
     var deleteID = article.id;
     $http.delete('/api/article/' + deleteID).success(function (data) {
       $scope.inventory = data.data;
     });
-    // var removedArticle = $scope.inventory.indexOf(article);
-    // $scope.inventory.splice(removedArticle, 1);
+      $state.reload();
   };
 
 //Artikel hinzufuegen Modal
@@ -43,11 +42,15 @@ $scope.createArticle = function (size) {
       $scope.create = function () {
       $http.post('/api/article/', $scope.newArticle).success(function (data) {
         $scope.inventory = data.data;
+        $scope.showAlert = true;
       });
       };
 
       $scope.ok = function () {
-        $uibModalInstance.close();
+        $timeout(function() {
+            $uibModalInstance.close();
+            $state.reload();
+        }, 3000);
       };
 
       $scope.cancel = function () {
@@ -79,6 +82,10 @@ $scope.editArticle = function (size, selectedArticle) {
       $scope.ok = function () {
         $uibModalInstance.close($scope.article);
       };
+
+      $scope.reload = function () {
+        $state.reload();
+      }
 
       $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');

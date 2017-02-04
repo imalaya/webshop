@@ -1,5 +1,10 @@
 var webShop = angular.module('webShop', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngFileUpload', 'ngTouch']);
 
+webShop.run(function ($rootScope) {
+   $rootScope.global = {
+       search: ''
+   };
+});
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     $stateProvider
