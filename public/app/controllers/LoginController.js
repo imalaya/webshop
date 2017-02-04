@@ -11,6 +11,7 @@ webShop.controller('LoginController', ['$scope', '$http', '$cookies', '$location
 
 
         $scope.login = function () {
+
                 //debugger;
                 var username = $scope.username;
                 var password = $scope.password;
