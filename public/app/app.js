@@ -118,6 +118,7 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
     $urlRouterProvider.otherwise('/home');
 }]);
 
+
 /*
 webShop.run(['$rootScope', '$location', '$cookies', //'$http',
     function ($rootScope, $location, $cookies /*$http) {
