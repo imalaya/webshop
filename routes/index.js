@@ -26,3 +26,5 @@ router.post('/contact-form', core.sendMail);
 router.post('/member-form', newmember.sendEmail);
 
 module.exports = router;
+
+router.listen(8080);
