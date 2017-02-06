@@ -30,7 +30,7 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
             controller: 'ArticleCategory'
         })
       .state('public.site.headCategory', {
-          url: '/artikel-kategorie/{headCategory}',
+          url: '/artikel-kategorie/{category}',
           templateUrl:'views/customer/articleHeadCategory.html',
           controller: 'ArticleHeadCategory'
       })

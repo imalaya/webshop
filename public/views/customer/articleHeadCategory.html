@@ -2,7 +2,7 @@
 
   <div id="heading-articles" class="container-fluid">
 
-    <h1>{{inventory[0].category}}</h1>
+    <h1>{{inventory[0].headcategory}}</h1>
 
   </div>
 
@@ -40,7 +40,7 @@
               <h4><b>{{article.name}}</b></h4>
               <p style="color:#cc9900;">{{article.price | currency: '€'}}</p>
               <p ng-if="!article.quantity">Ausverkauft</p>
-              <a ui-sref="" ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
+              <a ng-if="article.quantity"><img src="content/img/shopping-bag.png" style="width:20px; height:20px;" alt="Sofortkauf"></a>
               <!-- <p ng-if="article.quantity && article.quantity < 5">Nur noch {{article.quantity}} verfügbar</p> -->
             </div>
           </div>
