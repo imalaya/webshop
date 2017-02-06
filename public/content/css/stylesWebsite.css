@@ -440,6 +440,7 @@ figure.member * {
 figure.member img {
     opacity: 1;
     width: 100%;
+    height: 200px;
     -webkit-transition: opacity 0.35s;
     transition: opacity 0.35s;
 }
@@ -451,7 +452,7 @@ figure.member:after {
     left: 0;
     bottom: 0;
     content: '';
-    opacity: 0.45;
+    opacity: 0.70;
     -webkit-transform: skew(-45deg) scaleX(0);
     transform: skew(-45deg) scaleX(0);
     -webkit-transition: all 0.3s ease-in-out;
@@ -663,6 +664,13 @@ figure.member:hover figcaption p{
     width: 100%;
     margin-top: 50px;
 }
+
+.about-text{
+    margin-left: 150px !important;
+    margin-right: 150px !important;
+    text-align: center !important;
+}
+
 /* contact form */
 #contact-form-main{
     width:100%;
@@ -683,7 +691,7 @@ figure.member:hover figcaption p{
     padding-bottom:35px;
     width: 450px;
     float: left;
-    left: 50%;
+    left: 52%;
     position: relative;
     margin-top:30px;
     margin-left: -260px;
@@ -737,8 +745,8 @@ textarea {
 
 #form-button:hover{
     background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+    color: #cc9900;
+    border: 1px solid #cc9900;
 }
 
 /* privacy page + site notice page  */
