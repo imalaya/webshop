@@ -16,6 +16,7 @@ var db = pgp(connectionString);
 module.exports = {
     getAllArticles: getAllArticles,
     getArticleCategory: getArticleCategory,
+    getArticleHeadCategory: getArticleHeadCategory,
     getSingleArticle: getSingleArticle,
     createArticle: createArticle,
     updateArticle: updateArticle,
@@ -54,6 +55,23 @@ function getArticleCategory(req, res, next) {
             return next(err);
         });
 }
+
+function getArticleHeadCategory(req, res, next) {
+    var articleHeadCategory = req.params.category;
+    db.any('select * from public.articles where headcategory = $1', articleHeadCategory)
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    // status: 'success',
+                    data: data
+                    // message: 'Retrieved ONE category'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
 
 function getSingleArticle(req, res, next) {
     var articleID = parseInt(req.params.id);

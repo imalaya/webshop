@@ -11,6 +11,7 @@ var newmember = require('../core/new.member.controller');
 
 router.get('/api/article', db.getAllArticles);
 router.get('/api/article/category/:category', db.getArticleCategory);
+router.get('/api/article/headCategory/:category', db.getArticleHeadCategory);
 router.get('/api/article/:id', db.getSingleArticle);
 router.post('/api/article', db.createArticle);
 router.put('/api/article/:id', db.updateArticle);
@@ -26,5 +27,3 @@ router.post('/contact-form', core.sendMail);
 router.post('/member-form', newmember.sendEmail);
 
 module.exports = router;
-
-router.listen(8080);

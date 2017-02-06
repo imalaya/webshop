@@ -29,6 +29,11 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
             templateUrl:'views/customer/articleCategory.html',
             controller: 'ArticleCategory'
         })
+      .state('public.site.headCategory', {
+          url: '/artikel-kategorie/{headCategory}',
+          templateUrl:'views/customer/articleHeadCategory.html',
+          controller: 'ArticleHeadCategory'
+      })
 
         .state('public.site.details', {
             url: '/artikel/{id}',
