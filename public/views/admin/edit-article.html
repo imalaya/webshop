@@ -1,38 +1,54 @@
 <div class="content">
+
     <div class="modal-header">
         <h3 class="modal-title" id="modal-title">Artikel bearbeiten</h3>
     </div>
+
     <div class="modal-body" id="modal-body">
-        <form name="editArticleForm" novalidate>
-            <input type="text" placeholder="Name" name="name" ng-model="article.name" ng-required="true" />
-            <div ng-show="editArticleForm.name.$touched && editArticleForm.name.$invalid"
-            <small style="color:red; display: block; text-align: center;"> Gültigen Namen eingeben </small>
+
+      <form name="editArticleForm" novalidate>
+
+        <label class="formModalLabel">Name</label>
+        <input type="text" class="editArticle" placeholder="Name" name="name" ng-model="article.name" ng-required="true" />
+        <div class="errorStatusArt" ng-show="editArticleForm.name.$touched && editArticleForm.name.$invalid">
+        <small> Gültigen Namen eingeben </small>
+        </div>
+
+          <label class="formModalLabel">Kategorie</label>
+        <input type="text" class="editArticle" placeholder="Kategorie" name="category" ng-model="article.category" ng-required="true" />
+        <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
+        <option selected hidden>Kategorie wählen</option>
+        <option value="paper">Papier</option>
+        <option value="pen">Stifte</option>
+        </select>  Please uncomment and use when styling this field-->
+        <div class="errorStatusArt" ng-show="editArticleForm.category.$touched && editArticleForm.category.$invalid">
+        <small> Gültige Kategorie eingeben </small>
+        </div>
+
+        <label class="formModalLabel">Preis</label>
+        <input type="text" class="editArticle" placeholder="Preis" name="price" ng-model="article.price" ng-required="true" />
+        <div class="errorStatusArt" ng-show="editArticleForm.price.$touched && editArticleForm.price.$invalid">
+        <small> Gültigen Preis eingeben </small>
+        </div>
+
+        <label class="formModalLabel">Beschreibung</label>
+        <textarea id="descr" placeholder="Beschreibung" name="description" ng-model="article.description" ng-required="true" ></textarea>
+        <div class="errorStatusArt" ng-show="editArticleForm.description.$touched && editArticleForm.description.$invalid">
+          <small> Gültige Beschreibung eingeben </small>
+        </div>
+
+        <label class="formModalLabel">Menge</label>
+        <input type="number" min="1" class="editArticle" placeholder="Menge" name="quantity" ng-model="article.quantity" ng-required="true" />
+        <div class="errorStatusArt" ng-show="editArticleForm.quantity.$touched && editArticleForm.quantity.$invalid">
+        <small> Gültige Menge eingeben </small>
+        </div>
+
+      </form>
     </div>
-    <input type="text" placeholder="Kategorie" name="category" ng-model="article.category" ng-required="true" />
-    <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
-      <option selected hidden>Kategorie wählen</option>
-      <option value="paper">Papier</option>
-      <option value="pen">Stifte</option>
-    </select>  Please uncomment and use when styling this field-->
-    <div ng-show="editArticleForm.category.$touched && editArticleForm.category.$invalid"
-    <small style="color:red; display: block; text-align: center;"> Gültige Kategorie eingeben </small>
-</div>
-<input type="text" placeholder="Preis" name="price" ng-model="article.price" ng-required="true" />
-<div ng-show="editArticleForm.price.$touched && editArticleForm.price.$invalid"
-<small style="color:red; display: block; text-align: center;"> Gültigen Preis eingeben </small>
-</div>
-<!-- <textarea placeholder="Beschreibung" name="description" ng-model="article.description" ng-required="true" ></textarea>
-<div ng-show="editArticleForm.description.$touched && editArticleForm.description.$invalid"
-  <small style="color:red; display: block; text-align: center;"> Gültige Beschreibung eingeben </small>
-</div> -->
-<input type="number" placeholder="Menge" name="quantity" ng-model="article.quantity" ng-required="true" />
-<div ng-show="editArticleForm.quantity.$touched && editArticleForm.quantity.$invalid"
-<small style="color:red; display: block; text-align: center;"> Gültige Menge eingeben </small>
-</div>
-</form>
-</div>
-<div class="modal-footer">
-    <button class="btn modal-footer-button" type="button" ng-click="update();ok()" ng-disabled="editArticleForm.$invalid">Artikel speichern</button>
-    <button class="btn modal-footer-button" type="button" ng-click="cancel()">Schließen</button>
-</div>
+
+  <div class="modal-footer">
+      <button class="btn modal-footer-button" type="button" ng-click="update();ok()" ng-disabled="editArticleForm.$invalid">Artikel speichern</button>
+      <button class="btn modal-footer-button" type="button" ng-click="cancel()">Schließen</button>
+  </div>
+
 </div>

@@ -244,7 +244,7 @@
   margin-top: 10px;
 }
 
-.addMemberName, .addArticle {
+.addMemberName, .addArticle, .editArticle {
   width: 100%;
   padding-left: 15px;
   font-size: 14px;
@@ -256,7 +256,8 @@
 }
 
 .addMemberName:hover,
-.addArticle:hover {
+.addArticle:hover,
+.editArticle:hover {
   border-color: #cc9900;
 }
 
@@ -297,6 +298,7 @@ input[disabled="disabled"] {
 .errorStatus, .errorStatusArt {
   color: red;
   font-weight: 600;
+  text-align: center;
 }
 
 /* tablet-version */

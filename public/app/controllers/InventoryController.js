@@ -70,7 +70,9 @@ $scope.editArticle = function (size, selectedArticle) {
     ariaDescribedBy: 'modal-body',
     templateUrl: 'views/admin/edit-article.html',
     controller: function($scope, $uibModalInstance, article){
-      $scope.article = article;
+      // var copy = angular.copy($scope.article);
+
+      $scope.article = angular.copy(article);
 
       $scope.update = function () {
       var editID = $scope.article.id;
@@ -81,11 +83,8 @@ $scope.editArticle = function (size, selectedArticle) {
 
       $scope.ok = function () {
         $uibModalInstance.close($scope.article);
-      };
-
-      $scope.reload = function () {
         $state.reload();
-      }
+      };
 
       $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
