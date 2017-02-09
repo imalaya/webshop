@@ -203,6 +203,12 @@
   border: 1px solid transparent;
 }
 
+.logout {
+  margin: 40px 50px 0 0;
+  font-size: 16px;
+  padding: 10px 12px;
+}
+
 .sortButton:hover,
 .newArticle:hover,
 .newMember:hover,
