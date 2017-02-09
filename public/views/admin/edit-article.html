@@ -15,12 +15,13 @@
         </div>
 
           <label class="formModalLabel">Kategorie</label>
-        <input type="text" class="editArticle" placeholder="Kategorie" name="category" ng-model="article.category" ng-required="true" />
-        <!-- <select name="category" ng-model="newArticle.name" ng-required="true" />
-        <option selected hidden>Kategorie wählen</option>
-        <option value="paper">Papier</option>
-        <option value="pen">Stifte</option>
-        </select>  Please uncomment and use when styling this field-->
+        <select name="category" class="editArticle" ng-model="article.category" ng-required="true">
+          <option value="Papeterie">Papeterie</option>
+          <option value="Stifte">Stifte</option>
+          <option value="Zubehör">Zubehör</option>
+          <option value="Technik">Technik</option>
+          <option value="Geschenke">Geschenke</option>
+        </select>
         <div class="errorStatusArt" ng-show="editArticleForm.category.$touched && editArticleForm.category.$invalid">
         <small> Gültige Kategorie eingeben </small>
         </div>

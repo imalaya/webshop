@@ -12,12 +12,14 @@
         <small> Gültigen Namen eingeben </small>
       </div>
       <label class="formModalLabel">Kategorie</label>
-      <input type="text" class="addArticle" name="category" ng-model="newArticle.category" ng-required="true" />
-      <!-- <select name="category" ng-model="newArticle.category" ng-required="true" />
-        <option selected hidden>Kategorie wählen</option>
-        <option value="paper">Papier</option>
-        <option value="pen">Stifte</option>
-      </select> -->
+      <select name="category" class="addArticle" ng-model="newArticle.category" ng-required="true">
+        <option value="">Kategorie wählen</option>
+        <option value="Papeterie">Papeterie</option>
+        <option value="Stifte">Stifte</option>
+        <option value="Zubehör">Zubehör</option>
+        <option value="Technik">Technik</option>
+        <option value="Geschenke">Geschenke</option>
+      </select>
       <div class="errorStatusArt" ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid">
         <small> Gültige Kategorie eingeben </small>
       </div>
