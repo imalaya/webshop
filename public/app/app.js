@@ -4,6 +4,10 @@ webShop.run(function ($rootScope) {
    $rootScope.global = {
        search: ''
    };
+
+    $rootScope.$on('$stateChangeSuccess', function() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
 });
 
 webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
