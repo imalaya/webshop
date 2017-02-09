@@ -634,7 +634,8 @@ figure.member:hover figcaption p{
 #contact,
 #privacy,
 #sitenotice,
-#about{
+#about,
+#agb{
     color: black;
     letter-spacing: 4px;
     width: auto;
@@ -657,7 +658,8 @@ figure.member:hover figcaption p{
 #contact h2,
 #sitenotice p,
 #about p,
-#about h2{
+#about h2,
+#agb h2{
     text-align: center;
     font-size: 20px;
     font-weight: 100;

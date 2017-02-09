@@ -63,7 +63,11 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         .state('public.site.about', {
             url: '/about',
             templateUrl:'views/customer/footer/about.html'
-        });
+        })
+      .state('public.site.agb', {
+          url:'/agb',
+          templateUrl:'views/customer/footer/agb.html'
+      });
 
     $stateProvider
     .state('private', {
