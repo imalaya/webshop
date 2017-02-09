@@ -341,9 +341,13 @@ webShop.controller('MapController', function ($scope, $timeout) {
             position: new google.maps.LatLng(52.512130, 13.466260),
             map: $scope.map,
             icon: {
-                url: "content/Location_Icons/svg/Artist_3.svg",
-                scaledSize: new google.maps.Size(42, 42)
-            }
+                path: MAP_PIN,
+                fillColor: '#000000',
+                fillOpacity: 1,
+                strokeColor: '',
+                strokeWeight: 0,
+            },
+            map_icon_label: '<span class="map-icon map-icon-postal-code"></span>'
         });
 
         $scope.marker = new google.maps.Marker(marker);
