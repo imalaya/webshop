@@ -175,8 +175,8 @@
 /* Input Field */
 
 .search {
-  width: 250px;
-  height: 35px;
+  width: 200px;
+  height: 30px;
   border: 1px solid #444444;
   border-radius: 18px;
   margin-bottom: 15px;
@@ -189,13 +189,23 @@
   background-position: left;
 }
 
+#searchLabel {
+  font-size: 18px;
+  margin: 5px 5px 0 0;
+  color: black;
+}
+
+#search-icon {
+  margin: 3px 5px 0 0;
+}
+
 .sortButton,
 .newArticle,
 .newMember,
 .modal-footer-button,
 .login,
 .logout{
-  width: 200px;
+  width: 220px;
   padding: 6px 12px;
   border-radius: 0px;
   background-color: black;
@@ -446,7 +456,7 @@ input[disabled="disabled"] {
   }
 
   .search {
-    margin: 0;
+    margin: 3px 5px 0 0;
   }
 
   .sortButton, .newArticle {

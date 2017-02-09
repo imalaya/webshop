@@ -1,13 +1,13 @@
 <div class="content">
   <div class="sortGroup">
-    <button type="button" class="newArticle hidden-xs" ng-click="createArticle()">Neuer Artikel</button>
+    <button type="button" class="newArticle hidden-xs" ng-click="createArticle()">Neuen Artikel hinzufügen</button>
     <button class="sortButton" ng-click="order = 'name'">Nach Name sortieren</button>
     <button class="sortButton" ng-click="order = 'category'">Nach Kategorie sortieren</button>
   </div>
 
   <input type="text" class="search pull-right" ng-model="search" placeholder="Nach Artikel suchen"/>
-  <a class="search-icon pull-right"><img src="content/img/lupe.png" width="35" height="35" alt="Suche"></a>
-
+  <a class="pull-right" id="search-icon"><img src="content/img/lupe.png" width="25" height="25" alt="Suche"></a>
+  <label class="pull-right" id="searchLabel">Suche</label>
 
 
   <div class="table-responsive">
