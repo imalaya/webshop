@@ -2,10 +2,16 @@ webShop.controller('InventoryController', ['$scope', '$http', '$stateParams', '$
 
   $scope.removeArticle = function(article) {
     var deleteID = article.id;
-    $http.delete('/api/article/' + deleteID).success(function (data) {
-      $scope.inventory = data.data;
-    });
-      $state.reload();
+    var c = confirm("Artikel wirklich löschen?");
+    if(c) {
+      $http.delete('/api/article/' + deleteID).success(function (data) {
+        $scope.inventory = data.data;
+      });
+        $state.reload();
+    }
+    else {
+      alert("Artikel nicht gelöscht!");
+    }
   };
 
 //Artikel hinzufuegen Modal
