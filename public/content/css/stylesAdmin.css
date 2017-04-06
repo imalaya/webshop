@@ -230,6 +230,11 @@
   border: 1px solid transparent;
 }
 
+.newMember{
+  box-shadow: 2px 2px 2px #888888;
+  border: 2px solid transparent;
+}
+
 .sortButton,
 .newArticle{
   width: 80%;
