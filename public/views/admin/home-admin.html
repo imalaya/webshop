@@ -11,11 +11,7 @@
     <div class="header-brand">
       <img class="hidden-xs" id="logo" src="content/img/logoGM.png" alt="Gute Mine logo">
     </div>
-    <!--<div>
-      <button type="button" class="pull-right logout" ng-click="logout()">
-        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-      </button>
-    </div>-->
+
     <div class="navbar-header pull-left">
       <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
           <span class="sr-only">Toggle navigation</span>
@@ -32,6 +28,7 @@
           <li><a ui-sref="private.admin.dashboard">Home</a></li>
           <li><a ui-sref="private.admin.inventory">Inventar</a></li>
           <li><a ui-sref="private.admin.member">Mitarbeiter</a></li>
+          <li><button type="button" class="logout" ng-click="logout()">Abmelden</button></li>
         </ul>
       </div>
     </div>
