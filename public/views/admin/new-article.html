@@ -11,16 +11,22 @@
       <div class="errorStatusArt" ng-show="addArticleForm.name.$touched && addArticleForm.name.$invalid">
         <small> Gültigen Namen eingeben </small>
       </div>
-      <label class="formModalLabel">Kategorie</label>
-      <select name="category" class="addArticle" ng-model="newArticle.category" ng-required="true">
+
+      <label class="formModalLabel">Oberkategorie</label>
+      <select name="category" class="addArticle" ng-model="newArticle.category"
+      ng-options="category for category in categories" ng-change="getSubCategories()" ng-required="true">
         <option value="">Kategorie wählen</option>
-        <option value="Papeterie">Papeterie</option>
-        <option value="Stifte">Stifte</option>
-        <option value="Zubehör">Zubehör</option>
-        <option value="Technik">Technik</option>
-        <option value="Geschenke">Geschenke</option>
       </select>
       <div class="errorStatusArt" ng-show="addArticleForm.category.$touched && addArticleForm.category.$invalid">
+        <small> Gültige Kategorie eingeben </small>
+      </div>
+
+      <label class="formModalLabel">Unterkategorie</label>
+      <select name="subcategory" class="addArticle" ng-model="newArticle.subcategory"
+      ng-options="subcategory for subcategory in subcategories" ng-required="true">
+        <option value="">Unterkategorie wählen</option>
+      </select>
+      <div class="errorStatusArt" ng-show="addArticleForm.subcategory.$touched && addArticleForm.subcategory.$invalid">
         <small> Gültige Kategorie eingeben </small>
       </div>
 
