@@ -103,7 +103,7 @@
 .table-responsive {
   max-width: 100%;
   margin: auto;
-  padding-top: 60px;
+  padding-top: 2%;
   background-color: #fff;
   font-family: 'Lato', sans-serif;
 }
@@ -189,26 +189,23 @@
   margin: 30px 0 30px 30px;
 }
 
-.sortGroup {
-  text-align: right;
-  margin-bottom: 30px;
-}
-
 /* Input Field */
 
+.sidebar-right{
+  padding-top: 2%;
+  text-align: center;
+}
+
 .search {
-  width: 200px;
-  height: 30px;
-  border: 1px solid #444444;
-  border-radius: 18px;
-  margin-bottom: 15px;
-  margin-right: 5px;
-  padding-right: 10px;
-  text-align: right;
-  /*background-image: url("../img/lupe.png"); */
-  background-repeat: no-repeat;
-  /*background-size: cover; */
-  background-position: left;
+  width: 80%;
+  height: 35px;
+  border: 1.5px solid;
+  padding-left: 4%;
+  margin-bottom: 5%;
+}
+
+.search:focus{
+  border-color: #cc9900;
 }
 
 #searchLabel {
@@ -221,12 +218,9 @@
   margin: 3px 5px 0 0;
 }
 
-.sortButton,
-.newArticle,
 .newMember,
 .modal-footer-button,
-#login,
-.logout{
+#login{
   width: 220px;
   padding: 6px 12px;
   border-radius: 0px;
@@ -235,10 +229,34 @@
   border: 1px solid transparent;
 }
 
+.sortButton,
+.newArticle{
+  width: 80%;
+  background-color: black;
+  color: white;
+  border: 2px solid transparent;
+  height: 35px;
+  margin-bottom: 5%;
+}
+
+.sortButton{
+  text-align: left;
+  padding-left: 4%;
+}
+
+.newArticle{
+  margin-bottom: 20%;
+  box-shadow: 2px 2px 2px #888888;
+}
+
 .logout {
-  margin: 45px 50px 0 0;
-  font-size: 16px;
-  padding: 6px 12px;
+  font-size: 22px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-width: 2px;
+  background-color: black;
+  color: white;
+  padding: 1%;
 }
 
 .sortButton:hover,
@@ -251,15 +269,6 @@
   color: #cc9900;
   background-color: white;
 }
-
-.sortButton, .newArticle {
-  margin: 40px auto 0;
-}
-
-.newArticle {
-  float: left;
-}
-
 
 /* CSS FOR MODALS */
 

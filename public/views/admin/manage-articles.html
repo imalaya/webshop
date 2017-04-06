@@ -1,39 +1,39 @@
-<div class="content">
-  <div class="sortGroup">
-    <button type="button" class="newArticle hidden-xs" ng-click="createArticle()">Neuen Artikel hinzufügen</button>
-    <button class="sortButton" ng-click="order = 'name'">Nach Name sortieren</button>
-    <button class="sortButton" ng-click="order = 'category'">Nach Kategorie sortieren</button>
+<div class="content container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Preis</th>
+            <th class="hidden-xs">Kategorie</th>
+            <th class="hidden-xs">Anzahl</th>
+            <th>Bearbeiten</th>
+            <th>Löschen</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="article in inventory | orderBy: order | filter: search" >
+            <td><img class="article-imgs" ng-src="{{article.thumb}}" ng-show="article.thumb"/>{{article.name}}</td>
+            <td>{{article.price | currency: '€'}}</td>
+            <td class="hidden-xs"><span class="category">{{article.category}}</span></td>
+            <td class="hidden-xs"><span class="quantity">{{article.quantity}}</span></td>
+            <td><div class="edit" ng-click="editArticle('lg', article)"><i class="fa fa-edit fa-lg"></i></div></td>
+            <td><div class="remove" ng-click="removeArticle(article)"><i class="fa fa-close fa-lg"></i></div></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-4 sidebar-right">
+      <button type="button" class="newArticle hidden-xs" ng-click="createArticle()">Neuen Artikel hinzufügen</button>
+      <input type="text" class="search" ng-model="search" placeholder="Nach Artikel suchen..."/>
+      <button class="sortButton" ng-click="order = 'name'">Nach Name sortieren</button>
+      <button class="sortButton" ng-click="order = 'category'">Nach Kategorie sortieren</button>
+    </div>
+
+    <div ui-view></div>
   </div>
-
-  <input type="text" class="search pull-right" ng-model="search" placeholder="Nach Artikel suchen"/>
-  <a class="pull-right" id="search-icon"><img src="content/img/lupe.png" width="25" height="25" alt="Suche"></a>
-  <label class="pull-right" id="searchLabel">Suche</label>
-
-
-  <div class="table-responsive">
-    <table class="table table-condensed table-hover">
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>Preis</th>
-        <th class="hidden-xs">Kategorie</th>
-        <th class="hidden-xs">Anzahl</th>
-        <th>Bearbeiten</th>
-        <th>Löschen</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr ng-repeat="article in inventory | orderBy: order | filter: search" >
-        <td><img class="article-imgs" ng-src="{{article.thumb}}" ng-show="article.thumb"/>{{article.name}}</td>
-        <td>{{article.price | currency: '€'}}</td>
-        <td class="hidden-xs"><span class="category">{{article.category}}</span></td>
-        <td class="hidden-xs"><span class="quantity">{{article.quantity}}</span></td>
-        <td><div class="edit" ng-click="editArticle('lg', article)"><i class="fa fa-edit fa-lg"></i></div></td>
-        <td><div class="remove" ng-click="removeArticle(article)"><i class="fa fa-close fa-lg"></i></div></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  <div ui-view></div>
-
 </div>
