@@ -10,7 +10,6 @@ webShop.controller('InventoryController', ['$scope', '$http', '$stateParams', '$
 
 //Artikel hinzufuegen Modal
 $scope.createArticle = function (size) {
-
   var modalInstance = $uibModal.open({
     animation: true,
     ariaLabelledBy: 'modal-title',
@@ -38,6 +37,21 @@ $scope.createArticle = function (size) {
       // });
       // $uibModalInstance.close();
       // }
+
+      var categories = ['Papeterie', 'Stifte', 'Zubehör', 'Technik', 'Geschenke'];
+      $scope.categories = categories;
+
+      var options = [['Karten', 'Notizblöcke', 'Kalender', 'Poster'],
+      ['Kugelschreiber', 'Füllfederhalter', 'Bleistifte', 'Filzstifte'],
+      ['Etuis', 'Tape', 'Büroklammern', 'Sonstiges'], ['Schreibmaschinen', 'Technik-Zubehör'],
+      ['Geschenke-Sets', 'Grußkarten', 'Fotohalterungen', 'Geschenkpapier']];
+      $scope.subcategories = [];
+
+      $scope.getSubCategories = function() {
+        var key = $scope.categories.indexOf($scope.newArticle.category);
+        var conditionalOptions = options[key];
+        $scope.subcategories = conditionalOptions;
+      };
 
       $scope.create = function () {
       $http.post('/api/article/', $scope.newArticle).success(function (data) {
@@ -79,11 +93,14 @@ $scope.editArticle = function (size, selectedArticle) {
       $http.put('/api/article/' + editID, $scope.article).success(function (data) {
         $scope.inventory = data.data;
       });
+      $scope.showAlert = true;
       };
 
       $scope.ok = function () {
-        $uibModalInstance.close($scope.article);
-        $state.reload();
+        $timeout(function() {
+            $uibModalInstance.close($scope.article);
+            $state.reload();
+        }, 3000);
       };
 
       $scope.cancel = function () {
@@ -91,6 +108,7 @@ $scope.editArticle = function (size, selectedArticle) {
       };
     },
     size: size,
+    scope: $scope,
     resolve: {
       article: function () {
         return selectedArticle;
