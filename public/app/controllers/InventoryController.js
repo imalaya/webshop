@@ -93,11 +93,14 @@ $scope.editArticle = function (size, selectedArticle) {
       $http.put('/api/article/' + editID, $scope.article).success(function (data) {
         $scope.inventory = data.data;
       });
+      $scope.showAlert = true;
       };
 
       $scope.ok = function () {
-        $uibModalInstance.close($scope.article);
-        $state.reload();
+        $timeout(function() {
+            $uibModalInstance.close($scope.article);
+            $state.reload();
+        }, 3000);
       };
 
       $scope.cancel = function () {
@@ -105,6 +108,7 @@ $scope.editArticle = function (size, selectedArticle) {
       };
     },
     size: size,
+    scope: $scope,
     resolve: {
       article: function () {
         return selectedArticle;
