@@ -154,7 +154,6 @@ button.btn.btn-default:hover{
 div.startpage-content.container-fluid{
     padding-bottom: 40px;
     padding-top: 40px;
-    padding-left: 50px;
     border-top: 1.5px solid;
     text-align: center;
 }
@@ -413,9 +412,7 @@ select.form-control:focus{
 /* about page -> list of employees*/
 
 #members{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 50px;
 }
 
 figure.member {
@@ -817,6 +814,10 @@ textarea {
         padding-top: 60px;
     }
 
+    .about-text{
+        font-size: 10px!important;
+    }
+
     .dropdown-img{
         display: none;
     }
@@ -979,6 +980,7 @@ textarea {
     .navbar-collapse .navbar-nav>li{
         margin: 0 40px;
     }
+
 }
 
 /* hier auf die Breite 1300px - unendlich angepasst */
