@@ -72,7 +72,6 @@ function getArticleHeadCategory(req, res, next) {
         });
 }
 
-
 function getSingleArticle(req, res, next) {
     var articleID = parseInt(req.params.id);
     db.one('select * from articles where id = $1', articleID)
@@ -93,8 +92,8 @@ function createArticle(req, res, next) {
     req.body.price = parseInt(req.body.price);
     req.body.quantity = parseInt(req.body.quantity);
     // req.body.available = req.body.available.toString();
-    db.none('insert into articles(name, category, price, description, quantity, thumb) values ($1, $2, $3, $4, $5, $6)',
-        [req.body.name, req.body.category, req.body.price, req.body.description, req.body.quantity, req.body.thumb])
+    db.none('insert into articles(name, category, headcategory, price, description, quantity, thumb) values ($1, $2, $3, $4, $5, $6, $7)',
+        [req.body.name, req.body.subcategory, req.body.category, req.body.price, req.body.description, req.body.quantity, req.body.thumb])
         .then(function () {
             res.status(200)
                 .json({
