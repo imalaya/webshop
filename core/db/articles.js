@@ -107,8 +107,8 @@ function createArticle(req, res, next) {
 }
 
 function updateArticle(req, res, next) {
-    db.none('update articles set name=$1, price=$2, category=$3, quantity=$4 where id=$5',
-        [req.body.name, parseInt(req.body.price), req.body.category, parseInt(req.body.quantity), parseInt(req.params.id)])
+    db.none('update articles set name=$1, price=$2, headcategory=$3, category=$4, quantity=$5 where id=$6',
+        [req.body.name, parseInt(req.body.price), req.body.category, req.body.subcategory, parseInt(req.body.quantity), parseInt(req.params.id)])
         .then(function () {
             res.status(200)
                 .json({
