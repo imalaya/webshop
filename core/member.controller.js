@@ -10,7 +10,7 @@ exports.sendMail = function(req, res) {
     to: data.testMail,
     subject: 'Dein Invite Code, ' + data.firstName,
     text: 'Hallo ' + data.firstName + ', mit folgendem Link wirst Du auf eine Seite weitergeleitet, auf der Du dann Dein Passwort vergeben kannst. Viel Spaß' +
-    '                     ' + 'gutemine.f4.htw-berlin.de:8000/#/register.html'
+    '                     ' + 'gutemine.f4.htw-berlin.de:8000/#/register'
   });
 
   res.json(data);
