@@ -90,9 +90,23 @@ $scope.editArticle = function (size, selectedArticle) {
     ariaDescribedBy: 'modal-body',
     templateUrl: 'views/admin/edit-article.html',
     controller: function($scope, $uibModalInstance, article){
-      // var copy = angular.copy($scope.article);
 
       $scope.article = angular.copy(article);
+
+      var categories = ['Papeterie', 'Stifte', 'Zubehör', 'Technik', 'Geschenke'];
+      $scope.categories = categories;
+
+      var options = [['Karten', 'Notizblöcke', 'Kalender', 'Poster'],
+      ['Kugelschreiber', 'Füllfederhalter', 'Bleistifte', 'Filzstifte'],
+      ['Etuis', 'Tape', 'Büroklammern', 'Sonstiges'], ['Schreibmaschinen', 'Technik-Zubehör'],
+      ['Geschenke-Sets', 'Grußkarten', 'Fotohalterungen', 'Geschenkpapier']];
+      $scope.subcategories = [];
+
+      $scope.getSubCategories = function() {
+        var key = $scope.categories.indexOf($scope.article.category);
+        var conditionalOptions = options[key];
+        $scope.subcategories = conditionalOptions;
+      };
 
       $scope.update = function () {
       var editID = $scope.article.id;
@@ -123,10 +137,6 @@ $scope.editArticle = function (size, selectedArticle) {
   });
 };
 
-//get test data
-  // Wenn man noch keine Datenbank hat noch die Verweisung zur json-Datei anpassen.
-  // $http.get('data/inventory.json').success(function(data){
-  //    $scope.inventory = data;
   $http.get('/api/article').success(function(data){
     $scope.inventory = data.data;
   });

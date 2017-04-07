@@ -14,16 +14,20 @@
         <small> Gültigen Namen eingeben </small>
         </div>
 
-          <label class="formModalLabel">Kategorie</label>
-        <select name="category" class="editArticle" ng-model="article.category" ng-required="true">
-          <option value="Papeterie">Papeterie</option>
-          <option value="Stifte">Stifte</option>
-          <option value="Zubehör">Zubehör</option>
-          <option value="Technik">Technik</option>
-          <option value="Geschenke">Geschenke</option>
+          <label class="formModalLabel">Oberkategorie</label>
+        <select name="category" class="editArticle" ng-model="article.category"
+        ng-options="category for category in categories" ng-change="getSubCategories()" ng-required="true">
         </select>
         <div class="errorStatusArt" ng-show="editArticleForm.category.$touched && editArticleForm.category.$invalid">
         <small> Gültige Kategorie eingeben </small>
+        </div>
+
+        <label class="formModalLabel">Unterkategorie</label>
+        <select name="subcategory" class="editArticle" ng-model="article.subcategory"
+        ng-options="subcategory for subcategory in subcategories" ng-required="true">
+        </select>
+        <div class="errorStatusArt" ng-show="editArticleForm.subcategory.$touched && editArticleForm.subcategory.$invalid">
+          <small> Gültige Kategorie eingeben </small>
         </div>
 
         <label class="formModalLabel">Preis</label>
