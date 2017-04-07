@@ -5,7 +5,7 @@ var db = require('../core/db/articles');
 var interestedPersonDb = require('../core/db/interestedPerson');
 var login = require('../core/db/user');
 
-var core = require('../core/core.server.controller');
+var contact = require('../core/contact.controller');
 var newmember = require('../core/member.controller');
 
 
@@ -22,7 +22,7 @@ router.post('/api/interestedPerson', interestedPersonDb.saveInterestedPerson);
 
 router.post('/api/userLogin', login.isLoggedIn);
 
-router.post('/contact-form', core.sendMail);
+router.post('/contact-form', contact.sendMail);
 
 router.post('/member-form', newmember.sendMail);
 
