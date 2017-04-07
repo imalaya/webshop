@@ -9,12 +9,21 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
       templateUrl: 'views/admin/new-member.html',
       controller: function($scope, $uibModalInstance){
 
-        $scope.sendEmail = function() {
+        $scope.createAddress = function(){
+          if($scope.newMember.firstname && $scope.newMember.lastname)
+          {
+            $scope.newMember.email = $scope.newMember.firstname + '.' +
+            $scope.newMember.lastname + '@gutemine.de';
+          }
+        }
+
+        $scope.sendMail = function() {
 
             var data = ({
-              lastname: $scope.newMember.lastname,
-              firstname: $scope.newMember.firstname,
-              email: $scope.newMember.email
+              firstName: $scope.newMember.firstname,
+              lastName: $scope.newMember.lastname,
+              email: $scope.newMember.email,
+              testMail: $scope.newMember.testMail
             });
 
             $http.post('/member-form', data).
@@ -28,7 +37,6 @@ webShop.controller('MemberController', ['$scope', '$http','$uibModal', '$log', f
 
         $scope.ok = function () {
           $uibModalInstance.close();
-          $log.info('ok');
         };
 
         $scope.cancel = function () {

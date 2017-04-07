@@ -8,29 +8,32 @@
             <p id="modalParagraph">Bitte geben Sie den vollständigen Vor- und Nachnamen ein und bestätigen Sie den Eintrag um einen Mitarbeiter hinzuzufügen.</p>
 
             <label class="formModalLabel">Vorname</label>
-            <input class="addMemberName" type="text" name="firstname" ng-model="newMember.firstname" ng-required="true" />
+            <input class="addMemberName" type="text" name="firstname" ng-model="newMember.firstname" ng-required="true"/>
             <div class="errorStatus" ng-show="addMemberForm.firstname.$touched && addMemberForm.firstname.$invalid">
                 <small> Gültigen Vornamen eingeben </small>
             </div>
 
             <label class="formModalLabel">Nachname</label>
-            <input type="text" class="addMemberName" name="lastname" ng-model="newMember.lastname" ng-required="true" />
+            <input type="text" class="addMemberName" name="lastname" ng-model="newMember.lastname" ng-change="createAddress()" ng-required="true"/>
             <div class="errorStatus" ng-show="addMemberForm.lastname.$touched && addMemberForm.lastname.$invalid">
                 <small> Gültigen Nachnamen eingeben </small>
             </div>
 
-            <label class="formModalLabel">E-Mail Adresse</label>
-            <input type="text" class="addMemberName" name="email" ng-model="newMember.email" ng-required="true" />
+            <p>
+              {{newMember.email}}
+            </p>
+
+            <label class="formModalLabel">Für Herrn Yavuz</label>
+            <input type="text" class="addMemberName" name="email" ng-model="newMember.testMail" ng-required="true"/>
             <div class="errorStatus" ng-show="addMemberForm.email.$touched && addMemberForm.email.$invalid">
                 <small> Gültige Email eingeben </small>
             </div>
 
-            <p name="email">{{newMember.firstname}}.{{newMember.lastname}}@gutemine.de</p>
         </form>
     </div>
 
     <div class="modal-footer">
-        <button class="btn modal-footer-button" type="button" ng-click="sendEmail();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
+        <button class="btn modal-footer-button" type="button" ng-click="sendMail();ok()" ng-disabled="addMemberForm.$invalid">Mitarbeiter hinzufügen</button>
         <button class="btn modal-footer-button" type="button" ng-click="cancel()">Schließen</button>
     </div>..
 </div>

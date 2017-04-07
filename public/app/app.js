@@ -126,6 +126,7 @@ webShop.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
           controller: 'MemberController',
           parent: 'private.admin.member'
       })
+
       .state('login', {
           url: '/login',
           controller: 'LoginController',

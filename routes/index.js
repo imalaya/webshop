@@ -6,7 +6,7 @@ var interestedPersonDb = require('../core/db/interestedPerson');
 var login = require('../core/db/user');
 
 var core = require('../core/core.server.controller');
-var newmember = require('../core/new.member.controller');
+var newmember = require('../core/member.controller');
 
 
 router.get('/api/article', db.getAllArticles);
@@ -24,6 +24,6 @@ router.post('/api/userLogin', login.isLoggedIn);
 
 router.post('/contact-form', core.sendMail);
 
-router.post('/member-form', newmember.sendEmail);
+router.post('/member-form', newmember.sendMail);
 
 module.exports = router;
